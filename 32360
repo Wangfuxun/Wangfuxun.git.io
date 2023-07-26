@@ -16,21 +16,23 @@
   <meta name="author" content="Wangfuxun">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Welcome to my blog！This is my first article. 我其实很早就想搭建一个个人博客，但是由于各种事情一直没能实现。考完研之后这一想法再次涌上心头，于是花了一天时间终于把各种软件的安装和配置给弄完了。下面就将用到一些教程和注意事项贴出。 创建博客我主要是按照这两篇教程一步一步操作的，从Git、nodejs、hexo的安装到将个人博客部署到github。这两篇教程">
+    <meta name="description" content="Python简介Python是由吉多.范罗苏姆(Guido van Rossum)创造的一门独特的程序设计语言。Python是一门完全面向对象的语言,它遵循优雅、明确、简单的设计哲学。 Python语言具有简单易学、开源、面向对象等优点，但与C&#x2F;C++相比，它的运行速度较慢，同时这门语言对格式的要求极为严格。 编译与解释计算机无法直接执行使用高级语言编写的源程序，只能够识别执行低级的机器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="First Article">
-<meta property="og:url" content="https://wangfuxun.github.io/2022/12/30/First-Article/index.html">
+<meta property="og:title" content="Python基础之预备知识">
+<meta property="og:url" content="https://wangfuxun.github.io/32360">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to my blog！This is my first article. 我其实很早就想搭建一个个人博客，但是由于各种事情一直没能实现。考完研之后这一想法再次涌上心头，于是花了一天时间终于把各种软件的安装和配置给弄完了。下面就将用到一些教程和注意事项贴出。 创建博客我主要是按照这两篇教程一步一步操作的，从Git、nodejs、hexo的安装到将个人博客部署到github。这两篇教程">
+<meta property="og:description" content="Python简介Python是由吉多.范罗苏姆(Guido van Rossum)创造的一门独特的程序设计语言。Python是一门完全面向对象的语言,它遵循优雅、明确、简单的设计哲学。 Python语言具有简单易学、开源、面向对象等优点，但与C&#x2F;C++相比，它的运行速度较慢，同时这门语言对格式的要求极为严格。 编译与解释计算机无法直接执行使用高级语言编写的源程序，只能够识别执行低级的机器">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-12-30T11:51:34.000Z">
-<meta property="article:modified_time" content="2023-07-25T03:06:07.472Z">
+<meta property="og:image" content="e:\MyBlog\blog\source\pictures\compile.png">
+<meta property="article:published_time" content="2023-07-16T08:42:56.000Z">
+<meta property="article:modified_time" content="2023-07-26T04:07:33.930Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="e:\MyBlog\blog\source\pictures\compile.png">
   
   
   
-  <title>First Article - Hexo</title>
+  <title>Python基础之预备知识 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +198,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="First Article"></span>
+            <span id="subtitle" data-typed-text="Python基础之预备知识"></span>
           
         </div>
 
@@ -207,8 +209,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-12-30 19:51" pubdate>
-          December 30, 2022 pm
+        <time datetime="2023-07-16 16:42" pubdate>
+          July 16, 2023 pm
         </time>
       </span>
     
@@ -219,7 +221,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          862 words
+          385 words
         
       </span>
     
@@ -230,7 +232,7 @@
         
         
         
-          8 mins
+          4 mins
         
       </span>
     
@@ -267,33 +269,17 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">First Article</h1>
+            <h1 id="seo-header">Python基础之预备知识</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Welcome to my blog！This is my first article.</p>
-<p>我其实很早就想搭建一个个人博客，但是由于各种事情一直没能实现。考完研之后这一想法再次涌上心头，于是花了一天时间终于把各种软件的安装和配置给弄完了。下面就将用到一些教程和注意事项贴出。</p>
-<h2 id="创建博客"><a href="#创建博客" class="headerlink" title="创建博客"></a>创建博客</h2><p>我主要是按照这两篇教程一步一步操作的，从Git、nodejs、hexo的安装到将个人博客部署到github。这两篇教程对新手十分友好。</p>
-<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1373210">一文教会你如何搭建个人博客</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/sparkstark/article/details/124967315">Hexo个人博客安装及配置</a></p>
-<p>第一篇文章中最核心的部分是将博客部署到远端（即github），但是按照该文章的步骤会报错。原因是没有配置用户的电子邮件地址和个人名，为此在部署前需要在bash中输入以下命令：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs stylus">$ git config <span class="hljs-attr">--global</span> user<span class="hljs-selector-class">.email</span> <span class="hljs-string">&quot;2210749324@qq.com&quot;</span><br>$ git config <span class="hljs-attr">--global</span> user<span class="hljs-selector-class">.name</span> <span class="hljs-string">&quot;Wangfuxun&quot;</span><br></code></pre></td></tr></table></figure>
-
-<p>–global表示修改用户主目录下的配置信息，如果不含这一项，修改的仅为当前文件夹blog下的_config文件中的配置信息。</p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol>
-<li><p>在下载Git时，建议下载旧版本，比如2.38.0&#x2F;2.38.1，因为最新版2.39.0有bug，可能无法将博客部署到github（本人已踩过坑）。</p>
-</li>
-<li><p>Git官网下载非常慢，建议直接在镜像网站（比如淘宝）下载。</p>
-</li>
-<li><p>在部署时，遇到了一些问题，其解决方法如下，亲测好用。</p>
-</li>
-</ol>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/lvoelife/article/details/127370301">一文解决OpenSSL SSL_read: Connection was reset, errno 10054问题</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_66695483/article/details/125036055">解决Failed to connect to github.com port 443: Timed out</a></p>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>在写博客时需要使用到markdown语法，非常简单。</p>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/191d1e21f7ed">Markdown基本语法</a></p>
-<p>在Hexo官方文档中对写作&#x2F;生成静态文档&#x2F;配置等内容都有详细的介绍，有需要可以查看</p>
-<p><a target="_blank" rel="noopener" href="https://hexo.io/docs/">Documentation</a></p>
-<p>最后作为小白，我会努力向各位优秀的大佬学习，争取成为一个好的程序员，欢迎各位大佬指正不足。</p>
+                <h2 id="Python简介"><a href="#Python简介" class="headerlink" title="Python简介"></a>Python简介</h2><p>Python是由<strong>吉多.范罗苏姆</strong>(Guido van Rossum)创造的一门独特的程序设计语言。Python是一门<strong>完全面向对象</strong>的语言,它遵循优雅、明确、简单的设计哲学。</p>
+<p>Python语言具有简单易学、开源、面向对象等优点，但与C&#x2F;C++相比，它的运行速度较慢，同时这门语言对格式的要求极为严格。</p>
+<h3 id="编译与解释"><a href="#编译与解释" class="headerlink" title="编译与解释"></a>编译与解释</h3><p>计算机无法直接执行使用高级语言编写的源程序，只能够识别执行低级的机器指令，因此需要一种翻译程序将源程序转化为CPU能够执行的机器指令。翻译方式可以分为解释和编译两种，具体运行过程见下图<br><img src="E:\MyBlog\blog\source\pictures\compile.png" srcset="/img/loading.gif" lazyload alt="编译与解释"></p>
+<p>解释是逐行翻译程序每翻译一句，CPU就执行执行一句。<br>编译是将整个程序源代码翻译为等价的机器语言或者汇编语言格式的目标程序，之后再由CPU执行，例如C、C++</p>
+<p>编译型语言的执行速度快，解释型语言跨平台性能好，Java的跨平台是通过虚拟机实现的</p>
+<p>Python是解释型语言</p>
 
                 
               </div>
@@ -311,8 +297,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>First Article</div>
-      <div>https://wangfuxun.github.io/2022/12/30/First-Article/</div>
+      <div>Python基础之预备知识</div>
+      <div>https://wangfuxun.github.io/32360</div>
     </div>
     <div class="license-meta">
       
@@ -324,7 +310,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>December 30, 2022</div>
+          <div>July 16, 2023</div>
         </div>
       
       
@@ -359,6 +345,12 @@
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/43398" title="First Article">
+                        <span class="hidden-mobile">First Article</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
