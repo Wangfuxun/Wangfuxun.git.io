@@ -19,12 +19,12 @@
     <meta name="description" content="Welcome to my blog！This is my first article. 我其实很早就想搭建一个个人博客，但是由于各种事情一直没能实现。考完研之后这一想法再次涌上心头，于是花了一天时间终于把各种软件的安装和配置给弄完了。下面就将用到一些教程和注意事项贴出。 创建博客我主要是按照这两篇教程一步一步操作的，从Git、nodejs、hexo的安装到将个人博客部署到github。这两篇教程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="First Article">
-<meta property="og:url" content="https://wangfuxun.github.io/43398">
+<meta property="og:url" content="https://wangfuxun.github.io/posts/43398/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Welcome to my blog！This is my first article. 我其实很早就想搭建一个个人博客，但是由于各种事情一直没能实现。考完研之后这一想法再次涌上心头，于是花了一天时间终于把各种软件的安装和配置给弄完了。下面就将用到一些教程和注意事项贴出。 创建博客我主要是按照这两篇教程一步一步操作的，从Git、nodejs、hexo的安装到将个人博客部署到github。这两篇教程">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-12-30T11:51:34.000Z">
-<meta property="article:modified_time" content="2023-07-26T03:52:18.956Z">
+<meta property="article:modified_time" content="2023-07-26T11:28:08.510Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -219,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          945 words
+          1.3k words
         
       </span>
     
@@ -230,7 +230,7 @@
         
         
         
-          8 mins
+          12 mins
         
       </span>
     
@@ -290,11 +290,15 @@
 </ol>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/lvoelife/article/details/127370301">一文解决OpenSSL SSL_read: Connection was reset, errno 10054问题</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_66695483/article/details/125036055">解决Failed to connect to github.com port 443: Timed out</a></p>
 <ol start="4">
-<li>为了使文章有唯一的编号，使用了abbrlink插件生成文章链接</li>
+<li>为了使文章有唯一的编号，使用了abbrlink插件生成文章链接。需要注意在hexo配置文件_config中修改permalink时需要注意加上末尾的&#x2F;，如果缺失，文章链接会变为下载链接。</li>
 </ol>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_51755720/article/details/127996199">Hexo使用Abbrlink插件生成文章固定编号链接</a></p>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>在写博客时需要使用到markdown语法，非常简单。</p>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/191d1e21f7ed">Markdown基本语法</a></p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>在写博客时需要使用到markdown语法，非常简单，并且支持HTML标签。<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/191d1e21f7ed">Markdown基本语法</a></p>
+<p>为了导入本地图片，需要先在source目录下创建一个文件夹images用于存放。加载图片格式如下,本地路径使用绝对路径或相对路径均可，例如：E:&#x2F;MyBlog&#x2F;blog&#x2F;source&#x2F;images&#x2F;test.png或者..&#x2F;images&#x2F;test.png。</p>
+<p><code>![图片题注](图片存放路径)</code> </p>
+<p>也可以使用HTML设置图片，格式如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">align</span>=<span class="hljs-string">&quot;center&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;../images/Python基础-预备知识-compile.png&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">img</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
 <p>在Hexo官方文档中对写作&#x2F;生成静态文档&#x2F;配置等内容都有详细的介绍，有需要的话可以查看</p>
 <p><a target="_blank" rel="noopener" href="https://hexo.io/docs/">Documentation</a></p>
 <p>以后我会不定期地在博客中更新自己的各种学习笔记。最后作为小白，我会努力向各位优秀的大佬学习，争取成为一个好的程序员，欢迎各位大佬指正不足。</p>
@@ -316,7 +320,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>First Article</div>
-      <div>https://wangfuxun.github.io/43398</div>
+      <div>https://wangfuxun.github.io/posts/43398/</div>
     </div>
     <div class="license-meta">
       
@@ -360,9 +364,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/32360" title="Python基础之预备知识">
+                      <a href="/posts/32360/" title="Python基础-预备知识">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Python基础之预备知识</span>
+                        <span class="hidden-mobile">Python基础-预备知识</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
