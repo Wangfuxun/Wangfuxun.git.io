@@ -16,23 +16,21 @@
   <meta name="author" content="Wangfuxun">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Python简介Python是由吉多.范罗苏姆(Guido van Rossum)创造的一门独特的程序设计语言。Python是一门完全面向对象的语言,它遵循优雅、明确、简单的设计哲学。 Python语言具有简单易学、开源、面向对象等优点，但与C&#x2F;C++相比，它的运行速度较慢，同时这门语言对格式的要求极为严格。 预备知识编译与解释计算机无法直接执行使用高级语言编写的源程序，只能够识别执行低">
+    <meta name="description" content="基本语法1.数据类型 Python中变量不需要显式声明数据类型。程序运行时，Python解释器会根据赋值语句等号右侧的数据自动推导出变量保存数据的类型。  Python内置数据类型可以分为数值数据类型和非数值数据类型。其中内置数值数据类型有4种：int、float、bool、complex（复数类型），非数值数据类型有str、tuple（元组）、list（列表）、dict（字典）等。 2.标识符P">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python基础-预备知识">
-<meta property="og:url" content="https://wangfuxun.github.io/posts/32360/index.html">
+<meta property="og:title" content="Python基础-基本语法">
+<meta property="og:url" content="https://wangfuxun.github.io/posts/61427/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Python简介Python是由吉多.范罗苏姆(Guido van Rossum)创造的一门独特的程序设计语言。Python是一门完全面向对象的语言,它遵循优雅、明确、简单的设计哲学。 Python语言具有简单易学、开源、面向对象等优点，但与C&#x2F;C++相比，它的运行速度较慢，同时这门语言对格式的要求极为严格。 预备知识编译与解释计算机无法直接执行使用高级语言编写的源程序，只能够识别执行低">
+<meta property="og:description" content="基本语法1.数据类型 Python中变量不需要显式声明数据类型。程序运行时，Python解释器会根据赋值语句等号右侧的数据自动推导出变量保存数据的类型。  Python内置数据类型可以分为数值数据类型和非数值数据类型。其中内置数值数据类型有4种：int、float、bool、complex（复数类型），非数值数据类型有str、tuple（元组）、list（列表）、dict（字典）等。 2.标识符P">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://wangfuxun.github.io/images/Python%E5%9F%BA%E7%A1%80-%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86-compile.png">
-<meta property="article:published_time" content="2023-07-16T08:42:56.000Z">
-<meta property="article:modified_time" content="2023-07-26T12:47:07.841Z">
+<meta property="article:published_time" content="2023-07-17T09:26:33.000Z">
+<meta property="article:modified_time" content="2023-07-28T08:42:59.048Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://wangfuxun.github.io/images/Python%E5%9F%BA%E7%A1%80-%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86-compile.png">
   
   
   
-  <title>Python基础-预备知识 - Hexo</title>
+  <title>Python基础-基本语法 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -198,7 +196,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Python基础-预备知识"></span>
+            <span id="subtitle" data-typed-text="Python基础-基本语法"></span>
           
         </div>
 
@@ -209,8 +207,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-07-16 16:42" pubdate>
-          July 16, 2023 pm
+        <time datetime="2023-07-17 17:26" pubdate>
+          July 17, 2023 pm
         </time>
       </span>
     
@@ -221,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          814 words
+          1.3k words
         
       </span>
     
@@ -232,7 +230,7 @@
         
         
         
-          7 mins
+          12 mins
         
       </span>
     
@@ -269,35 +267,59 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Python基础-预备知识</h1>
+            <h1 id="seo-header">Python基础-基本语法</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="Python简介"><a href="#Python简介" class="headerlink" title="Python简介"></a>Python简介</h2><p>Python是由<strong>吉多.范罗苏姆</strong>(Guido van Rossum)创造的一门独特的程序设计语言。Python是一门<strong>完全面向对象</strong>的语言,它遵循优雅、明确、简单的设计哲学。</p>
-<p>Python语言具有简单易学、开源、面向对象等优点，但与C&#x2F;C++相比，它的运行速度较慢，同时这门语言对格式的要求极为严格。</p>
-<h2 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h2><h3 id="编译与解释"><a href="#编译与解释" class="headerlink" title="编译与解释"></a>编译与解释</h3><p>计算机无法直接执行使用高级语言编写的源程序，只能够识别执行低级的机器指令，因此需要一种翻译程序，将源程序转化为CPU能够执行的机器指令。翻译方式可以分为解释和编译两种，具体运行过程见下图。</p>
-<p><img src="/../images/Python%E5%9F%BA%E7%A1%80-%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86-compile.png" srcset="/img/loading.gif" lazyload alt="编译与解释"></p>
-<p><strong>编译</strong>是先将整个程序源代码翻译为等价的机器语言或者汇编语言格式的目标程序，之后再由CPU执行，例如C、C++等。<strong>解释</strong>是逐行翻译源程序，每翻译一句，CPU就执行一句，不产生目标代码，例如R、Python等。</p>
-<p><strong>编译型语言的执行速度快，解释型语言跨平台性能好</strong>，而Java的跨平台是通过虚拟机实现的。</p>
-<h3 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h3><p>调试方法：在某一行设置一个断点，当程序执行到断点时暂时停止继续执行，之后通过单步调试继续向下执行。</p>
-<p>程序断点原理：断点（breakpoint）的本质是一个<strong>中断信号</strong>，CPU执行至断点时产生中断，由调试器将程序挂起，此时程序并没有终止或者结束。</p>
-<p>常用的调试器提供了多种单步调试方式：</p>
+                <h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="1-数据类型"><a href="#1-数据类型" class="headerlink" title="1.数据类型"></a>1.数据类型</h3><blockquote>
+<p>Python中变量不需要显式声明数据类型。程序运行时，Python解释器会根据赋值语句等号右侧的数据自动推导出变量保存数据的类型。</p>
+</blockquote>
+<p>Python内置数据类型可以分为数值数据类型和非数值数据类型。其中内置数值数据类型有4种：int、float、bool、complex（复数类型），非数值数据类型有str、tuple（元组）、list（列表）、dict（字典）等。</p>
+<h3 id="2-标识符"><a href="#2-标识符" class="headerlink" title="2.标识符"></a>2.标识符</h3><p>Python标识符的命名规则：</p>
 <ol>
-<li>step into：进入子函数内部并继续单步执行</li>
-<li>step over：不会进入子函数内部单步执行，而是把整个子函数当作一步执行</li>
-<li>step out：将子函数中剩余部分执行完，返回上一级函数，与step into配合使用</li>
+<li>由<strong>字母、下划线和数字</strong>组成</li>
+<li>不能由数字开头 </li>
+<li>不能与关键字重名</li>
 </ol>
-<h3 id="Python程序排错"><a href="#Python程序排错" class="headerlink" title="Python程序排错"></a>Python程序排错</h3><ol>
-<li>每行代码完成一个动作，因此不能把多条语句写在同一行。</li>
-<li>缩进错误。（由于对格式的严格要求，Python语言也被称为“<strong>游标卡尺语言</strong>”）</li>
+<p>注：Python中的标识符是区分大小写的</p>
+<p><strong>关键字</strong>即Python内部已经使用的标识符</p>
+<p>Python命名规范：<br>（1）变量、函数、模块：<strong>单词的首字母采用小写字母，单词之间用下划线连接</strong>，例如：first_name<br>（2）类名：大驼峰，例如：MyHome<br>（3）常量名：所有字符全部大写，例如：LEFT</p>
+<p>补充：在其他语言中，标识符的命名常采用<em>驼峰法</em></p>
+<blockquote>
+<p>大驼峰（又称<strong>Pascal命名法</strong>）：组成标识符的每个单词首字符都采用大写字母<br>小驼峰：第一个单词以小写字母开始，后续单词的首字母大写</p>
+</blockquote>
+<h3 id="3-程序结构"><a href="#3-程序结构" class="headerlink" title="3.程序结构"></a>3.程序结构</h3><ol>
+<li>顺序结构</li>
+<li>分支结构：if、else、elif（等价于C语言的else if）等</li>
+<li>循环结构：for、while、break、continue等</li>
 </ol>
-<h3 id="Python执行方式"><a href="#Python执行方式" class="headerlink" title="Python执行方式"></a>Python执行方式</h3><ol>
-<li>解释器 </li>
-<li>交互式shell。默认shell适用于学习&#x2F;验证Python的语法或者局部代码</li>
-<li>IPython交互式shell</li>
-<li>IDE。例如Pycharm、Anaconda等</li>
-</ol>
+<h3 id="4-变量"><a href="#4-变量" class="headerlink" title="4.变量"></a>4.变量</h3><p>程序中的数据保存在内存之中，Python并不像汇编语言和机器语言那样直接通过内存地址访问数据，而是通过赋值语局将变量<strong>绑定</strong>到相应的内存单元，之后通过变量来访问数据。</p>
+<blockquote>
+<p>如果<em>环境</em>将名字x映射到存储单元s，则称x被<em>绑定</em>到s。环境表示将名字映射到存储单元的函数。——陈意云，张昱《编译原理（第三版）》</p>
+</blockquote>
+<p><strong>Python变量被访问之前必须进行初始化，即赋值。</strong></p>
+<h3 id="5-函数和模块"><a href="#5-函数和模块" class="headerlink" title="5.函数和模块"></a>5.函数和模块</h3><p>使用<strong>import</strong>关键字可以导入模块（包&#x2F;Python源文件）。生成随机数的代码如下：</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver"><span class="hljs-comment"># 随机生成一个[1，100]的整数</span><br>import <span class="hljs-built_in">random</span><br><span class="hljs-built_in">num</span> = <span class="hljs-built_in">random</span>.randint(<span class="hljs-number">1</span>,<span class="hljs-number">100</span>)                     <br></code></pre></td></tr></table></figure>
+
+<p>补充：在导入模块时，Python解释器会在与模块文件同一目录的__pycache__子目录下生成.pvc文件。pyc文件是由Python解释器<strong>编译过的字节码文件</strong>。字节码是一种低级的、与平台无关的代码，可以被Python虚拟机直接执行，提高程序的执行速度。</p>
+<p>Python解释源程序分为两个步骤：<br>（1）处理源代码，编译生成一个二进制字节码<br>（2）对字节码进行处理，生成CPU能够识别的机器码</p>
+<p>函数定义使用<strong>def</strong>关键字，其中参数不包含类型。在使用其他文件或模块定义的函数时，需要先使用import关键字导入该文件。</p>
+<h3 id="6-输入和输出函数"><a href="#6-输入和输出函数" class="headerlink" title="6.输入和输出函数"></a>6.输入和输出函数</h3><p><strong>input</strong>函数能够接收从键盘输入的数据，<strong>返回字符串类型</strong>。其中括号内的信息为提示信息，并不包含在返回值中。</p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf"><span class="hljs-attribute">name</span> <span class="hljs-operator">=</span> input(<span class="hljs-string">&quot;请输入姓名：&quot;</span>)<br></code></pre></td></tr></table></figure>
+
+<p><strong>print</strong>函数能够打印输出文本，并且可以实现格式化输出。print函数由参数end指定换行符，默认输出内容后在末尾自动换行，即end&#x3D;’\n’。</p>
+<figure class="highlight hsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs hsp"><span class="hljs-keyword">print</span>(<span class="hljs-string">&quot;我的名字是%s&quot;</span> % name)    <span class="hljs-meta">#输出格式化字符串</span><br><span class="hljs-keyword">print</span>(<span class="hljs-string">&quot;hello world&quot;</span>, <span class="hljs-keyword">end</span> = <span class="hljs-string">&quot;&quot;</span>)  <span class="hljs-meta"># 不换行</span><br></code></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
 
                 
               </div>
@@ -315,8 +337,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Python基础-预备知识</div>
-      <div>https://wangfuxun.github.io/posts/32360/</div>
+      <div>Python基础-基本语法</div>
+      <div>https://wangfuxun.github.io/posts/61427/</div>
     </div>
     <div class="license-meta">
       
@@ -328,7 +350,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>July 16, 2023</div>
+          <div>July 17, 2023</div>
         </div>
       
       
@@ -360,18 +382,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/61427/" title="Python基础-基本语法">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Python基础-基本语法</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/43398/" title="First Article">
-                        <span class="hidden-mobile">First Article</span>
+                      <a href="/posts/32360/" title="Python基础-预备知识">
+                        <span class="hidden-mobile">Python基础-预备知识</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
