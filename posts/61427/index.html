@@ -13,24 +13,26 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="Wangfuxun">
+  <meta name="author" content="WangFuxun">
   <meta name="keywords" content="">
   
     <meta name="description" content="基本语法1.数据类型 Python中变量不需要显式声明数据类型。程序运行时，Python解释器会根据赋值语句等号右侧的数据自动推导出变量保存数据的类型。  Python内置数据类型可以分为数值数据类型和非数值数据类型。其中内置数值数据类型有4种：int、float、bool、complex（复数类型），非数值数据类型有str、tuple（元组）、list（列表）、dict（字典）等。 2.标识符P">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python基础-基本语法">
 <meta property="og:url" content="https://wangfuxun.github.io/posts/61427/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="用心流浪">
 <meta property="og:description" content="基本语法1.数据类型 Python中变量不需要显式声明数据类型。程序运行时，Python解释器会根据赋值语句等号右侧的数据自动推导出变量保存数据的类型。  Python内置数据类型可以分为数值数据类型和非数值数据类型。其中内置数值数据类型有4种：int、float、bool、complex（复数类型），非数值数据类型有str、tuple（元组）、list（列表）、dict（字典）等。 2.标识符P">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://wangfuxun.github.io/Python/escape_char.png">
 <meta property="article:published_time" content="2023-07-17T09:26:33.000Z">
-<meta property="article:modified_time" content="2023-07-28T08:42:59.048Z">
+<meta property="article:modified_time" content="2023-08-05T05:28:23.702Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://wangfuxun.github.io/Python/escape_char.png">
   
   
   
-  <title>Python基础-基本语法 - Hexo</title>
+  <title>Python基础-基本语法 - 用心流浪</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -219,7 +221,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k words
+          1.4k words
         
       </span>
     
@@ -284,7 +286,7 @@
 </ol>
 <p>注：Python中的标识符是区分大小写的</p>
 <p><strong>关键字</strong>即Python内部已经使用的标识符</p>
-<p>Python命名规范：<br>（1）变量、函数、模块：<strong>单词的首字母采用小写字母，单词之间用下划线连接</strong>，例如：first_name<br>（2）类名：大驼峰，例如：MyHome<br>（3）常量名：所有字符全部大写，例如：LEFT</p>
+<p>Python命名规范：<br>（1）变量、函数、模块、包：<strong>单词的首字母采用小写字母，单词之间用下划线连接</strong>，例如：first_name<br>（2）类名：大驼峰，例如：MyHome<br>（3）常量名：所有字符全部大写，例如：LEFT</p>
 <p>补充：在其他语言中，标识符的命名常采用<em>驼峰法</em></p>
 <blockquote>
 <p>大驼峰（又称<strong>Pascal命名法</strong>）：组成标识符的每个单词首字符都采用大写字母<br>小驼峰：第一个单词以小写字母开始，后续单词的首字母大写</p>
@@ -311,15 +313,9 @@
 <p><strong>print</strong>函数能够打印输出文本，并且可以实现格式化输出。print函数由参数end指定换行符，默认输出内容后在末尾自动换行，即end&#x3D;’\n’。</p>
 <figure class="highlight hsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs hsp"><span class="hljs-keyword">print</span>(<span class="hljs-string">&quot;我的名字是%s&quot;</span> % name)    <span class="hljs-meta">#输出格式化字符串</span><br><span class="hljs-keyword">print</span>(<span class="hljs-string">&quot;hello world&quot;</span>, <span class="hljs-keyword">end</span> = <span class="hljs-string">&quot;&quot;</span>)  <span class="hljs-meta"># 不换行</span><br></code></pre></td></tr></table></figure>
 
-
-
-
-
-
-
-
-
-
+<p>补充：<br>常用的几种转义字符如下所示：</p>
+<p><img src="/./Python/escape_char.png" srcset="/img/loading.gif" lazyload alt="转义字符"></p>
+<p>注：\t 能够使文本在垂直方向上保持对齐</p>
 
                 
               </div>
@@ -327,6 +323,27 @@
             <hr/>
             <div>
               <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Python/" class="category-chain-item">Python</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
   
   
 </div>
@@ -344,7 +361,7 @@
       
         <div class="license-meta-item">
           <div>Author</div>
-          <div>Wangfuxun</div>
+          <div>WangFuxun</div>
         </div>
       
       
@@ -381,6 +398,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/posts/46737/" title="Python基础-数据容器(1)">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Python基础-数据容器(1)</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">

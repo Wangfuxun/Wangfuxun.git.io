@@ -16,21 +16,29 @@
   <meta name="author" content="WangFuxun">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Welcome to my blog！This is my first article. 我其实很早就想搭建一个个人博客，但是由于各种事情一直没能实现。考完研之后这一想法再次涌上心头，于是花了一天时间终于把各种软件的安装和配置给弄完了。下面就将用到一些教程和注意事项贴出。 创建博客我主要是按照这三篇教程一步一步操作的，从Git、nodejs、hexo的安装到将个人博客部署到github。这几篇教程">
+    <meta name="description" content="字符串 str1.常用方法总结其中s1、s2均代表字符串  统计与查找 12345s1.count(s2) # 统计子字符串s2在s1中出现的次数s1.index(s2) # 获取子字符串s2在s1中的起始下标s1.find(s2) # 查找子串s2并返回起始下标# index与find区别在于：如果子串不存在，index方法返回-1，而index方法会报错  判断 123456# 返回值均为布尔">
 <meta property="og:type" content="article">
-<meta property="og:title" content="First Article">
-<meta property="og:url" content="https://wangfuxun.github.io/posts/43398/index.html">
+<meta property="og:title" content="Python基础-数据容器(2)">
+<meta property="og:url" content="https://wangfuxun.github.io/posts/18065/index.html">
 <meta property="og:site_name" content="用心流浪">
-<meta property="og:description" content="Welcome to my blog！This is my first article. 我其实很早就想搭建一个个人博客，但是由于各种事情一直没能实现。考完研之后这一想法再次涌上心头，于是花了一天时间终于把各种软件的安装和配置给弄完了。下面就将用到一些教程和注意事项贴出。 创建博客我主要是按照这三篇教程一步一步操作的，从Git、nodejs、hexo的安装到将个人博客部署到github。这几篇教程">
+<meta property="og:description" content="字符串 str1.常用方法总结其中s1、s2均代表字符串  统计与查找 12345s1.count(s2) # 统计子字符串s2在s1中出现的次数s1.index(s2) # 获取子字符串s2在s1中的起始下标s1.find(s2) # 查找子串s2并返回起始下标# index与find区别在于：如果子串不存在，index方法返回-1，而index方法会报错  判断 123456# 返回值均为布尔">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-12-30T11:51:34.000Z">
-<meta property="article:modified_time" content="2023-08-05T05:28:18.274Z">
+<meta property="og:image" content="https://wangfuxun.github.io/Python/split.png">
+<meta property="og:image" content="https://wangfuxun.github.io/Python/join.png">
+<meta property="og:image" content="https://wangfuxun.github.io/Python/just.png">
+<meta property="og:image" content="https://wangfuxun.github.io/Python/strip.png">
+<meta property="og:image" content="https://wangfuxun.github.io/Python/format_char.png">
+<meta property="og:image" content="https://wangfuxun.github.io/Python/format_%25.png">
+<meta property="og:image" content="https://wangfuxun.github.io/Python/format_format.png">
+<meta property="article:published_time" content="2023-08-04T04:10:20.000Z">
+<meta property="article:modified_time" content="2023-08-05T05:28:03.169Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://wangfuxun.github.io/Python/split.png">
   
   
   
-  <title>First Article - 用心流浪</title>
+  <title>Python基础-数据容器(2) - 用心流浪</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +204,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="First Article"></span>
+            <span id="subtitle" data-typed-text="Python基础-数据容器(2)"></span>
           
         </div>
 
@@ -207,8 +215,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-12-30 19:51" pubdate>
-          December 30, 2022 pm
+        <time datetime="2023-08-04 12:10" pubdate>
+          August 4, 2023 pm
         </time>
       </span>
     
@@ -219,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k words
+          1.2k words
         
       </span>
     
@@ -230,7 +238,7 @@
         
         
         
-          11 mins
+          10 mins
         
       </span>
     
@@ -267,39 +275,51 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">First Article</h1>
+            <h1 id="seo-header">Python基础-数据容器(2)</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Welcome to my blog！This is my first article.</p>
-<p>我其实很早就想搭建一个个人博客，但是由于各种事情一直没能实现。考完研之后这一想法再次涌上心头，于是花了一天时间终于把各种软件的安装和配置给弄完了。下面就将用到一些教程和注意事项贴出。</p>
-<h3 id="创建博客"><a href="#创建博客" class="headerlink" title="创建博客"></a>创建博客</h3><p>我主要是按照这三篇教程一步一步操作的，从Git、nodejs、hexo的安装到将个人博客部署到github。这几篇教程对新手十分友好。</p>
-<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1373210">一文教会你如何搭建个人博客</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/sparkstark/article/details/124967315">Hexo个人博客安装及配置</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/guixinchn/article/details/107787660">Hexo博客部署到远程仓库（Conding、Gitee、Github）</a></p>
-<p>第一篇文章中最核心的部分是<strong>将博客部署到远端</strong>（即github），但是按照该文章的步骤会报错。原因是没有配置用户的电子邮件地址和个人名，为此在部署前需要在bash中输入以下命令：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs stylus">$ git config <span class="hljs-attr">--global</span> user<span class="hljs-selector-class">.email</span> <span class="hljs-string">&quot;2210749324@qq.com&quot;</span><br>$ git config <span class="hljs-attr">--global</span> user<span class="hljs-selector-class">.name</span> <span class="hljs-string">&quot;Wangfuxun&quot;</span><br></code></pre></td></tr></table></figure>
+                <h2 id="字符串-str"><a href="#字符串-str" class="headerlink" title="字符串 str"></a>字符串 str</h2><h3 id="1-常用方法总结"><a href="#1-常用方法总结" class="headerlink" title="1.常用方法总结"></a>1.常用方法总结</h3><p>其中s1、s2均代表字符串</p>
+<ol>
+<li><p>统计与查找</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm"><span class="hljs-built_in">s1</span>.count(<span class="hljs-built_in">s2</span>) <span class="hljs-comment"># 统计子字符串s2在s1中出现的次数</span><br><br><span class="hljs-built_in">s1</span>.index(<span class="hljs-built_in">s2</span>) <span class="hljs-comment"># 获取子字符串s2在s1中的起始下标</span><br><span class="hljs-built_in">s1</span>.find(<span class="hljs-built_in">s2</span>) <span class="hljs-comment"># 查找子串s2并返回起始下标</span><br><span class="hljs-comment"># index与find区别在于：如果子串不存在，index方法返回-1，而index方法会报错</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>判断</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs 1c"><span class="hljs-meta"># 返回值均为布尔型</span><br>s.isdecimal() <span class="hljs-meta"># 判断是否为数字，不能判断小数</span><br>s.isdigit() <span class="hljs-meta"># 判断是否为数字，支持判断单字节数字，不能判断小数</span><br>s.islower() <span class="hljs-meta"># 判断字母是否全为小写</span><br>s.isupper() <span class="hljs-meta"># 判断字母是否全为大写</span><br>s.isspace() <span class="hljs-meta"># 判断是否为空格</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>替换</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm"><span class="hljs-built_in">s2</span> = <span class="hljs-built_in">s1</span>.replace(<span class="hljs-keyword">sub1,sub2) </span><span class="hljs-comment"># 将s1中的所有子串sub1替换为sub2，返回一个新字符串，而s1不发生变化</span><br><span class="hljs-built_in">s2</span> = <span class="hljs-built_in">s1</span>.upper()  <span class="hljs-comment"># 将s1所有字母转为大写，返回一个字符串</span><br><span class="hljs-built_in">s2</span> = <span class="hljs-built_in">s1</span>.lower()  <span class="hljs-comment"># 将s1所有字母转为小写，返回一个字符串</span><br></code></pre></td></tr></table></figure>
 
-<p>–global表示修改用户主目录下的配置信息，如果不含这一项，修改的仅为当前文件夹blog下的_config文件中的配置信息。</p>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ol>
-<li><p>在下载Git时，建议下载旧版本，比如2.38.0&#x2F;2.38.1，因为最新版2.39.0有bug，可能无法将博客部署到github（本人已踩过坑）。</p>
 </li>
-<li><p>Git官网下载非常慢，建议直接在镜像网站（比如淘宝）下载。</p>
+<li><p>分割与拼接</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">s_list</span> = s.split()   <span class="hljs-comment"># 分割字符串，返回一个列表。</span><br><span class="hljs-comment"># 如果参数为空，则默认以空白字符为分隔符进行拆分；如果不为空，则按照该字符进行分割，结果中不包括该字符。</span><br><br><span class="hljs-attr">s2</span> = s1.join(seq) <span class="hljs-comment"># 拼接字符串，以s1作为连接符，seq为字符或字符串序列。</span><br><span class="hljs-attr">s2</span> = s1 * num    <span class="hljs-comment"># 将s1拼接num次</span><br></code></pre></td></tr></table></figure>
+<p>实例：<br><img src="/./Python/split.png" srcset="/img/loading.gif" lazyload alt="字符串的分割"><br><img src="/./Python/join.png" srcset="/img/loading.gif" lazyload alt="字符串拼接"></p>
 </li>
-<li><p>在部署时，遇到了一些问题，其解决方法如下，亲测好用。</p>
+<li><p>文本对齐</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-comment"># 使用指定字符（默认为空格）将内容填充至长度length，返回一个新字符串</span><br><span class="hljs-attr">s2</span> = s1.center(length)  <span class="hljs-comment"># 居中对齐</span><br><span class="hljs-attr">s2</span> = s1.ljust(length)   <span class="hljs-comment"># 左对齐</span><br><span class="hljs-attr">s2</span> = s1.rjust(length)   <span class="hljs-comment"># 右对齐</span><br></code></pre></td></tr></table></figure>
+<p>实例：<br><img src="/./Python/just.png" srcset="/img/loading.gif" lazyload alt="文本对齐"></p>
+</li>
+<li><p>去除空白字符</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">s2</span> = s1.strip()   <span class="hljs-comment"># 去除左右两侧的空白字符（\t\n\r等）</span><br><span class="hljs-attr">s2</span> = s1.lstrip()  <span class="hljs-comment"># 去除左侧的空白字符</span><br><span class="hljs-attr">s2</span> = s1.rstrip()  <span class="hljs-comment"># 去除右侧的空白字符</span><br></code></pre></td></tr></table></figure>
+<p>实例：<br><img src="/./Python/strip.png" srcset="/img/loading.gif" lazyload alt="去除空白字符"></p>
 </li>
 </ol>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/lvoelife/article/details/127370301">一文解决OpenSSL SSL_read: Connection was reset, errno 10054问题</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_66695483/article/details/125036055">解决Failed to connect to github.com port 443: Timed out</a></p>
-<ol start="4">
-<li>为了使文章有唯一的编号，使用了abbrlink插件生成文章链接。需要注意在hexo配置文件_config中修改permalink时需要注意加上末尾的&#x2F;，如果缺失，文章链接会变为下载链接。</li>
+<h3 id="2-字符串的格式化"><a href="#2-字符串的格式化" class="headerlink" title="2.字符串的格式化"></a>2.字符串的格式化</h3><p>字符串的格式化是一种将数据转化为特定格式的字符串的方法。在Python中主要有以下几种实现形式：</p>
+<ol>
+<li>%形式</li>
 </ol>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_51755720/article/details/127996199">Hexo使用Abbrlink插件生成文章固定编号链接</a></p>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>在写博客时需要使用到markdown语法，非常简单，并且支持HTML标签。<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/191d1e21f7ed">Markdown基本语法</a></p>
-<p>为了导入本地图片，需要按照这篇文章的内容进行操作，否则图片无法加载（已踩坑）。<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/kantaiyang/article/details/129159055">hexo无法显示本地图片的问题</a></p>
-<p>加载图片格式如下,本地路径使用绝对路径或相对路径均可，例如：E:&#x2F;MyBlog&#x2F;blog&#x2F;source&#x2F;images&#x2F;test.png或者..&#x2F;images&#x2F;test.png。</p>
-<p><code>![图片题注](图片存放路径)</code> </p>
-<p>在Hexo官方文档中对写作&#x2F;生成静态文档&#x2F;配置等内容都有详细的介绍，有需要的话可以查看</p>
-<p><a target="_blank" rel="noopener" href="https://hexo.io/docs/">Documentation</a></p>
-<p>以后我会不定期地在博客中更新自己的各种学习笔记。最后作为小白，我会努力向各位优秀的大佬学习，争取成为一个好的程序员，欢迎各位大佬指正不足。</p>
+<p><code>格式化字符串 % (值1,值2,...)</code></p>
+<p>在格式化字符串内部，%操作符起占位作用，%之后的部分是需要格式化的内容，可以使用变量对这些内容进行替换。常见的几种格式化字符如下：<br><img src="/./Python/format_char.png" srcset="/img/loading.gif" lazyload alt="格式化字符"></p>
+<p>实例：<br><img src="/./Python/format_%25.png" srcset="/img/loading.gif" lazyload alt="%形式"></p>
+<ol start="2">
+<li>format形式</li>
+</ol>
+<p><code>格式化字符串.format(值1,值2,...)</code></p>
+<p>在格式化字符串内部，{}为占位符，{}内部为需要格式化的内容。format函数中常见的格式化字符与%形式的基本一致，例如s代表字符串，d代表十进制整数，f代表浮点数。</p>
+<p>注意：{}内部第一部分为索引或键，第二部分为格式符号（包括格式化字符等），两部分之间用冒号隔开。如果{}内部不写索引，默认从0开始递增排列。</p>
+<p>实例：<br><img src="/./Python/format_format.png" srcset="/img/loading.gif" lazyload alt="format形式"></p>
+<p>与%形式相比，format函数能够可以实现文本对齐、百分制等更为复杂的功能。</p>
 
                 
               </div>
@@ -307,6 +327,27 @@
             <hr/>
             <div>
               <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Python/" class="category-chain-item">Python</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
   
   
 </div>
@@ -317,8 +358,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>First Article</div>
-      <div>https://wangfuxun.github.io/posts/43398/</div>
+      <div>Python基础-数据容器(2)</div>
+      <div>https://wangfuxun.github.io/posts/18065/</div>
     </div>
     <div class="license-meta">
       
@@ -330,7 +371,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>December 30, 2022</div>
+          <div>August 4, 2023</div>
         </div>
       
       
@@ -362,15 +403,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/32360/" title="Python基础-预备知识">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Python基础-预备知识</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/posts/46737/" title="Python基础-数据容器(1)">
+                        <span class="hidden-mobile">Python基础-数据容器(1)</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>

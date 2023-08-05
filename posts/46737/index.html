@@ -16,21 +16,26 @@
   <meta name="author" content="WangFuxun">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Welcome to my blog！This is my first article. 我其实很早就想搭建一个个人博客，但是由于各种事情一直没能实现。考完研之后这一想法再次涌上心头，于是花了一天时间终于把各种软件的安装和配置给弄完了。下面就将用到一些教程和注意事项贴出。 创建博客我主要是按照这三篇教程一步一步操作的，从Git、nodejs、hexo的安装到将个人博客部署到github。这几篇教程">
+    <meta name="description" content="1.列表 list列表（即数组）索引值从0开始，一般情况下默认列表中的所有数据的类型一致。 常用方法如下： 注意：  clear与del的区别clear会清除列表中所有元素，但内存并未释放，仍然可以通过变量名访问；del关键字会将变量从内存中删除，此时不能继续使用变量名，否则会报错。区别见下图：如果仅删除某一个索引对应的元素，则后续元素均向前移动一位，索引值均减1。  append与extend的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="First Article">
-<meta property="og:url" content="https://wangfuxun.github.io/posts/43398/index.html">
+<meta property="og:title" content="Python基础-数据容器(1)">
+<meta property="og:url" content="https://wangfuxun.github.io/posts/46737/index.html">
 <meta property="og:site_name" content="用心流浪">
-<meta property="og:description" content="Welcome to my blog！This is my first article. 我其实很早就想搭建一个个人博客，但是由于各种事情一直没能实现。考完研之后这一想法再次涌上心头，于是花了一天时间终于把各种软件的安装和配置给弄完了。下面就将用到一些教程和注意事项贴出。 创建博客我主要是按照这三篇教程一步一步操作的，从Git、nodejs、hexo的安装到将个人博客部署到github。这几篇教程">
+<meta property="og:description" content="1.列表 list列表（即数组）索引值从0开始，一般情况下默认列表中的所有数据的类型一致。 常用方法如下： 注意：  clear与del的区别clear会清除列表中所有元素，但内存并未释放，仍然可以通过变量名访问；del关键字会将变量从内存中删除，此时不能继续使用变量名，否则会报错。区别见下图：如果仅删除某一个索引对应的元素，则后续元素均向前移动一位，索引值均减1。  append与extend的">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-12-30T11:51:34.000Z">
-<meta property="article:modified_time" content="2023-08-05T05:28:18.274Z">
+<meta property="og:image" content="https://wangfuxun.github.io/Python/list.png">
+<meta property="og:image" content="https://wangfuxun.github.io/Python/del.png">
+<meta property="og:image" content="https://wangfuxun.github.io/Python/append.png">
+<meta property="og:image" content="https://wangfuxun.github.io/Python/keys.png">
+<meta property="article:published_time" content="2023-08-03T09:30:12.000Z">
+<meta property="article:modified_time" content="2023-08-05T05:28:35.402Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://wangfuxun.github.io/Python/list.png">
   
   
   
-  <title>First Article - 用心流浪</title>
+  <title>Python基础-数据容器(1) - 用心流浪</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +201,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="First Article"></span>
+            <span id="subtitle" data-typed-text="Python基础-数据容器(1)"></span>
           
         </div>
 
@@ -207,8 +212,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-12-30 19:51" pubdate>
-          December 30, 2022 pm
+        <time datetime="2023-08-03 17:30" pubdate>
+          August 3, 2023 pm
         </time>
       </span>
     
@@ -219,7 +224,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k words
+          1.5k words
         
       </span>
     
@@ -230,7 +235,7 @@
         
         
         
-          11 mins
+          13 mins
         
       </span>
     
@@ -267,39 +272,61 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">First Article</h1>
+            <h1 id="seo-header">Python基础-数据容器(1)</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Welcome to my blog！This is my first article.</p>
-<p>我其实很早就想搭建一个个人博客，但是由于各种事情一直没能实现。考完研之后这一想法再次涌上心头，于是花了一天时间终于把各种软件的安装和配置给弄完了。下面就将用到一些教程和注意事项贴出。</p>
-<h3 id="创建博客"><a href="#创建博客" class="headerlink" title="创建博客"></a>创建博客</h3><p>我主要是按照这三篇教程一步一步操作的，从Git、nodejs、hexo的安装到将个人博客部署到github。这几篇教程对新手十分友好。</p>
-<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1373210">一文教会你如何搭建个人博客</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/sparkstark/article/details/124967315">Hexo个人博客安装及配置</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/guixinchn/article/details/107787660">Hexo博客部署到远程仓库（Conding、Gitee、Github）</a></p>
-<p>第一篇文章中最核心的部分是<strong>将博客部署到远端</strong>（即github），但是按照该文章的步骤会报错。原因是没有配置用户的电子邮件地址和个人名，为此在部署前需要在bash中输入以下命令：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs stylus">$ git config <span class="hljs-attr">--global</span> user<span class="hljs-selector-class">.email</span> <span class="hljs-string">&quot;2210749324@qq.com&quot;</span><br>$ git config <span class="hljs-attr">--global</span> user<span class="hljs-selector-class">.name</span> <span class="hljs-string">&quot;Wangfuxun&quot;</span><br></code></pre></td></tr></table></figure>
+                <h2 id="1-列表-list"><a href="#1-列表-list" class="headerlink" title="1.列表 list"></a>1.列表 list</h2><p>列表（即数组）索引值从0开始，一般情况下默认列表中的所有数据的类型一致。</p>
+<p>常用方法如下：<br><img src="/./Python/list.png" srcset="/img/loading.gif" lazyload alt="列表常用方法总结"></p>
+<p>注意：</p>
+<ol>
+<li><p>clear与del的区别<br>clear会清除列表中所有元素，但内存并未释放，仍然可以通过变量名访问；<strong>del关键字会将变量从内存中删除</strong>，此时不能继续使用变量名，否则会报错。区别见下图：<br><img src="/./Python/del.png" srcset="/img/loading.gif" lazyload alt="del删除列表"><br>如果仅删除某一个索引对应的元素，则后续元素均向前移动一位，索引值均减1。</p>
+</li>
+<li><p>append与extend的区别<br>extend用于合并列表，将需要插入的列表的元素加入原列表，参数为<strong>可迭代对象</strong>；append直接将整个对象当作一个元素加入原列表末尾，参数为任意对象。其区别见下图：<br><img src="/./Python/append.png" srcset="/img/loading.gif" lazyload alt="append与extend"></p>
+</li>
+</ol>
+<h2 id="2-元组-tuple"><a href="#2-元组-tuple" class="headerlink" title="2.元组 tuple"></a>2.元组 tuple</h2><p>元组是由多个元素组成的序列，<strong>元组的元素不能被修改</strong></p>
+<p><strong>元组只包含一个元素时需要在元素后面添加逗号</strong></p>
+<p>常用方法：</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs axapta"><span class="hljs-meta"># t代表元组</span><br><br>t.<span class="hljs-keyword">count</span>(k) <span class="hljs-meta"># 统计数据k出现的次数</span><br><br>t.<span class="hljs-keyword">index</span>(k) <span class="hljs-meta"># 查找数据k，返回数据k第一次匹配时的索引位置，如果对象不在元组中会产生异常</span><br><br>len(t) <span class="hljs-meta"># 统计元组的长度</span><br></code></pre></td></tr></table></figure>
 
-<p>–global表示修改用户主目录下的配置信息，如果不含这一项，修改的仅为当前文件夹blog下的_config文件中的配置信息。</p>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ol>
-<li><p>在下载Git时，建议下载旧版本，比如2.38.0&#x2F;2.38.1，因为最新版2.39.0有bug，可能无法将博客部署到github（本人已踩过坑）。</p>
+
+
+<p>应用：（1）函数的参数和返回值（2）格式化字符串（3）将列表转化为元组，保证数据安全</p>
+<p>元组和列表的转换<br>元组-&gt;列表：列表&#x3D;list（元组）  列表-&gt;元组：元组&#x3D;tuple（列表）</p>
+<h2 id="3-集合"><a href="#3-集合" class="headerlink" title="3.集合"></a>3.集合</h2><p>Python中的集合与数学上的集合一致。集合是<strong>无序</strong>对象的聚集，并且集合中的元素<strong>不重复</strong>。存储的元素为字符串、数值类型或者元组等<strong>不可变类型</strong>。集合的内部实现基于<strong>哈希表</strong>。集合之间可以进行并集、交集、差集等运算。</p>
+<p>集合分为可变集合set和不可变集合frozenset。下面主要介绍可变集合的常用方法(其中s、s1、s2均代表集合名)：</p>
+<ol>
+<li><p>添加</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs csharp">s.<span class="hljs-keyword">add</span>(elem)  <span class="hljs-meta"># 向集合添加一个元素elem，如果该元素已存在则不产生效果</span><br>s.update(iter)  <span class="hljs-meta"># 将可迭代对象iter的元素添加到集合中   </span><br></code></pre></td></tr></table></figure>
 </li>
-<li><p>Git官网下载非常慢，建议直接在镜像网站（比如淘宝）下载。</p>
+<li><p>删除</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs maxima">s.<span class="hljs-built_in">remove</span>(<span class="hljs-built_in">elem</span>) # 删除指定元素<span class="hljs-built_in">elem</span>，如果不存在会报错<br>s.discard(<span class="hljs-built_in">elem</span>) # 删除指定元素<span class="hljs-built_in">elem</span>，如果不存在则忽略<br>s.clear()   # 清空集合<br></code></pre></td></tr></table></figure>
+
 </li>
-<li><p>在部署时，遇到了一些问题，其解决方法如下，亲测好用。</p>
+<li><p>集合运算</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">s1</span> &amp; s2 <span class="hljs-comment"># 交集</span><br>s1 | s2 <span class="hljs-comment"># 并集</span><br>s1 - s2 <span class="hljs-comment"># 差集</span><br></code></pre></td></tr></table></figure>
+<p>注意：如果要创建一个空集合，则必须用set函数创建，不能使用{ }创建（否则会创建一个空字典）</p>
 </li>
 </ol>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/lvoelife/article/details/127370301">一文解决OpenSSL SSL_read: Connection was reset, errno 10054问题</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_66695483/article/details/125036055">解决Failed to connect to github.com port 443: Timed out</a></p>
-<ol start="4">
-<li>为了使文章有唯一的编号，使用了abbrlink插件生成文章链接。需要注意在hexo配置文件_config中修改permalink时需要注意加上末尾的&#x2F;，如果缺失，文章链接会变为下载链接。</li>
+<h2 id="4-字典-dict"><a href="#4-字典-dict" class="headerlink" title="4.字典 dict"></a>4.字典 dict</h2><p>字典是<strong>存储无序</strong>的对象集合（列表存储的是有序对象），是键和值的<strong>哈希映射</strong>关系。它的实现同样基于<strong>哈希表</strong>。</p>
+<p>特点：<br>（1）使用键值对存储数据，键值对之间使用逗号分隔，键和值之间使用冒号分隔<br>（2）<strong>键必须唯一</strong><br>（3）键必须是<strong>不可变类型</strong>，值可以取任意数据类型</p>
+<p>字典的常用方法如下(其中d代表字典名,key代表键，value代表值)：</p>
+<ol>
+<li><p>添加</p>
+<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs q">d[<span class="hljs-built_in">key</span>]=<span class="hljs-built_in">value</span>   # 如果<span class="hljs-built_in">key</span>存在，修改已存在的键值对；如果<span class="hljs-built_in">key</span>不存在，新增键值对<br><br>d1.<span class="hljs-keyword">update</span>(d2) <br># 将字典d2合并到字典d1中。如果字典d1和字典d2存在相同的键，则将对原键值对进行覆盖<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>查看</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">keys</span> = d.keys()      <span class="hljs-comment"># 获取所有键key</span><br><span class="hljs-attr">values</span> = d.values()  <span class="hljs-comment"># 获取所有值value</span><br><span class="hljs-attr">items</span> = d.items()    <span class="hljs-comment"># 获取字典中的每一个元素</span><br></code></pre></td></tr></table></figure>
+<p>这三种方法的返回值均为<strong>可迭代的视图对象</strong>，它们并不具备列表的功能，即无法通过索引获取元素、无法修改、无法使用内置方法等，仅支持迭代遍历。可以通过list函数将这些对象转化为列表进行操作。<br>实例：<br><img src="/./Python/keys.png" srcset="/img/loading.gif" lazyload alt="视图对象"></p>
+</li>
+<li><p>删除</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs maxima"><span class="hljs-built_in">del</span> d[<span class="hljs-built_in">key</span>]  # 删除键为<span class="hljs-built_in">key</span>对应的键值对<br><span class="hljs-built_in">del</span> d       # 删除整个字典，释放内存空间<br>d.<span class="hljs-built_in">pop</span>(<span class="hljs-built_in">key</span>)  # 如果键<span class="hljs-built_in">key</span>存在，返回并删除其值；如果指定的<span class="hljs-built_in">key</span>不存在，则会报错<br>d.clear()   # 清除字典中的元素<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>迭代遍历</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs axapta"><span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> d:      <span class="hljs-meta"># k为每次遍历获得的键值对的key</span><br>    <span class="hljs-keyword">print</span>(k,d[k]) <br></code></pre></td></tr></table></figure></li>
 </ol>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_51755720/article/details/127996199">Hexo使用Abbrlink插件生成文章固定编号链接</a></p>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>在写博客时需要使用到markdown语法，非常简单，并且支持HTML标签。<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/191d1e21f7ed">Markdown基本语法</a></p>
-<p>为了导入本地图片，需要按照这篇文章的内容进行操作，否则图片无法加载（已踩坑）。<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/kantaiyang/article/details/129159055">hexo无法显示本地图片的问题</a></p>
-<p>加载图片格式如下,本地路径使用绝对路径或相对路径均可，例如：E:&#x2F;MyBlog&#x2F;blog&#x2F;source&#x2F;images&#x2F;test.png或者..&#x2F;images&#x2F;test.png。</p>
-<p><code>![图片题注](图片存放路径)</code> </p>
-<p>在Hexo官方文档中对写作&#x2F;生成静态文档&#x2F;配置等内容都有详细的介绍，有需要的话可以查看</p>
-<p><a target="_blank" rel="noopener" href="https://hexo.io/docs/">Documentation</a></p>
-<p>以后我会不定期地在博客中更新自己的各种学习笔记。最后作为小白，我会努力向各位优秀的大佬学习，争取成为一个好的程序员，欢迎各位大佬指正不足。</p>
 
                 
               </div>
@@ -307,6 +334,27 @@
             <hr/>
             <div>
               <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Python/" class="category-chain-item">Python</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
   
   
 </div>
@@ -317,8 +365,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>First Article</div>
-      <div>https://wangfuxun.github.io/posts/43398/</div>
+      <div>Python基础-数据容器(1)</div>
+      <div>https://wangfuxun.github.io/posts/46737/</div>
     </div>
     <div class="license-meta">
       
@@ -330,7 +378,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>December 30, 2022</div>
+          <div>August 3, 2023</div>
         </div>
       
       
@@ -362,15 +410,21 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/32360/" title="Python基础-预备知识">
+                      <a href="/posts/18065/" title="Python基础-数据容器(2)">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Python基础-预备知识</span>
+                        <span class="hidden-mobile">Python基础-数据容器(2)</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/posts/61427/" title="Python基础-基本语法">
+                        <span class="hidden-mobile">Python基础-基本语法</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
