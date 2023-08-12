@@ -16,22 +16,22 @@
   <meta name="author" content="WangFuxun">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1.列表 list列表（即数组）索引值从0开始，一般情况下默认列表中的所有数据的类型一致。 常用方法如下： 注意：  clear与del的区别clear会清除列表中所有元素，但内存并未释放，仍然可以通过变量名访问；del关键字会将变量从内存中删除，此时不能继续使用变量名，否则会报错。区别见下图：如果仅删除某一个索引对应的元素，则后续元素均向前移动一位，索引值均减1。  append与extend的">
+    <meta name="description" content="1.列表 list列表（即数组）索引值从0开始，一般情况下默认列表中的所有数据的类型一致。 常用方法如下： 注意：  clear与del的区别clear会清除列表中所有元素，但内存并未释放，仍然可以通过变量名访问；del关键字会将变量从内存中删除，此时不能继续使用变量名，否则会报错。如果仅删除某一个索引对应的元素，则后续元素均向前移动一位，索引值均减1。区别见下图：    append与exten">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python基础-数据容器(1)">
 <meta property="og:url" content="https://wangfuxun.github.io/posts/46737/index.html">
 <meta property="og:site_name" content="用心流浪">
-<meta property="og:description" content="1.列表 list列表（即数组）索引值从0开始，一般情况下默认列表中的所有数据的类型一致。 常用方法如下： 注意：  clear与del的区别clear会清除列表中所有元素，但内存并未释放，仍然可以通过变量名访问；del关键字会将变量从内存中删除，此时不能继续使用变量名，否则会报错。区别见下图：如果仅删除某一个索引对应的元素，则后续元素均向前移动一位，索引值均减1。  append与extend的">
+<meta property="og:description" content="1.列表 list列表（即数组）索引值从0开始，一般情况下默认列表中的所有数据的类型一致。 常用方法如下： 注意：  clear与del的区别clear会清除列表中所有元素，但内存并未释放，仍然可以通过变量名访问；del关键字会将变量从内存中删除，此时不能继续使用变量名，否则会报错。如果仅删除某一个索引对应的元素，则后续元素均向前移动一位，索引值均减1。区别见下图：    append与exten">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://wangfuxun.github.io/images/Python%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8(1)-list.png">
-<meta property="og:image" content="https://wangfuxun.github.io/images/Python%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8(1)-del.png">
-<meta property="og:image" content="https://wangfuxun.github.io/images/Python%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8(1)-append.png">
-<meta property="og:image" content="https://wangfuxun.github.io/images/Python%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8(1)-keys.png">
+<meta property="og:image" content="https://wangfuxun.github.io/images/Python/%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8(1)-list.png">
+<meta property="og:image" content="https://wangfuxun.github.io/images/Python/%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8(1)-del.png">
+<meta property="og:image" content="https://wangfuxun.github.io/images/Python/%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8(1)-append.png">
+<meta property="og:image" content="https://wangfuxun.github.io/images/Python/%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8(1)-keys.png">
 <meta property="article:published_time" content="2023-08-03T09:30:12.000Z">
-<meta property="article:modified_time" content="2023-08-05T09:03:48.468Z">
+<meta property="article:modified_time" content="2023-08-07T15:15:28.456Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://wangfuxun.github.io/images/Python%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8(1)-list.png">
+<meta name="twitter:image" content="https://wangfuxun.github.io/images/Python/%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8(1)-list.png">
   
   
   
@@ -278,14 +278,16 @@
               <div class="markdown-body">
                 
                 <h2 id="1-列表-list"><a href="#1-列表-list" class="headerlink" title="1.列表 list"></a>1.列表 list</h2><p>列表（即数组）索引值从0开始，一般情况下默认列表中的所有数据的类型一致。</p>
-<p>常用方法如下：<br><img src="/../images/Python%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8(1)-list.png" srcset="/img/loading.gif" lazyload alt="列表常用方法总结"></p>
+<p>常用方法如下：<br><img src="/../images/Python/%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8(1)-list.png" srcset="/img/loading.gif" lazyload alt="列表常用方法总结"></p>
 <p>注意：</p>
 <ol>
-<li><p>clear与del的区别<br>clear会清除列表中所有元素，但内存并未释放，仍然可以通过变量名访问；<strong>del关键字会将变量从内存中删除</strong>，此时不能继续使用变量名，否则会报错。区别见下图：<br><img src="/../images/Python%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8(1)-del.png" srcset="/img/loading.gif" lazyload alt="del删除列表"><br>如果仅删除某一个索引对应的元素，则后续元素均向前移动一位，索引值均减1。</p>
-</li>
-<li><p>append与extend的区别<br>extend用于合并列表，将需要插入的列表的元素加入原列表，参数为<strong>可迭代对象</strong>；append直接将整个对象当作一个元素加入原列表末尾，参数为任意对象。其区别见下图：<br><img src="/../images/Python%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8(1)-append.png" srcset="/img/loading.gif" lazyload alt="append与extend"></p>
-</li>
+<li>clear与del的区别<br>clear会清除列表中所有元素，但内存并未释放，仍然可以通过变量名访问；<strong>del关键字会将变量从内存中删除</strong>，此时不能继续使用变量名，否则会报错。如果仅删除某一个索引对应的元素，则后续元素均向前移动一位，索引值均减1。区别见下图：</li>
 </ol>
+<p><img src="/../images/Python/%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8(1)-del.png" srcset="/img/loading.gif" lazyload alt="del删除列表"></p>
+<ol start="2">
+<li>append与extend的区别<br>extend用于合并列表，将需要插入的列表的元素加入原列表，参数为<strong>可迭代对象</strong>；append直接将整个对象当作一个元素加入原列表末尾，参数为任意对象。其区别见下图：</li>
+</ol>
+<p><img src="/../images/Python/%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8(1)-append.png" srcset="/img/loading.gif" lazyload alt="append与extend"></p>
 <h2 id="2-元组-tuple"><a href="#2-元组-tuple" class="headerlink" title="2.元组 tuple"></a>2.元组 tuple</h2><p>元组是由多个元素组成的序列，<strong>元组的元素不能被修改</strong></p>
 <p><strong>元组只包含一个元素时需要在元素后面添加逗号</strong></p>
 <p>常用方法：</p>
@@ -319,8 +321,11 @@
 </li>
 <li><p>查看</p>
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">keys</span> = d.keys()      <span class="hljs-comment"># 获取所有键key</span><br><span class="hljs-attr">values</span> = d.values()  <span class="hljs-comment"># 获取所有值value</span><br><span class="hljs-attr">items</span> = d.items()    <span class="hljs-comment"># 获取字典中的每一个元素</span><br></code></pre></td></tr></table></figure>
-<p>这三种方法的返回值均为<strong>可迭代的视图对象</strong>，它们并不具备列表的功能，即无法通过索引获取元素、无法修改、无法使用内置方法等，仅支持迭代遍历。可以通过list函数将这些对象转化为列表进行操作。<br>实例：<br><img src="/../images/Python%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8(1)-keys.png" srcset="/img/loading.gif" lazyload alt="视图对象"></p>
+<p>这三种方法的返回值均为<strong>可迭代的视图对象</strong>，它们并不具备列表的功能，即无法通过索引获取元素、无法修改、无法使用内置方法等，仅支持迭代遍历。可以通过list函数将这些对象转化为列表进行操作。</p>
 </li>
+</ol>
+<p>实例：<br><img src="/../images/Python/%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8(1)-keys.png" srcset="/img/loading.gif" lazyload alt="视图对象"></p>
+<ol start="3">
 <li><p>删除</p>
 <figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs maxima"><span class="hljs-built_in">del</span> d[<span class="hljs-built_in">key</span>]  # 删除键为<span class="hljs-built_in">key</span>对应的键值对<br><span class="hljs-built_in">del</span> d       # 删除整个字典，释放内存空间<br>d.<span class="hljs-built_in">pop</span>(<span class="hljs-built_in">key</span>)  # 如果键<span class="hljs-built_in">key</span>存在，返回并删除其值；如果指定的<span class="hljs-built_in">key</span>不存在，则会报错<br>d.clear()   # 清除字典中的元素<br></code></pre></td></tr></table></figure>
 </li>
