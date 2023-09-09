@@ -16,23 +16,29 @@
   <meta name="author" content="WangFuxun">
   <meta name="keywords" content="">
   
-    <meta name="description" content="基本语法1.数据类型与运算符 Python中变量不需要显式声明数据类型。程序运行时，Python解释器会根据赋值语句等号右侧的数据自动推导出变量保存数据的类型。  Python内置数据类型可以分为数值数据类型和非数值数据类型。其中内置数值数据类型有4种：int、float、bool、complex（复数类型），非数值数据类型有str、tuple（元组）、list（列表）、dict（字典）等。 Py">
+    <meta name="description" content="函数的参数参数传递Python函数的参数传递方式为引用传递。 在函数调用时默认按照位置顺序传递形参。 函数id()可以返回对象的id标识，每个对象由唯一的id标识。 变量的声明和赋值用于把一个变量绑定到某个内存单元。 缺省参数具有默认值的参数为缺省参数（也称为可变参数）。注意：必须保证带有默认值的缺省参数在参数列表末尾，否则会报错。  多值参数当函数的参数数目不确定时可以使用多值参数。参数名前增加">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python基础-基本语法">
-<meta property="og:url" content="https://wangfuxun.github.io/posts/61427/index.html">
+<meta property="og:title" content="Python函数进阶">
+<meta property="og:url" content="https://wangfuxun.github.io/posts/53362/index.html">
 <meta property="og:site_name" content="用心流浪">
-<meta property="og:description" content="基本语法1.数据类型与运算符 Python中变量不需要显式声明数据类型。程序运行时，Python解释器会根据赋值语句等号右侧的数据自动推导出变量保存数据的类型。  Python内置数据类型可以分为数值数据类型和非数值数据类型。其中内置数值数据类型有4种：int、float、bool、complex（复数类型），非数值数据类型有str、tuple（元组）、list（列表）、dict（字典）等。 Py">
+<meta property="og:description" content="函数的参数参数传递Python函数的参数传递方式为引用传递。 在函数调用时默认按照位置顺序传递形参。 函数id()可以返回对象的id标识，每个对象由唯一的id标识。 变量的声明和赋值用于把一个变量绑定到某个内存单元。 缺省参数具有默认值的参数为缺省参数（也称为可变参数）。注意：必须保证带有默认值的缺省参数在参数列表末尾，否则会报错。  多值参数当函数的参数数目不确定时可以使用多值参数。参数名前增加">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://wangfuxun.github.io/images/Python/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95-%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6.png">
-<meta property="article:published_time" content="2023-07-17T09:26:33.000Z">
-<meta property="article:modified_time" content="2023-08-13T02:43:47.099Z">
+<meta property="og:image" content="https://wangfuxun.github.io/images/Python/%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6-%E7%BC%BA%E7%9C%81%E5%8F%82%E6%95%B0%E4%BD%8D%E7%BD%AE.png">
+<meta property="og:image" content="https://wangfuxun.github.io/images/Python/%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6-%E5%A4%9A%E5%80%BC%E5%8F%82%E6%95%B0.png">
+<meta property="og:image" content="https://wangfuxun.github.io/images/Python/%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6-%E6%8B%86%E5%8C%85%E8%AF%AD%E6%B3%95.png">
+<meta property="og:image" content="https://wangfuxun.github.io/images/Python/%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6-%E5%91%BD%E5%90%8D%E5%8F%82%E6%95%B0.png">
+<meta property="og:image" content="https://wangfuxun.github.io/">
+<meta property="og:image" content="https://wangfuxun.github.io/images/Python/%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6-%E5%A4%9A%E4%B8%AA%E8%BF%94%E5%9B%9E%E5%80%BC.png">
+<meta property="og:image" content="https://wangfuxun.github.io/images/Python/%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6-%E4%BF%AE%E6%94%B9%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F.png">
+<meta property="article:published_time" content="2023-08-13T01:25:06.000Z">
+<meta property="article:modified_time" content="2023-09-09T09:17:23.892Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://wangfuxun.github.io/images/Python/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95-%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6.png">
+<meta name="twitter:image" content="https://wangfuxun.github.io/images/Python/%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6-%E7%BC%BA%E7%9C%81%E5%8F%82%E6%95%B0%E4%BD%8D%E7%BD%AE.png">
   
   
   
-  <title>Python基础-基本语法 - 用心流浪</title>
+  <title>Python函数进阶 - 用心流浪</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -198,7 +204,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Python基础-基本语法"></span>
+            <span id="subtitle" data-typed-text="Python函数进阶"></span>
           
         </div>
 
@@ -209,8 +215,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-07-17 17:26" pubdate>
-          July 17, 2023 pm
+        <time datetime="2023-08-13 09:25" pubdate>
+          August 13, 2023 am
         </time>
       </span>
     
@@ -221,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.6k words
+          736 words
         
       </span>
     
@@ -232,7 +238,7 @@
         
         
         
-          14 mins
+          7 mins
         
       </span>
     
@@ -269,60 +275,40 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Python基础-基本语法</h1>
+            <h1 id="seo-header">Python函数进阶</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="1-数据类型与运算符"><a href="#1-数据类型与运算符" class="headerlink" title="1.数据类型与运算符"></a>1.数据类型与运算符</h3><blockquote>
-<p>Python中变量不需要显式声明数据类型。程序运行时，Python解释器会根据赋值语句等号右侧的数据自动推导出变量保存数据的类型。</p>
-</blockquote>
-<p>Python内置数据类型可以分为数值数据类型和非数值数据类型。其中内置数值数据类型有4种：int、float、bool、complex（复数类型），非数值数据类型有str、tuple（元组）、list（列表）、dict（字典）等。</p>
-<p>Python数据类型可分为可变类型和不可变类型两种。<br><strong>不可变类型</strong>：数据不允许被修改。包括数值数据类型（4种）、str、tuple等。<br><strong>可变类型</strong>：数据可以被修改。包括list、可变集合set、dict等。</p>
-<p>Python中的运算符与C++基本一致，需要注意以下几个：</p>
-<ol>
-<li>与C++不同，Python中逻辑运算符为and、or、not</li>
-<li>**表示乘方运算</li>
-<li>&#x2F;表示浮点数除法，而&#x2F;&#x2F;表示<strong>除法取整</strong></li>
-</ol>
-<h3 id="2-标识符"><a href="#2-标识符" class="headerlink" title="2.标识符"></a>2.标识符</h3><p>Python标识符的命名规则：</p>
-<ol>
-<li>由<strong>字母、下划线和数字</strong>组成</li>
-<li>不能由数字开头 </li>
-<li>不能与关键字重名</li>
-</ol>
-<p>注：Python中的标识符是区分大小写的</p>
-<p><strong>关键字</strong>即Python内部已经使用的标识符</p>
-<p>Python命名规范：<br>（1）变量、函数、模块、包：<strong>单词的首字母采用小写字母，单词之间用下划线连接</strong>，例如：first_name<br>（2）类名：大驼峰，例如：MyHome<br>（3）常量名：所有字符全部大写，例如：LEFT</p>
-<p>补充：在其他语言中，标识符的命名常采用<em>驼峰法</em></p>
+                <h2 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h2><h3 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h3><p>Python函数的参数传递方式为<strong>引用传递</strong>。</p>
+<p>在函数调用时默认按照位置顺序传递形参。</p>
+<p>函数id()可以返回对象的id标识，每个对象由唯一的id标识。</p>
+<p>变量的声明和赋值用于把一个变量绑定到某个内存单元。</p>
+<h3 id="缺省参数"><a href="#缺省参数" class="headerlink" title="缺省参数"></a>缺省参数</h3><p>具有默认值的参数为缺省参数（也称为可变参数）。<br>注意：必须保证带有默认值的缺省参数在<strong>参数列表末尾</strong>，否则会报错。</p>
+<p><img src="/../images/Python/%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6-%E7%BC%BA%E7%9C%81%E5%8F%82%E6%95%B0%E4%BD%8D%E7%BD%AE.png" srcset="/img/loading.gif" lazyload alt="缺省参数位置"></p>
+<h3 id="多值参数"><a href="#多值参数" class="headerlink" title="多值参数"></a>多值参数</h3><p>当函数的参数数目不确定时可以使用多值参数。参数名前增加<strong>一个星号可以接收元组，两个星号可以接收字典</strong>。命名时通常采用以下方式：</p>
 <blockquote>
-<p>大驼峰（又称<strong>Pascal命名法</strong>）：组成标识符的每个单词首字符都采用大写字母<br>小驼峰：第一个单词以小写字母开始，后续单词的首字母大写</p>
+<p>*args 存放元组参数 （args为arguments的缩写）<br>**kwargs 存放字典参数 （kw为keyword的缩写）</p>
 </blockquote>
-<h3 id="3-程序结构"><a href="#3-程序结构" class="headerlink" title="3.程序结构"></a>3.程序结构</h3><ol>
-<li>顺序结构</li>
-<li>分支结构：if、else、elif（等价于C语言的else if）等</li>
-<li>循环结构：for、while、break、continue等</li>
+<p>实例：<br><img src="/../images/Python/%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6-%E5%A4%9A%E5%80%BC%E5%8F%82%E6%95%B0.png" srcset="/img/loading.gif" lazyload alt="多值参数"></p>
+<p><strong>拆包语法</strong><br>如果需要将一个元组变量直接传递给args，则在该变量前增加一个<em>；<br>如果需要将一个字典变量直接传递给kwargs，则在字典变量前增加两个</em>。</p>
+<p><img src="/../images/Python/%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6-%E6%8B%86%E5%8C%85%E8%AF%AD%E6%B3%95.png" srcset="/img/loading.gif" lazyload alt="拆包语法"></p>
+<p>注意：采用这种方式传递的字典变量的键必须为str类型。</p>
+<h3 id="命名参数"><a href="#命名参数" class="headerlink" title="命名参数"></a>命名参数</h3><p>按照名称指定传入的参数称为命名参数（也称关键字参数）。采用这种方式<strong>传递的参数与顺序无关</strong>。如果存在多个缺省参数时，可以选择特定的参数进行传递。</p>
+<p><img src="/../images/Python/%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6-%E5%91%BD%E5%90%8D%E5%8F%82%E6%95%B0.png" srcset="/img/loading.gif" lazyload alt="命名参数"></p>
+<h2 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h2><p>Python中函数的返回值采用<strong>引用传递</strong>方式。</p>
+<p><img src="/" srcset="/img/loading.gif" lazyload alt="返回值采用引用传递"></p>
+<p>函数使用<strong>元组</strong>可以返回多个值，同时可以使用多个变量接收函数的多个返回值。</p>
+<p><img src="/../images/Python/%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6-%E5%A4%9A%E4%B8%AA%E8%BF%94%E5%9B%9E%E5%80%BC.png" srcset="/img/loading.gif" lazyload alt="多个返回值"></p>
+<h2 id="变量的作用域和生存期"><a href="#变量的作用域和生存期" class="headerlink" title="变量的作用域和生存期"></a>变量的作用域和生存期</h2><p><strong>全局变量</strong>：在函数和类之外声明的变量。<br><strong>局部变量</strong>：在函数体中声明的变量。</p>
+<p>注意：</p>
+<ol>
+<li>全局变量可以被不同的模块和函数访问，可能会导致程序错误，因此应尽量避免使用全局变量。</li>
+<li>局部变量在函数执行时才会被创建。</li>
+<li>如果在函数内部定义一个与全局变量同名的变量，该变量为局部变量，即。Python中不允许直接修改全局变量的值，如果需要修改则在函数内部使用<strong>global</strong>关键字。</li>
 </ol>
-<h3 id="4-变量"><a href="#4-变量" class="headerlink" title="4.变量"></a>4.变量</h3><p>程序中的数据保存在内存之中，Python并不像汇编语言和机器语言那样直接通过内存地址访问数据，而是通过赋值语局将变量<strong>绑定</strong>到相应的内存单元，之后通过变量来访问数据。</p>
-<blockquote>
-<p>如果<em>环境</em>将名字x映射到存储单元s，则称x被<em>绑定</em>到s。环境表示将名字映射到存储单元的函数。——陈意云，张昱《编译原理（第三版）》</p>
-</blockquote>
-<p><strong>Python变量被访问之前必须进行初始化，即赋值。</strong></p>
-<h3 id="5-函数和模块"><a href="#5-函数和模块" class="headerlink" title="5.函数和模块"></a>5.函数和模块</h3><p>使用<strong>import</strong>关键字可以导入模块（包&#x2F;Python源文件）。生成随机数的代码如下：</p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver"><span class="hljs-comment"># 随机生成一个[1，100]的整数</span><br>import <span class="hljs-built_in">random</span><br><span class="hljs-built_in">num</span> = <span class="hljs-built_in">random</span>.randint(<span class="hljs-number">1</span>,<span class="hljs-number">100</span>)                     <br></code></pre></td></tr></table></figure>
-
-<p>补充：在导入模块时，Python解释器会在与模块文件同一目录的__pycache__子目录下生成.pvc文件。pyc文件是由Python解释器<strong>编译过的字节码文件</strong>。字节码是一种低级的、与平台无关的代码，可以被Python虚拟机直接执行，提高程序的执行速度。</p>
-<p>Python解释源程序分为两个步骤：<br>（1）处理源代码，编译生成一个二进制字节码<br>（2）对字节码进行处理，生成CPU能够识别的机器码</p>
-<p>函数定义使用<strong>def</strong>关键字，其中参数不包含类型。在使用其他文件或模块定义的函数时，需要先使用import关键字导入该文件。</p>
-<h3 id="6-输入和输出函数"><a href="#6-输入和输出函数" class="headerlink" title="6.输入和输出函数"></a>6.输入和输出函数</h3><p><strong>input</strong>函数能够接收从键盘输入的数据，<strong>返回字符串类型</strong>。其中括号内的信息为提示信息，并不包含在返回值中。</p>
-<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf"><span class="hljs-attribute">name</span> <span class="hljs-operator">=</span> input(<span class="hljs-string">&quot;请输入姓名：&quot;</span>)<br></code></pre></td></tr></table></figure>
-
-<p><strong>print</strong>函数能够打印输出文本，并且可以实现格式化输出。print函数由参数end指定换行符，默认输出内容后在末尾自动换行，即end&#x3D;’\n’。</p>
-<figure class="highlight hsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs hsp"><span class="hljs-keyword">print</span>(<span class="hljs-string">&quot;我的名字是%s&quot;</span> % name)    <span class="hljs-meta">#输出格式化字符串</span><br><span class="hljs-keyword">print</span>(<span class="hljs-string">&quot;hello world&quot;</span>, <span class="hljs-keyword">end</span> = <span class="hljs-string">&quot;&quot;</span>)  <span class="hljs-meta"># 不换行</span><br></code></pre></td></tr></table></figure>
-
-<p>补充：<br>常用的几种转义字符如下所示：</p>
-<p><img src="/../images/Python/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95-%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6.png" srcset="/img/loading.gif" lazyload alt="转义字符"></p>
-<p>注：\t 能够使文本在垂直方向上保持对齐</p>
+<p><img src="/../images/Python/%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6-%E4%BF%AE%E6%94%B9%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F.png" srcset="/img/loading.gif" lazyload alt="使用global修改全局变量"></p>
+<p>变量的生命周期（生存期）：变量从<strong>被创建到被系统回收</strong>的过程</p>
 
                 
               </div>
@@ -361,8 +347,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Python基础-基本语法</div>
-      <div>https://wangfuxun.github.io/posts/61427/</div>
+      <div>Python函数进阶</div>
+      <div>https://wangfuxun.github.io/posts/53362/</div>
     </div>
     <div class="license-meta">
       
@@ -374,7 +360,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>July 17, 2023</div>
+          <div>August 13, 2023</div>
         </div>
       
       
@@ -406,9 +392,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/46737/" title="Python基础-数据容器(1)">
+                      <a href="/posts/42877/" title="二分查找">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Python基础-数据容器(1)</span>
+                        <span class="hidden-mobile">二分查找</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -416,8 +402,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/32360/" title="Python基础-预备知识">
-                        <span class="hidden-mobile">Python基础-预备知识</span>
+                      <a href="/posts/54928/" title="Python基础-数据容器(3)">
+                        <span class="hidden-mobile">Python基础-数据容器(3)</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
