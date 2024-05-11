@@ -16,21 +16,21 @@
   <meta name="author" content="WangFuxun">
   <meta name="keywords" content="">
   
-    <meta name="description" content="异常异常处理机制Python程序通过了解释但是在执行时报错，这类错误即为异常。异常处理是通过try-except实现的。程序停止执行并提示错误信息即为抛出异常。异常捕获的完整语法如下： 12345678910111213try:    #尝试执行的代码except 错误类型1:    #对应的代码处理except (错误类型2，错误类型3):    #对应的代码处理except Exception">
+    <meta name="description" content="anaconda命令 查看anaconda中的全部环境  1conda env list   创建虚拟环境 1conda create -n 环境名 python&#x3D;x.x.x   激活虚拟环境 1conda activate 环境名  linux系统需要先激活base 1source activate    查看当前虚拟环境中有哪些库 1conda list   退出虚拟环境 1conda dea">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python异常与文件">
-<meta property="og:url" content="https://wangfuxun.github.io/posts/51459/index.html">
+<meta property="og:title" content="Anaconda常用命令">
+<meta property="og:url" content="https://wangfuxun.github.io/posts/29299/index.html">
 <meta property="og:site_name" content="用心流浪">
-<meta property="og:description" content="异常异常处理机制Python程序通过了解释但是在执行时报错，这类错误即为异常。异常处理是通过try-except实现的。程序停止执行并提示错误信息即为抛出异常。异常捕获的完整语法如下： 12345678910111213try:    #尝试执行的代码except 错误类型1:    #对应的代码处理except (错误类型2，错误类型3):    #对应的代码处理except Exception">
+<meta property="og:description" content="anaconda命令 查看anaconda中的全部环境  1conda env list   创建虚拟环境 1conda create -n 环境名 python&#x3D;x.x.x   激活虚拟环境 1conda activate 环境名  linux系统需要先激活base 1source activate    查看当前虚拟环境中有哪些库 1conda list   退出虚拟环境 1conda dea">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-01-08T14:12:42.000Z">
-<meta property="article:modified_time" content="2024-01-08T15:39:29.684Z">
+<meta property="article:published_time" content="2024-05-11T15:14:56.000Z">
+<meta property="article:modified_time" content="2024-05-11T15:37:20.659Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Python异常与文件 - 用心流浪</title>
+  <title>Anaconda常用命令 - 用心流浪</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +196,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Python异常与文件"></span>
+            <span id="subtitle" data-typed-text="Anaconda常用命令"></span>
           
         </div>
 
@@ -207,8 +207,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-01-08 22:12" pubdate>
-          January 8, 2024 pm
+        <time datetime="2024-05-11 23:14" pubdate>
+          May 11, 2024 pm
         </time>
       </span>
     
@@ -219,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.6k words
+          323 words
         
       </span>
     
@@ -230,7 +230,7 @@
         
         
         
-          14 mins
+          3 mins
         
       </span>
     
@@ -267,35 +267,51 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Python异常与文件</h1>
+            <h1 id="seo-header">Anaconda常用命令</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><h3 id="异常处理机制"><a href="#异常处理机制" class="headerlink" title="异常处理机制"></a>异常处理机制</h3><p>Python程序通过了解释但是在执行时报错，这类错误即为异常。异常处理是通过try-except实现的。程序停止执行并提示错误信息即为抛出异常。异常捕获的完整语法如下：</p>
-<figure class="highlight nim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs nim"><span class="hljs-keyword">try</span>:<br>    <span class="hljs-comment">#尝试执行的代码</span><br><span class="hljs-keyword">except</span> 错误类型<span class="hljs-number">1</span>:<br>    <span class="hljs-comment">#对应的代码处理</span><br><span class="hljs-keyword">except</span> (错误类型<span class="hljs-number">2</span>，错误类型<span class="hljs-number">3</span>):<br>    <span class="hljs-comment">#对应的代码处理</span><br><span class="hljs-keyword">except</span> <span class="hljs-type">Exception</span> <span class="hljs-keyword">as</span> <span class="hljs-built_in">result</span>:<br>    <span class="hljs-comment">#打印错误信息，result为捕获的异常对象</span><br>    print(<span class="hljs-built_in">result</span>)<br><span class="hljs-keyword">else</span>:<br>    <span class="hljs-comment">#没有异常才会执行的代码</span><br><span class="hljs-keyword">finally</span>:<br>    <span class="hljs-comment">#无论是否异常，都会执行的代码</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="异常传递"><a href="#异常传递" class="headerlink" title="异常传递"></a>异常传递</h3><p>当函数执行出现异常，会将异常传递给函数的调用者。利用异常的传递性，在主程序捕获异常，不需要在每个函数中增加异常捕获的代码。Python中提供了Exception异常类。<br>主动抛出异常的方法：<br>1.	创建一个Exception的对象<br>2.	使用<strong>raise</strong>关键字抛出异常对象</p>
-<p>示例如下：</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs vim">def input_password():<br>    <span class="hljs-keyword">pwd</span> = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入密码：&quot;</span>)<br>    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(<span class="hljs-keyword">pwd</span>) &gt;= <span class="hljs-number">8</span>:<br>        <span class="hljs-keyword">print</span>(<span class="hljs-string">&quot;密码格式正确&quot;</span>)<br>        <span class="hljs-keyword">return</span><br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">ex</span> = Exception(<span class="hljs-string">&quot;密码长度小于8位&quot;</span>)<br>        raise <span class="hljs-keyword">ex</span><br><br><span class="hljs-keyword">try</span>:<br>    input_password()<br>except Exception <span class="hljs-keyword">as</span> result:<br>    <span class="hljs-keyword">print</span>(<span class="hljs-string">&quot;程序异常：%s&quot;</span> % result)<br></code></pre></td></tr></table></figure>
-
-<h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><h3 id="1-模块"><a href="#1-模块" class="headerlink" title="1.模块"></a>1.模块</h3><p><strong>一个Python文件就是一个模块</strong>。模块提供的工具有全局变量、函数、类等。</p>
-<p>导入方式：<br>（1）整个模块导入<br><code>import 模块名 as 模块别名</code><br>as关键字指定别名（可以省略），模块别名应满足“大驼峰“命名规则，通过<code>模块名.</code>的方式使用工具。</p>
-<p>（2）部分导入工具<br><code>from 模块名 import 工具名</code><br>可以直接使用工具</p>
-<p>注意：</p>
-<ol>
-<li><p>如果两个模块存在同名函数，后导入模块的函数会覆盖先导入模块的函数。</p>
-</li>
-<li><p>文件被导入时没有缩进的代码会被执行一遍。但是在实际开发中，模块下方可能会有一些测试代码，当被导入其他模块中执行时，这一部分代码也会被执行。可以通过__name__解决这一问题。<br><strong>name__是Python内置的一个字符串，存储模块的名称，可以用来标记当前模块是否为顶层模块。如果一个模块是顶层模块，即当前模块直接运行（没有被其他模块调用），__name</strong> &#x3D;&#x3D; “__main__”；而当前模块被导入到其他模块调用时，__name__为当前模块名。</p>
-</li>
+                <h2 id="anaconda命令"><a href="#anaconda命令" class="headerlink" title="anaconda命令"></a>anaconda命令</h2><ol>
+<li>查看anaconda中的全部环境</li>
 </ol>
-<h3 id="2-包"><a href="#2-包" class="headerlink" title="2.包"></a>2.包</h3><p><strong>一个包是若干个模块的集合</strong>。实质是一个包含多个模块的特殊目录，目录下包含一个__init__.py文件，需要在该文件中指定对外界提供的模块列表。</p>
-<p>包的命名规范为：全部小写字母，不推荐使用下划线。</p>
-<p>包的结构为<strong>树状</strong>，可以进行分层组织，从而避免重名。例如一个包pkga的结构如下所示，它由两个子包pkgb和pkgc组成，两个子包都有同名模块module1。</p>
-<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs gherkin">pkga      <span class="hljs-comment">#顶层包a</span><br>|<span class="hljs-string">—— __init__.py</span><br><span class="hljs-string"></span>|<span class="hljs-string">—— pkgb        #子包b</span><br><span class="hljs-string"></span>|<span class="hljs-string">   </span>|<span class="hljs-string">—— __init__.py</span><br><span class="hljs-string"></span>|<span class="hljs-string">   </span>|<span class="hljs-string">—— module1.py</span><br><span class="hljs-string"></span>|<span class="hljs-string">   </span>|<span class="hljs-string">—— module2.py</span><br><span class="hljs-string"></span>|<br>|<span class="hljs-string">—— pkgc        #子包c</span><br><span class="hljs-string">    </span>|<span class="hljs-string">—— __init__.py</span><br><span class="hljs-string">    </span>|<span class="hljs-string">—— module1.py</span><br><span class="hljs-string">    </span>|<span class="hljs-string">—— module3.py</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> list<br></code></pre></td></tr></table></figure>
 
-<p>如果要使用module2中的函数say()，则导入与使用方式如下：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs stylus">#方式一：<br>import pkga<span class="hljs-selector-class">.pkgb</span><span class="hljs-selector-class">.module2</span><br>pkga<span class="hljs-selector-class">.pkgb</span><span class="hljs-selector-class">.module2</span><span class="hljs-selector-class">.say</span>()<br><br>#方式二（推荐）：<br>from pkga<span class="hljs-selector-class">.pkgb</span> import module2<br>module2<span class="hljs-selector-class">.say</span>()<br><br>#方式三：<br>from pkga<span class="hljs-selector-class">.pkgb</span><span class="hljs-selector-class">.module2</span> import say<br><span class="hljs-function"><span class="hljs-title">say</span><span class="hljs-params">()</span></span><br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li><p>创建虚拟环境</p>
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs llvm">conda create -n 环境名 python<span class="hljs-operator">=</span><span class="hljs-keyword">x</span>.<span class="hljs-keyword">x</span>.<span class="hljs-keyword">x</span><br></code></pre></td></tr></table></figure>
+
+</li>
+<li><p>激活虚拟环境</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs applescript">conda <span class="hljs-built_in">activate</span> 环境名<br></code></pre></td></tr></table></figure></li>
+</ol>
+<p>linux系统需要先激活base</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs applescript">source <span class="hljs-built_in">activate</span><br></code></pre></td></tr></table></figure>
+
+
+<ol start="4">
+<li><p>查看当前虚拟环境中有哪些库</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">conda list</span><br></code></pre></td></tr></table></figure>
+
+</li>
+<li><p>退出虚拟环境</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">conda deactivate</span><br></code></pre></td></tr></table></figure>
+
+</li>
+<li><p>删除虚拟环境</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">conda <span class="hljs-built_in">remove</span> -n 环境名 –all<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>切换工作目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /d 路径<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="Jupyter-Notebook添加虚拟环境"><a href="#Jupyter-Notebook添加虚拟环境" class="headerlink" title="Jupyter Notebook添加虚拟环境"></a>Jupyter Notebook添加虚拟环境</h2><ol>
+<li><p>安装ipykernel</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">conda <span class="hljs-keyword">install</span> ipykernel<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>将虚拟环境添加到Jupyter Notebook</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">python -m ipykernel <span class="hljs-keyword">install</span> –name 环境名<br></code></pre></td></tr></table></figure></li>
+</ol>
+
                 
               </div>
             
@@ -313,7 +329,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Python/" class="category-chain-item">Python</a>
+  <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="category-chain-item">深度学习</a>
   
   
 
@@ -333,8 +349,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Python异常与文件</div>
-      <div>https://wangfuxun.github.io/posts/51459/</div>
+      <div>Anaconda常用命令</div>
+      <div>https://wangfuxun.github.io/posts/29299/</div>
     </div>
     <div class="license-meta">
       
@@ -346,7 +362,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>January 8, 2024</div>
+          <div>May 11, 2024</div>
         </div>
       
       
@@ -378,9 +394,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/29299/" title="Anaconda常用命令">
+                      <a href="/posts/42525/" title="基于Tensorflow的MNIST手写数字识别">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Anaconda常用命令</span>
+                        <span class="hidden-mobile">基于Tensorflow的MNIST手写数字识别</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -388,8 +404,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/27884/" title="Python面向对象-继承与多态">
-                        <span class="hidden-mobile">Python面向对象-继承与多态</span>
+                      <a href="/posts/51459/" title="Python异常与文件">
+                        <span class="hidden-mobile">Python异常与文件</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
