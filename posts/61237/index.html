@@ -16,23 +16,23 @@
   <meta name="author" content="WangFuxun">
   <meta name="keywords" content="">
   
-    <meta name="description" content="任务描述：识别给定图像中的数字，数字范围为0到9。实际上是一个多分类任务。 MNIST数据集图像的大小为28*28，标签范围为0到9，训练集图片的数量为60000，测试集图片的数量为10000。keras中提供了该数据集，能够直接导入使用。 数据处理1.对图像进行扁平化处理，将图像维度由28*28转化为行向量。2.进行归一化处理。对于图像数据，直接用像素值除以255。3.对于多分类任务，需要将标签">
+    <meta name="description" content="冒泡排序算法思路：以升序为例，依次比较相邻两个元素，如果第一个元素的值大于第二个元素，则交换两个元素的值，直到处理完序列中最后两个元素，即为一轮，此时最后一个元素的值即为最大值（即处于有序状态）。重复这一过程，直到所有元素都处于有序状态。如图所示。  代码（java）： 123456789101112public static void bubbleSort(int[] arr)&amp;#123;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基于Tensorflow的MNIST手写数字识别">
-<meta property="og:url" content="https://wangfuxun.github.io/posts/42525/index.html">
+<meta property="og:title" content="排序算法-冒泡排序">
+<meta property="og:url" content="https://wangfuxun.github.io/posts/61237/index.html">
 <meta property="og:site_name" content="用心流浪">
-<meta property="og:description" content="任务描述：识别给定图像中的数字，数字范围为0到9。实际上是一个多分类任务。 MNIST数据集图像的大小为28*28，标签范围为0到9，训练集图片的数量为60000，测试集图片的数量为10000。keras中提供了该数据集，能够直接导入使用。 数据处理1.对图像进行扁平化处理，将图像维度由28*28转化为行向量。2.进行归一化处理。对于图像数据，直接用像素值除以255。3.对于多分类任务，需要将标签">
+<meta property="og:description" content="冒泡排序算法思路：以升序为例，依次比较相邻两个元素，如果第一个元素的值大于第二个元素，则交换两个元素的值，直到处理完序列中最后两个元素，即为一轮，此时最后一个元素的值即为最大值（即处于有序状态）。重复这一过程，直到所有元素都处于有序状态。如图所示。  代码（java）： 123456789101112public static void bubbleSort(int[] arr)&amp;#123;">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://wangfuxun.github.io/images/deeplearning/tensorflow%E5%AE%9E%E7%8E%B0%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png">
-<meta property="article:published_time" content="2024-05-11T15:33:17.000Z">
-<meta property="article:modified_time" content="2024-05-11T15:56:36.089Z">
+<meta property="og:image" content="https://wangfuxun.github.io/images/sort/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.png">
+<meta property="article:published_time" content="2024-06-15T05:31:45.000Z">
+<meta property="article:modified_time" content="2024-06-15T13:16:41.519Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://wangfuxun.github.io/images/deeplearning/tensorflow%E5%AE%9E%E7%8E%B0%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png">
+<meta name="twitter:image" content="https://wangfuxun.github.io/images/sort/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.png">
   
   
   
-  <title>基于Tensorflow的MNIST手写数字识别 - 用心流浪</title>
+  <title>排序算法-冒泡排序 - 用心流浪</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -198,7 +198,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="基于Tensorflow的MNIST手写数字识别"></span>
+            <span id="subtitle" data-typed-text="排序算法-冒泡排序"></span>
           
         </div>
 
@@ -209,8 +209,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-05-11 23:33" pubdate>
-          May 11, 2024 pm
+        <time datetime="2024-06-15 13:31" pubdate>
+          June 15, 2024 pm
         </time>
       </span>
     
@@ -221,7 +221,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.7k words
+          1.5k words
         
       </span>
     
@@ -232,7 +232,7 @@
         
         
         
-          23 mins
+          13 mins
         
       </span>
     
@@ -269,24 +269,25 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">基于Tensorflow的MNIST手写数字识别</h1>
+            <h1 id="seo-header">排序算法-冒泡排序</h1>
             
             
               <div class="markdown-body">
                 
-                <p>任务描述：识别给定图像中的数字，数字范围为0到9。实际上是一个<strong>多分类</strong>任务。</p>
-<h3 id="MNIST数据集"><a href="#MNIST数据集" class="headerlink" title="MNIST数据集"></a>MNIST数据集</h3><p>图像的大小为28*28，标签范围为0到9，训练集图片的数量为60000，测试集图片的数量为10000。keras中提供了该数据集，能够直接导入使用。</p>
-<h3 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h3><p>1.对图像进行扁平化处理，将图像维度由28*28转化为行向量。<br>2.进行归一化处理。对于图像数据，直接用像素值除以255。<br>3.对于多分类任务，需要将标签转化为<strong>one-hot编码</strong>。</p>
-<h3 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h3><p>网络结构为三层，均为全连接层。前两层均为20个神经元，激活函数均为relu；最后一层为10个神经元（对应分类数目），激活函数使用softmax。</p>
-<h3 id="模型训练"><a href="#模型训练" class="headerlink" title="模型训练"></a>模型训练</h3><p>采用Adam算法进行梯度下降，损失函数选用交叉熵损失，评价指标选择准确率（accuracy）</p>
-<p>代码如下：</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><code class="hljs routeros">import numpy as np<br>import tensorflow as tf<br><span class="hljs-keyword">from</span> tensorflow import keras<br><span class="hljs-keyword">from</span> keras.datasets import mnist<br><span class="hljs-keyword">from</span> keras.utils import to_categorical<br><span class="hljs-keyword">from</span> PIL import Image<br><br><span class="hljs-comment"># ----------------------</span><br><span class="hljs-comment"># 数据集处理</span><br><span class="hljs-comment"># ----------------------</span><br><br>(train_images, train_labels), (test_images, test_labels) = mnist.load_data()<br><span class="hljs-comment"># 数据格式为np.ndarray 图像形状为(num,28,28) 标签形状为(num,)</span><br><br><span class="hljs-comment"># img = Image.fromarray(test_images[2341])</span><br><span class="hljs-comment"># img.show()</span><br><span class="hljs-comment"># img.save(&quot;./images/image.jpg&quot;)</span><br><br><span class="hljs-comment"># 扁平化处理 </span><br>dim = train_images.shape[1] * train_images.shape[2] # 输入到网络中的数据的维度<br>train_images = train_images.reshape((train_images.shape[0], -1))<br>test_images = test_images.reshape((test_images.shape[0], -1))<br><br><span class="hljs-comment"># 归一化处理</span><br>train_images = train_images / 255<br>test_images = test_images / 255<br><br><span class="hljs-comment">#将标签转化为one-hot编码</span><br>train_labels = to_categorical(train_labels.reshape(-1,1), <span class="hljs-attribute">num_classes</span>=10)<br>test_labels = to_categorical(test_labels.reshape(-1,1), <span class="hljs-attribute">num_classes</span>=10)<br><br><span class="hljs-comment"># -----------------------</span><br><span class="hljs-comment"># 模型构建</span><br><span class="hljs-comment"># -----------------------</span><br><br>model = keras.models.Sequential([<br>    keras.layers.Dense(<span class="hljs-attribute">units</span>=20, input_shape=(dim, )),    # 全连接层<br>    keras.layers.ReLU(),<br>    keras.layers.Dense(<span class="hljs-attribute">units</span>=20),    # 全连接层<br>    keras.layers.ReLU(),<br>    keras.layers.Dense(<span class="hljs-attribute">units</span>=10,activation=&quot;softmax&quot;)  # 全连接+softmax<br>])<br><span class="hljs-comment"># model.summary() # 查看网络结构</span><br><br><span class="hljs-comment"># 模型装配</span><br>lr = 0.001<br>model.compile(<span class="hljs-attribute">optimizer</span>=keras.optimizers.Adam(learning_rate=lr),<br>              loss = keras.losses.CategoricalCrossentropy(),<br>              metrics=[<span class="hljs-string">&#x27;accuracy&#x27;</span>])<br><span class="hljs-comment"># 也可以使用字符串形式传递</span><br><span class="hljs-comment"># 如 optimizer = “rmsprop”, loss = &#x27;categorical_crossentropy&#x27;)</span><br><br><span class="hljs-comment"># 模型训练</span><br>num_epochs = 100<br>minibatch_size = 50<br>history = model.fit(train_images, train_labels, <span class="hljs-attribute">epochs</span>=num_epochs, <span class="hljs-attribute">batch_size</span>=minibatch_size)<br><br>train_loss = history.history[<span class="hljs-string">&#x27;loss&#x27;</span>]<br>train_accuracy = history.history[<span class="hljs-string">&#x27;accuracy&#x27;</span>]<br><br><span class="hljs-comment"># 在tensorboard中绘制loss曲线和accuracy曲线</span><br>log_dir = <span class="hljs-string">&quot;./logs/&quot;</span><br>writer = tf.summary.create_file_writer(log_dir)<br>with writer.as_default():<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(num_epochs):<br>        tf.summary.scalar(<span class="hljs-string">&#x27;train_loss&#x27;</span>, train_loss[i], <span class="hljs-attribute">step</span>=i)<br>        tf.summary.scalar(<span class="hljs-string">&#x27;accuracy&#x27;</span>, train_accuracy[i], <span class="hljs-attribute">step</span>=i)<br>writer.flush()<br>writer.close()<br><br><span class="hljs-comment"># 模型评估</span><br>_, test_accuracy = model.evaluate(test_images, test_labels)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;test accuracy:&quot;</span> + str(test_accuracy))<br><br><span class="hljs-comment"># 模型测试</span><br>image = Image.open(<span class="hljs-string">&quot;./images/image.jpg&quot;</span>)<br>image_array = np.array(image).reshape(1,-1)<br>result = model.predict(image_array)<br><span class="hljs-built_in">print</span>(result)<br></code></pre></td></tr></table></figure>
+                <h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><p>算法思路：以升序为例，依次比较相邻两个元素，如果第一个元素的值大于第二个元素，则交换两个元素的值，直到处理完序列中最后两个元素，即为一轮，此时最后一个元素的值即为最大值（即处于有序状态）。重复这一过程，直到所有元素都处于有序状态。如图所示。</p>
+<p><img src="/../images/sort/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.png" srcset="/img/loading.gif" lazyload alt="冒泡排序"></p>
+<p>代码（java）：</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-type">static</span> <span class="hljs-type">void</span> <span class="hljs-title">bubbleSort</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr)</span></span>&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = arr.length<span class="hljs-number">-1</span>; i &gt; <span class="hljs-number">0</span>; i--)&#123;<br>        <span class="hljs-comment">// i后面的元素均处于有序状态</span><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; i; j++)&#123;<br>            <span class="hljs-keyword">if</span>(arr[j] &gt; arr[j+<span class="hljs-number">1</span>])&#123;<br>                <span class="hljs-type">int</span> tmp = arr[j];<br>                arr[j] = arr[j+<span class="hljs-number">1</span>];<br>                arr[j+<span class="hljs-number">1</span>] = tmp;<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p>在终端中使用<code>tensorboard --logdir=logs</code>，之后在localhost:6006端口（默认端口）即可查看绘制的曲线，如下图所示。</p>
-<p><img src="/../images/deeplearning/tensorflow%E5%AE%9E%E7%8E%B0%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" srcset="/img/loading.gif" lazyload alt="训练损失train_loss和准确率accuracy曲线"></p>
-<p>思考过程：数据集处理——网络搭建——模型改进</p>
-<p>改进时可以调整层数、神经元数量、学习率、训练轮次等因素。对于该模型，增加神经元数量的提升效果最显著。</p>
+<p>时间复杂度O(n^2)，空间复杂度O(1)，是一种<strong>稳定</strong>排序算法。</p>
+<h2 id="冒泡排序的改进"><a href="#冒泡排序的改进" class="headerlink" title="冒泡排序的改进"></a>冒泡排序的改进</h2><p>如果在某一轮中没有发生元素值的交换，则说明序列已经处于有序状态，无需再继续进行循环。设置一个标记flag&#x3D;true，只要发生元素值的交换就将flag置为false。在一轮结束后，如果flag仍然为true，则说明序列已经有序，终止循环。</p>
+<p>改进后的代码：</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-type">static</span> <span class="hljs-type">void</span> <span class="hljs-title">bubbleSortImprove</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr)</span></span>&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = arr.length<span class="hljs-number">-1</span>; i &gt; <span class="hljs-number">0</span>; i--)&#123;<br>        <span class="hljs-comment">// i后面的元素均处于有序状态</span><br>        <span class="hljs-type">boolean</span> flag = <span class="hljs-literal">true</span>; <span class="hljs-comment">// 标记序列是否有序</span><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; i; j++)&#123;<br>            <span class="hljs-keyword">if</span>(arr[j] &gt; arr[j+<span class="hljs-number">1</span>])&#123;<br>                <span class="hljs-type">int</span> tmp = arr[j];<br>                arr[j] = arr[j+<span class="hljs-number">1</span>];<br>                arr[j+<span class="hljs-number">1</span>] = tmp;<br>                flag = <span class="hljs-literal">false</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(flag) <span class="hljs-keyword">break</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
+<h2 id="双向冒泡排序"><a href="#双向冒泡排序" class="headerlink" title="双向冒泡排序"></a>双向冒泡排序</h2><p>双向冒泡排序，又称鸡尾酒排序，是冒泡排序的一种改进。</p>
+<p>算法步骤：<br>1.从左到右依次比较相邻的两个元素，直到将最大值移动至序列末尾。<br>2.从右向左依次比较相邻的两个元素，直到将最小值移动至序列头部。<br>3.重复上述过程，直到序列中只剩一个元素，即完成排序。</p>
+<p>代码：</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-type">static</span> <span class="hljs-type">void</span> <span class="hljs-title">cocktailSort</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr)</span></span>&#123;<br>    <span class="hljs-type">int</span> left = <span class="hljs-number">0</span>, right = arr.length<span class="hljs-number">-1</span>;<br>    <span class="hljs-comment">//left左侧和right右侧的元素均处于有序状态</span><br>    <span class="hljs-type">boolean</span> flag = <span class="hljs-literal">true</span>;<br><br>    <span class="hljs-keyword">while</span>(left &lt; right)&#123;<br><br>        flag = <span class="hljs-literal">true</span>;<br><br>        <span class="hljs-comment">//从左向右移动最大值至right处</span><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = left; i &lt; right; i++)&#123;<br>            <span class="hljs-keyword">if</span>(arr[i] &gt; arr[i+<span class="hljs-number">1</span>])&#123;<br>                <span class="hljs-type">int</span> tmp = arr[i];<br>                arr[i] = arr[i+<span class="hljs-number">1</span>];<br>                arr[i+<span class="hljs-number">1</span>] = tmp;<br>                flag = <span class="hljs-literal">false</span>;<br>            &#125;<br>        &#125;<br>        right--;<br><br>        <span class="hljs-comment">//从右向左移动最小值至left处</span><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = right; j &gt; left; j--)&#123;<br>            <span class="hljs-keyword">if</span>(arr[j<span class="hljs-number">-1</span>] &gt; arr[j])&#123;<br>                <span class="hljs-type">int</span> tmp = arr[j<span class="hljs-number">-1</span>];<br>                arr[j<span class="hljs-number">-1</span>] = arr[j];<br>                arr[j] = tmp;<br>                flag = <span class="hljs-literal">false</span>;<br>            &#125;<br>        &#125;<br>        left++;<br><br>        <span class="hljs-keyword">if</span>(flag) <span class="hljs-keyword">break</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -304,7 +305,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="category-chain-item">深度学习</a>
+  <a href="/categories/%E7%AE%97%E6%B3%95/" class="category-chain-item">算法</a>
   
   
 
@@ -324,8 +325,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>基于Tensorflow的MNIST手写数字识别</div>
-      <div>https://wangfuxun.github.io/posts/42525/</div>
+      <div>排序算法-冒泡排序</div>
+      <div>https://wangfuxun.github.io/posts/61237/</div>
     </div>
     <div class="license-meta">
       
@@ -337,7 +338,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>May 11, 2024</div>
+          <div>June 15, 2024</div>
         </div>
       
       
@@ -369,18 +370,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/61237/" title="排序算法-冒泡排序">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">排序算法-冒泡排序</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/29299/" title="Anaconda常用命令">
-                        <span class="hidden-mobile">Anaconda常用命令</span>
+                      <a href="/posts/42525/" title="基于Tensorflow的MNIST手写数字识别">
+                        <span class="hidden-mobile">基于Tensorflow的MNIST手写数字识别</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
