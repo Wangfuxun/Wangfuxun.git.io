@@ -16,23 +16,24 @@
   <meta name="author" content="WangFuxun">
   <meta name="keywords" content="">
   
-    <meta name="description" content="字典树(Trie)，也称为前缀树或单词查找树，是一种树型的数据结构，常用于存储字符串集合。许多编辑器或搜索引擎的词频统计、前缀匹配、自动补全、拼写检查等功能都是基于字典树实现的。其性质如下： 1.根节点不包含字符，除根节点外每一个节点都只包含一个字符。2.从根节点到某一节点，路径上经过的字符连接起来，为该节点对应的字符串。3.每个节点的所有子节点包含的字符都不相同。 示例如下图所示。 与字典树相关">
+    <meta name="description" content="1.邻接矩阵邻接矩阵（adjacency matrix）是一个二维数组，用来表示图中节点的关系。对于非带权图，如果节点i和节点j之间存在边，则二维数组中i行j列元素为1，否则为0；对于带权图（也称为网），如果节点i和节点j之间存在边，则二维数组中i行j列元素为边的权重，否则为无穷大。 性质：  无向图的邻接矩阵一定为对称矩阵，有向图的邻接矩阵则不一定。 无向图的邻接矩阵i行非零元素个数为节点i的度">
 <meta property="og:type" content="article">
-<meta property="og:title" content="串匹配-字典树">
-<meta property="og:url" content="https://wangfuxun.github.io/posts/43931/index.html">
+<meta property="og:title" content="图的存储结构">
+<meta property="og:url" content="https://wangfuxun.github.io/posts/12592/index.html">
 <meta property="og:site_name" content="用心流浪">
-<meta property="og:description" content="字典树(Trie)，也称为前缀树或单词查找树，是一种树型的数据结构，常用于存储字符串集合。许多编辑器或搜索引擎的词频统计、前缀匹配、自动补全、拼写检查等功能都是基于字典树实现的。其性质如下： 1.根节点不包含字符，除根节点外每一个节点都只包含一个字符。2.从根节点到某一节点，路径上经过的字符连接起来，为该节点对应的字符串。3.每个节点的所有子节点包含的字符都不相同。 示例如下图所示。 与字典树相关">
+<meta property="og:description" content="1.邻接矩阵邻接矩阵（adjacency matrix）是一个二维数组，用来表示图中节点的关系。对于非带权图，如果节点i和节点j之间存在边，则二维数组中i行j列元素为1，否则为0；对于带权图（也称为网），如果节点i和节点j之间存在边，则二维数组中i行j列元素为边的权重，否则为无穷大。 性质：  无向图的邻接矩阵一定为对称矩阵，有向图的邻接矩阵则不一定。 无向图的邻接矩阵i行非零元素个数为节点i的度">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://wangfuxun.github.io/images/patternmatch/Trie.png">
-<meta property="article:published_time" content="2024-07-12T13:10:58.000Z">
-<meta property="article:modified_time" content="2024-07-12T14:59:14.447Z">
+<meta property="og:image" content="https://wangfuxun.github.io/images/graph/adjacecy_matrix.png">
+<meta property="og:image" content="https://wangfuxun.github.io/images/graph/adjacency_list.png">
+<meta property="article:published_time" content="2024-07-16T06:07:36.000Z">
+<meta property="article:modified_time" content="2024-07-16T12:45:51.125Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://wangfuxun.github.io/images/patternmatch/Trie.png">
+<meta name="twitter:image" content="https://wangfuxun.github.io/images/graph/adjacecy_matrix.png">
   
   
   
-  <title>串匹配-字典树 - 用心流浪</title>
+  <title>图的存储结构 - 用心流浪</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -198,7 +199,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="串匹配-字典树"></span>
+            <span id="subtitle" data-typed-text="图的存储结构"></span>
           
         </div>
 
@@ -209,8 +210,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-07-12 21:10" pubdate>
-          July 12, 2024 pm
+        <time datetime="2024-07-16 14:07" pubdate>
+          July 16, 2024 pm
         </time>
       </span>
     
@@ -221,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.4k words
+          2.2k words
         
       </span>
     
@@ -232,7 +233,7 @@
         
         
         
-          13 mins
+          19 mins
         
       </span>
     
@@ -269,19 +270,32 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">串匹配-字典树</h1>
+            <h1 id="seo-header">图的存储结构</h1>
             
             
               <div class="markdown-body">
                 
-                <p>字典树(<strong>Trie</strong>)，也称为<strong>前缀树</strong>或单词查找树，是一种树型的数据结构，常用于存储字符串集合。许多编辑器或搜索引擎的词频统计、前缀匹配、自动补全、拼写检查等功能都是基于字典树实现的。其性质如下：</p>
-<p>1.<em>根节点不包含字符</em>，除根节点外每一个节点都只包含一个字符。<br>2.<em>从根节点到某一节点，路径上经过的字符连接起来，为该节点对应的字符串</em>。<br>3.每个节点的所有子节点包含的字符都不相同。</p>
-<p>示例如下图所示。<br><img src="/../images/patternmatch/Trie.png" srcset="/img/loading.gif" lazyload alt="字典树"></p>
-<p>与字典树相关的操作主要有以下三个：<br>1.插入：将一个字符串逐个字符插入到字典树中。<br>2.查找：判断某一个字符串是否在字典树中。<br>3.前缀搜索：判断某一前缀是否在字典树中。与查找类似，但不需要判断最后一个字符是否为整个字符串的结尾。</p>
-<p>这里假设每个字符串只包含26个小写英文字母，代码如下：</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-keyword">class</span> <span class="hljs-title class_">TrieNode</span>&#123;<br>    TrieNode[] children;<br>    <span class="hljs-type">boolean</span> isEnd;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">TrieNode</span><span class="hljs-params">()</span></span>&#123;<br>        children = <span class="hljs-keyword">new</span> TrieNode[<span class="hljs-number">26</span>]; <span class="hljs-comment">// 假设字符串只包含小写英文字母</span><br>        isEnd = <span class="hljs-literal">false</span>; <span class="hljs-comment">//是否为一个字符串的结尾</span><br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Trie</span> &#123;<br>    <span class="hljs-keyword">private</span> TrieNode root;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Trie</span><span class="hljs-params">()</span> </span>&#123;<br>        root = <span class="hljs-keyword">new</span> <span class="hljs-built_in">TrieNode</span>();<br>    &#125;<br>    <br>    <span class="hljs-comment">//插入字符串</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-type">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(<span class="hljs-type">String</span> <span class="hljs-type">word</span>)</span> </span>&#123;<br>        TrieNode p = root;<br>        <span class="hljs-type">char</span>[] ch = <span class="hljs-type">word</span>.<span class="hljs-built_in">toCharArray</span>();<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; ch.length; i++)&#123;<br>            <span class="hljs-type">int</span> j = ch[i] - <span class="hljs-string">&#x27;a&#x27;</span>;<br>            <span class="hljs-keyword">if</span>(p.children[j] == null)&#123;<br>                p.children[j] = <span class="hljs-keyword">new</span> <span class="hljs-built_in">TrieNode</span>();<br>            &#125;<br>            p = p.children[j];<br>        &#125;<br>        p.isEnd = <span class="hljs-literal">true</span>;<br>    &#125;<br>    <br>    <span class="hljs-comment">//判断字符串是否已经插入</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title">search</span><span class="hljs-params">(<span class="hljs-type">String</span> <span class="hljs-type">word</span>)</span> </span>&#123;<br>        TrieNode p = root;<br>        <span class="hljs-type">char</span>[] ch = <span class="hljs-type">word</span>.<span class="hljs-built_in">toCharArray</span>();<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; ch.length; i++)&#123;<br>            <span class="hljs-type">int</span> j = ch[i] - <span class="hljs-string">&#x27;a&#x27;</span>;<br>            <span class="hljs-keyword">if</span>(p.children[j] == null)&#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            &#125;<br>            p = p.children[j];<br>        &#125;<br>        <span class="hljs-keyword">return</span> p.isEnd;<br>    &#125;<br>    <br>    <span class="hljs-comment">//判断前缀是否存在</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title">startsWith</span><span class="hljs-params">(<span class="hljs-type">String</span> prefix)</span> </span>&#123;<br>        TrieNode p = root;<br>        <span class="hljs-type">char</span>[] ch = prefix.<span class="hljs-built_in">toCharArray</span>();<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; ch.length; i++)&#123;<br>            <span class="hljs-type">int</span> j = ch[i] - <span class="hljs-string">&#x27;a&#x27;</span>;<br>            <span class="hljs-keyword">if</span>(p.children[j] == null)&#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            &#125;<br>            p = p.children[j];<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+                <h3 id="1-邻接矩阵"><a href="#1-邻接矩阵" class="headerlink" title="1.邻接矩阵"></a>1.邻接矩阵</h3><p>邻接矩阵（adjacency matrix）是一个<strong>二维数组</strong>，用来表示图中节点的关系。对于非带权图，如果节点i和节点j之间存在边，则二维数组中i行j列元素为1，否则为0；对于带权图（也称为<strong>网</strong>），如果节点i和节点j之间存在边，则二维数组中i行j列元素为边的权重，否则为无穷大。</p>
+<p>性质：</p>
+<ol>
+<li>无向图的邻接矩阵一定为<strong>对称</strong>矩阵，有向图的邻接矩阵则不一定。</li>
+<li>无向图的邻接矩阵i行非零元素个数为节点i的<strong>度</strong>。而在有向图中，i行非零元素个数为节点i的<strong>出度</strong>，i列非零元素个数为节点i的<strong>入度</strong>。</li>
+<li>无向图和有向图的邻接矩阵的<strong>对角线元素均为0</strong>。</li>
+</ol>
+<p>示例如图所示。</p>
+<p><img src="/../images/graph/adjacecy_matrix.png" srcset="/img/loading.gif" lazyload alt="邻接矩阵"></p>
+<p>实现代码:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-keyword">class</span> <span class="hljs-title">Graph</span>&#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-built_in">int</span> vertexNum; <span class="hljs-comment">//节点数目</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-built_in">int</span> edgeNum; <span class="hljs-comment">//边数目</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-built_in">int</span>[][] edges; <span class="hljs-comment">//邻接矩阵</span><br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Graph</span>()</span>&#123;<br>        vertexNum = <span class="hljs-number">0</span>;<br>        edgeNum = <span class="hljs-number">0</span>;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Graph</span>(<span class="hljs-params"><span class="hljs-built_in">int</span> vertexNum</span>)</span>&#123;<br>        <span class="hljs-keyword">this</span>.vertexNum = vertexNum;<br>        <span class="hljs-keyword">this</span>.edges = <span class="hljs-keyword">new</span> <span class="hljs-built_in">int</span>[vertexNum][vertexNum];<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addEdges</span>(<span class="hljs-params"><span class="hljs-built_in">int</span> i, <span class="hljs-built_in">int</span> j</span>)</span>&#123;<br>        edges[i][j] = <span class="hljs-number">1</span>;<br>        edges[j][i] = <span class="hljs-number">1</span>; <span class="hljs-comment">//如果为有向图，则这一行可以去掉</span><br>        edgeNum++;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-built_in">int</span> <span class="hljs-title">getVertexNum</span>()</span>&#123;<br>        <span class="hljs-keyword">return</span> vertexNum;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-built_in">int</span> <span class="hljs-title">getEdge</span>(<span class="hljs-params"><span class="hljs-built_in">int</span> i, <span class="hljs-built_in">int</span> j</span>)</span>&#123;<br>        <span class="hljs-keyword">return</span> edges[i][j];<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-built_in">int</span> <span class="hljs-title">getEdgeNum</span>()</span>&#123;<br>        <span class="hljs-keyword">return</span> edgeNum;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">printGraph</span>()</span>&#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-built_in">int</span> i = <span class="hljs-number">0</span>; i &lt; vertexNum; i++)&#123;<br>            System.<span class="hljs-keyword">out</span>.println(Arrays.toString(edges[i]));<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p>参考资料:<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_46202073/article/details/107253959">【图解算法】模板+变式——带你彻底搞懂字典树(Trie树)</a></p>
+<p>对于稀疏图，邻接矩阵会造成大量的空间浪费，因此邻接矩阵更加适合稠密图。同时邻接矩阵也适用于一些需要矩阵运算的场景。</p>
+<h3 id="2-邻接表"><a href="#2-邻接表" class="headerlink" title="2.邻接表"></a>2.邻接表</h3><p>邻接表（adjacency list）是一种顺序存储和链式存储相结合的存储结构，由节点表和边表两部分组成。节点表的作用是记录图中的所有节点，并且每一个节点指向一个边表。边表包含与当前节点连接的所有邻接节点。</p>
+<p>对于无向图，节点i的边表表示节点i的所有邻接节点的集合；对于有向图，节点i的边表则表示以节点i为起点（即弧头）的所有有向边的弧尾节点的集合。</p>
+<p>示例如下图所示。</p>
+<p><img src="/../images/graph/adjacency_list.png" srcset="/img/loading.gif" lazyload alt="邻接表"></p>
+<p>实现代码：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-keyword">class</span> <span class="hljs-title">GraphAdjList</span>&#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-built_in">int</span> vertexNum;<br>    <span class="hljs-keyword">private</span> <span class="hljs-built_in">int</span> edgeNum;<br>    <span class="hljs-keyword">private</span> List&lt;List&lt;Integer&gt;&gt; adjacencyList; <span class="hljs-comment">//邻接表</span><br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">GraphAdjList</span>()</span>&#123;<br>        vertexNum = <span class="hljs-number">0</span>;<br>        edgeNum = <span class="hljs-number">0</span>;<br>    &#125; <br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">GraphAdjList</span>(<span class="hljs-params"><span class="hljs-built_in">int</span> vertexNum</span>)</span>&#123;<br>        <span class="hljs-keyword">this</span>.vertexNum = vertexNum;<br>        <span class="hljs-keyword">this</span>.adjacencyList = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;(vertexNum);<br>        <span class="hljs-keyword">for</span>(<span class="hljs-built_in">int</span> i = <span class="hljs-number">0</span>; i &lt; vertexNum; i++)&#123;<br>            adjacencyList.<span class="hljs-keyword">add</span>(<span class="hljs-keyword">new</span> ArrayList&lt;&gt;());<br>        &#125; <br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addEdges</span>(<span class="hljs-params"><span class="hljs-built_in">int</span> i, <span class="hljs-built_in">int</span> j</span>)</span>&#123;<br>        adjacencyList.<span class="hljs-keyword">get</span>(i).<span class="hljs-keyword">add</span>(j);<br>        adjacencyList.<span class="hljs-keyword">get</span>(j).<span class="hljs-keyword">add</span>(i); <span class="hljs-comment">//如果为有向图，则这一行可以去掉</span><br>        edgeNum++;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-built_in">int</span> <span class="hljs-title">getVertexNum</span>()</span>&#123;<br>        <span class="hljs-keyword">return</span> vertexNum;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-built_in">int</span> <span class="hljs-title">getEdgeNum</span>()</span>&#123;<br>        <span class="hljs-keyword">return</span> edgeNum;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> boolean <span class="hljs-title">getEdge</span>(<span class="hljs-params"><span class="hljs-built_in">int</span> i, <span class="hljs-built_in">int</span> j</span>)</span>&#123;<br>        <span class="hljs-keyword">return</span> adjacencyList.<span class="hljs-keyword">get</span>(i).contains(j);<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">printGraph</span>()</span>&#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-built_in">int</span> i = <span class="hljs-number">0</span>; i &lt; vertexNum; i++)&#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-built_in">int</span> j: adjacencyList.<span class="hljs-keyword">get</span>(i))&#123;<br>                System.<span class="hljs-keyword">out</span>.println(String.format(<span class="hljs-string">&quot;[%s, %s]&quot;</span>, i, j));<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>对于稀疏图，邻接表比邻接矩阵更节省空间。但是对于有向图，邻接表找某一个节点的入度的效率较低，因此通常还会构建一个<strong>逆邻接表</strong>，以方便查找入度。</p>
 
                 
               </div>
@@ -320,8 +334,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>串匹配-字典树</div>
-      <div>https://wangfuxun.github.io/posts/43931/</div>
+      <div>图的存储结构</div>
+      <div>https://wangfuxun.github.io/posts/12592/</div>
     </div>
     <div class="license-meta">
       
@@ -333,7 +347,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>July 12, 2024</div>
+          <div>July 16, 2024</div>
         </div>
       
       
@@ -365,18 +379,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/12592/" title="图的存储结构">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">图的存储结构</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/22932/" title="串匹配-BM算法">
-                        <span class="hidden-mobile">串匹配-BM算法</span>
+                      <a href="/posts/43931/" title="串匹配-字典树">
+                        <span class="hidden-mobile">串匹配-字典树</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
