@@ -23,12 +23,13 @@
 <meta property="og:site_name" content="用心流浪">
 <meta property="og:description" content="基本思想 并查集（Union-Find）是一种树型的数据结构，通常使用森林来表示，每一棵树表示一个集合，树中的节点表示集合中的元素，树的根节点作为一个集合的标识。示例如图所示。  并查集有合并（Union）和 查找（Find）两种基本操作： （1）查找：查找某一个节点所属的集合，即查找某一个节点所在树的根节点。 （2）合并：将两个节点所属的两个不相交集合（Disjoint Set）合">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://wangfuxun.github.io/posts/images/UnionFind/UnionFind.png">
+<meta property="og:image" content="https://wangfuxun.github.io/images/UnionFind/UnionFind.png">
+<meta property="og:image" content="https://wangfuxun.github.io/images/UnionFind/UnionFind_Improvement.png">
 <meta property="article:published_time" content="2024-07-31T13:20:07.000Z">
-<meta property="article:modified_time" content="2024-07-31T13:25:14.456Z">
+<meta property="article:modified_time" content="2024-08-12T17:36:12.707Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://wangfuxun.github.io/posts/images/UnionFind/UnionFind.png">
+<meta name="twitter:image" content="https://wangfuxun.github.io/images/UnionFind/UnionFind.png">
   
   
   
@@ -276,7 +277,7 @@
                 
                 <h2 id="基本思想">基本思想</h2>
 <p><strong>并查集</strong>（Union-Find）是一种树型的数据结构，通常使用<strong>森林</strong>来表示，每一棵树表示一个集合，树中的节点表示集合中的元素，树的根节点作为一个集合的标识。示例如图所示。
-<img src="../images/UnionFind/UnionFind.png" srcset="/img/loading.gif" lazyload alt="并查集" /></p>
+<img src="/images/UnionFind/UnionFind.png" srcset="/img/loading.gif" lazyload alt="并查集" /></p>
 <p>并查集有<strong>合并</strong>（Union）和
 <strong>查找</strong>（Find）两种基本操作：
 （1）查找：查找某一个节点所属的集合，即查找某一个节点所在树的根节点。
@@ -291,8 +292,7 @@ Set）合并为一个集合，即将两棵树合并为一棵树。</p>
 <p>合并时，将高度较小的树合并到较大的树上，合并后的树的高度等于较大的树的高度。如果将较大的树合并到较小的树上，则合并后树的高度会增加。在具体实现中，需要使用一个<code>rank</code>数组来保存所在树的高度，只有在根节点处该数组才有意义。</p>
 <p><strong>2.路径压缩（Path Compression）</strong></p>
 <p>查找时，让每一个节点的父指针直接指向树的根节点，降低树的高度。在代码中递归调用查找函数，在<strong>回溯</strong>过程中，可以让整条路径上的节点的父指针都指向根节点。（非常巧妙！）</p>
-<p>示例如图所示。 <img
-src="../images/UnionFind/UnionFind_Improvement.png" srcset="/img/loading.gif" lazyload
+<p>示例如图所示。 <img src="/images/UnionFind/UnionFind_Improvement.png" srcset="/img/loading.gif" lazyload
 alt="并查集的优化" /></p>
 <p>代码： <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs gradle"><span class="hljs-comment">//优化之后的并查集</span><br><span class="hljs-keyword">class</span> UnionFindSet &#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span>[] parent;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span>[] rank; <span class="hljs-comment">// 保存树的高度</span><br><br>    <span class="hljs-keyword">public</span> UnionFindSet(<span class="hljs-keyword">int</span> <span class="hljs-keyword">size</span>)&#123;<br>        parent = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-keyword">size</span>];<br>        rank = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-keyword">size</span>];<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-keyword">size</span>; i++)&#123;<br>            parent[i] = i;<br>            rank[i] = <span class="hljs-number">1</span>;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-comment">//路径压缩</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-keyword">find</span>(<span class="hljs-keyword">int</span> i)&#123;<br>        <span class="hljs-keyword">if</span>(parent[i] != i)&#123;<br>            parent[i] = <span class="hljs-keyword">find</span>(parent[i]); <span class="hljs-comment">//巧妙使用递归</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> parent[i];<br>    &#125;<br><br>    <span class="hljs-comment">//按秩合并</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> union(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)&#123;<br>        <span class="hljs-keyword">int</span> rootX = <span class="hljs-keyword">find</span>(x);<br>        <span class="hljs-keyword">int</span> rootY = <span class="hljs-keyword">find</span>(y);<br><br>        <span class="hljs-keyword">if</span>(rootX == rootY)&#123;<br>            <span class="hljs-keyword">return</span> ;<br>        &#125;<br><br>        <span class="hljs-keyword">if</span>(rank[rootX] &lt; rank[rootY])&#123;<br>            parent[rootX] = rootY;<br>        &#125;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(rank[rootX] &gt; rank[rootY])&#123;<br>            parent[rootY] = rootX;<br>        &#125;<br>        <span class="hljs-keyword">else</span> &#123;<br>            parent[rootX] = rootY;<br>            rank[rootY]++;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p>
 <p>参考资料:</p>

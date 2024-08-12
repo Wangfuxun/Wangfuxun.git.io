@@ -23,15 +23,15 @@
 <meta property="og:site_name" content="用心流浪">
 <meta property="og:description" content="Boyer-Moore算法，即BM算法，是一种非常高效的字符串搜索算法，擅长处理大规模文本和长模式串。它的核心思想是当主串与模式串在某一位置失配时，根据某种规则，跳过一些不必要的比较，提高字符串匹配的效率。目前大多数文本编辑器中的字符串查找、替换功能都是使用BM算法实现的。 BM算法由坏字符和好后缀两个启发式规则组成，下面将对这两部分进行具体介绍。 坏字符规则 与KMP算法不同，BM算法是从">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://wangfuxun.github.io/posts/images/patternmatch/BM-nobadchar.png">
-<meta property="og:image" content="https://wangfuxun.github.io/posts/images/patternmatch/BM-badchar.png">
-<meta property="og:image" content="https://wangfuxun.github.io/posts/images/patternmatch/BM-goodsuffix.png">
-<meta property="og:image" content="https://wangfuxun.github.io/posts/images/patternmatch/BM-substring.png">
+<meta property="og:image" content="https://wangfuxun.github.io/images/patternmatch/BM-nobadchar.png">
+<meta property="og:image" content="https://wangfuxun.github.io/images/patternmatch/BM-badchar.png">
+<meta property="og:image" content="https://wangfuxun.github.io/images/patternmatch/BM-goodsuffix.png">
+<meta property="og:image" content="https://wangfuxun.github.io/images/patternmatch/BM-substring.png">
 <meta property="article:published_time" content="2024-07-05T05:39:40.000Z">
-<meta property="article:modified_time" content="2024-07-07T16:23:00.299Z">
+<meta property="article:modified_time" content="2024-08-12T17:37:32.199Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://wangfuxun.github.io/posts/images/patternmatch/BM-nobadchar.png">
+<meta name="twitter:image" content="https://wangfuxun.github.io/images/patternmatch/BM-nobadchar.png">
   
   
   
@@ -283,13 +283,13 @@
 <p>与KMP算法不同，BM算法是从模式串的末尾开始，<strong>自右向左</strong>与主串进行匹配的。当第一次出现主串的字符与模式串的字符不匹配时，主串的相应字符称为<strong>坏字符</strong>。</p>
 <p>1.如果模式串中不存在该坏字符，则说明模式串中任何一个字符都不能与坏字符匹配，因此将模式串向右移动，使模式串的第一个字符与主串坏字符的后一个字符对齐，并继续进行匹配。如下图所示。</p>
 <figure>
-<img src="../images/patternmatch/BM-nobadchar.png" srcset="/img/loading.gif" lazyload
+<img src="/images/patternmatch/BM-nobadchar.png" srcset="/img/loading.gif" lazyload
 alt="模式串中不存在坏字符" />
 <figcaption aria-hidden="true">模式串中不存在坏字符</figcaption>
 </figure>
 <p>2.如果模式串中存在该坏字符，则将模式串向右移动，使模式串的坏字符与主串的坏字符对齐，并继续进行匹配。其中需要注意，如果模式串含有多个坏字符，则必须选择<strong>最右侧</strong>的坏字符与主串的坏字符对齐，否则可能会错过匹配。</p>
 <figure>
-<img src="../images/patternmatch/BM-badchar.png" srcset="/img/loading.gif" lazyload
+<img src="/images/patternmatch/BM-badchar.png" srcset="/img/loading.gif" lazyload
 alt="模式串中存在坏字符" />
 <figcaption aria-hidden="true">模式串中存在坏字符</figcaption>
 </figure>
@@ -301,12 +301,12 @@ alt="模式串中存在坏字符" />
 suffix)是<strong>主串与模式串匹配的后缀子串</strong>，即坏字符右侧匹配成功的部分。利用好后缀确定模式串的移动次数，可以分为以下三种情况：</p>
 <p>1.除了好后缀本身之外，如果模式串中存在其他与好后缀匹配的子串，则使该子串的第一个字符与主串好后缀的第一个字符对齐，继续进行匹配。注意，如果存在多个子串与好后缀匹配，则需要选择<strong>最右侧</strong>子串，原因与坏字符的相同。如下图所示。</p>
 <figure>
-<img src="../images/patternmatch/BM-goodsuffix.png" srcset="/img/loading.gif" lazyload alt="存在好后缀" />
+<img src="/images/patternmatch/BM-goodsuffix.png" srcset="/img/loading.gif" lazyload alt="存在好后缀" />
 <figcaption aria-hidden="true">存在好后缀</figcaption>
 </figure>
 <p>2.如果模式串中不存在其他与好后缀匹配的子串，则需要查找好后缀的<strong>真后缀</strong>中是否存在后缀子串与模式串的某一<strong>前缀</strong>匹配，如果匹配，则将该后缀子串在主串中的第一个字符与模式串的第一个字符匹配。<em>真后缀是除了字符串自身以外的所有的后缀子串形成的集合</em>。如下图所示。</p>
 <figure>
-<img src="../images/patternmatch/BM-substring.png" srcset="/img/loading.gif" lazyload
+<img src="/images/patternmatch/BM-substring.png" srcset="/img/loading.gif" lazyload
 alt="存在好后缀的后缀子串" />
 <figcaption aria-hidden="true">存在好后缀的后缀子串</figcaption>
 </figure>
