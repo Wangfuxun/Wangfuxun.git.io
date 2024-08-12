@@ -16,12 +16,12 @@
   <meta name="author" content="WangFuxun">
   <meta name="keywords" content="">
   
-    <meta name="description" content="异常异常处理机制Python程序通过了解释但是在执行时报错，这类错误即为异常。异常处理是通过try-except实现的。程序停止执行并提示错误信息即为抛出异常。异常捕获的完整语法如下： 12345678910111213try:    #尝试执行的代码except 错误类型1:    #对应的代码处理except (错误类型2，错误类型3):    #对应的代码处理except Exception">
+    <meta name="description" content="异常 异常处理机制 Python程序通过了解释但是在执行时报错，这类错误即为异常。异常处理是通过try-except实现的。程序停止执行并提示错误信息即为抛出异常。异常捕获的完整语法如下： 12345678910111213try:    #尝试执行的代码except 错误类型1:    #对应的代码处理except (错误类型2，错误类型3):    #对应的代码处理except Exce">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python异常与文件">
 <meta property="og:url" content="https://wangfuxun.github.io/posts/51459/index.html">
 <meta property="og:site_name" content="用心流浪">
-<meta property="og:description" content="异常异常处理机制Python程序通过了解释但是在执行时报错，这类错误即为异常。异常处理是通过try-except实现的。程序停止执行并提示错误信息即为抛出异常。异常捕获的完整语法如下： 12345678910111213try:    #尝试执行的代码except 错误类型1:    #对应的代码处理except (错误类型2，错误类型3):    #对应的代码处理except Exception">
+<meta property="og:description" content="异常 异常处理机制 Python程序通过了解释但是在执行时报错，这类错误即为异常。异常处理是通过try-except实现的。程序停止执行并提示错误信息即为抛出异常。异常捕获的完整语法如下： 12345678910111213try:    #尝试执行的代码except 错误类型1:    #对应的代码处理except (错误类型2，错误类型3):    #对应的代码处理except Exce">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-01-08T14:12:42.000Z">
 <meta property="article:modified_time" content="2024-01-08T15:39:29.684Z">
@@ -230,7 +230,7 @@
         
         
         
-          14 mins
+          13 mins
         
       </span>
     
@@ -272,30 +272,38 @@
             
               <div class="markdown-body">
                 
-                <h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><h3 id="异常处理机制"><a href="#异常处理机制" class="headerlink" title="异常处理机制"></a>异常处理机制</h3><p>Python程序通过了解释但是在执行时报错，这类错误即为异常。异常处理是通过try-except实现的。程序停止执行并提示错误信息即为抛出异常。异常捕获的完整语法如下：</p>
-<figure class="highlight nim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs nim"><span class="hljs-keyword">try</span>:<br>    <span class="hljs-comment">#尝试执行的代码</span><br><span class="hljs-keyword">except</span> 错误类型<span class="hljs-number">1</span>:<br>    <span class="hljs-comment">#对应的代码处理</span><br><span class="hljs-keyword">except</span> (错误类型<span class="hljs-number">2</span>，错误类型<span class="hljs-number">3</span>):<br>    <span class="hljs-comment">#对应的代码处理</span><br><span class="hljs-keyword">except</span> <span class="hljs-type">Exception</span> <span class="hljs-keyword">as</span> <span class="hljs-built_in">result</span>:<br>    <span class="hljs-comment">#打印错误信息，result为捕获的异常对象</span><br>    print(<span class="hljs-built_in">result</span>)<br><span class="hljs-keyword">else</span>:<br>    <span class="hljs-comment">#没有异常才会执行的代码</span><br><span class="hljs-keyword">finally</span>:<br>    <span class="hljs-comment">#无论是否异常，都会执行的代码</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="异常传递"><a href="#异常传递" class="headerlink" title="异常传递"></a>异常传递</h3><p>当函数执行出现异常，会将异常传递给函数的调用者。利用异常的传递性，在主程序捕获异常，不需要在每个函数中增加异常捕获的代码。Python中提供了Exception异常类。<br>主动抛出异常的方法：<br>1.	创建一个Exception的对象<br>2.	使用<strong>raise</strong>关键字抛出异常对象</p>
-<p>示例如下：</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs vim">def input_password():<br>    <span class="hljs-keyword">pwd</span> = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入密码：&quot;</span>)<br>    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(<span class="hljs-keyword">pwd</span>) &gt;= <span class="hljs-number">8</span>:<br>        <span class="hljs-keyword">print</span>(<span class="hljs-string">&quot;密码格式正确&quot;</span>)<br>        <span class="hljs-keyword">return</span><br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">ex</span> = Exception(<span class="hljs-string">&quot;密码长度小于8位&quot;</span>)<br>        raise <span class="hljs-keyword">ex</span><br><br><span class="hljs-keyword">try</span>:<br>    input_password()<br>except Exception <span class="hljs-keyword">as</span> result:<br>    <span class="hljs-keyword">print</span>(<span class="hljs-string">&quot;程序异常：%s&quot;</span> % result)<br></code></pre></td></tr></table></figure>
-
-<h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><h3 id="1-模块"><a href="#1-模块" class="headerlink" title="1.模块"></a>1.模块</h3><p><strong>一个Python文件就是一个模块</strong>。模块提供的工具有全局变量、函数、类等。</p>
-<p>导入方式：<br>（1）整个模块导入<br><code>import 模块名 as 模块别名</code><br>as关键字指定别名（可以省略），模块别名应满足“大驼峰“命名规则，通过<code>模块名.</code>的方式使用工具。</p>
-<p>（2）部分导入工具<br><code>from 模块名 import 工具名</code><br>可以直接使用工具</p>
-<p>注意：</p>
-<ol>
-<li><p>如果两个模块存在同名函数，后导入模块的函数会覆盖先导入模块的函数。</p>
-</li>
-<li><p>文件被导入时没有缩进的代码会被执行一遍。但是在实际开发中，模块下方可能会有一些测试代码，当被导入其他模块中执行时，这一部分代码也会被执行。可以通过__name__解决这一问题。<br><strong>name__是Python内置的一个字符串，存储模块的名称，可以用来标记当前模块是否为顶层模块。如果一个模块是顶层模块，即当前模块直接运行（没有被其他模块调用），__name</strong> &#x3D;&#x3D; “__main__”；而当前模块被导入到其他模块调用时，__name__为当前模块名。</p>
-</li>
+                <h2 id="异常">异常</h2>
+<h3 id="异常处理机制">异常处理机制</h3>
+<p>Python程序通过了解释但是在执行时报错，这类错误即为异常。异常处理是通过try-except实现的。程序停止执行并提示错误信息即为抛出异常。异常捕获的完整语法如下：
+<figure class="highlight nim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs nim"><span class="hljs-keyword">try</span>:<br>    <span class="hljs-comment">#尝试执行的代码</span><br><span class="hljs-keyword">except</span> 错误类型<span class="hljs-number">1</span>:<br>    <span class="hljs-comment">#对应的代码处理</span><br><span class="hljs-keyword">except</span> (错误类型<span class="hljs-number">2</span>，错误类型<span class="hljs-number">3</span>):<br>    <span class="hljs-comment">#对应的代码处理</span><br><span class="hljs-keyword">except</span> <span class="hljs-type">Exception</span> <span class="hljs-keyword">as</span> <span class="hljs-built_in">result</span>:<br>    <span class="hljs-comment">#打印错误信息，result为捕获的异常对象</span><br>    print(<span class="hljs-built_in">result</span>)<br><span class="hljs-keyword">else</span>:<br>    <span class="hljs-comment">#没有异常才会执行的代码</span><br><span class="hljs-keyword">finally</span>:<br>    <span class="hljs-comment">#无论是否异常，都会执行的代码</span><br></code></pre></td></tr></table></figure></p>
+<h3 id="异常传递">异常传递</h3>
+<p>当函数执行出现异常，会将异常传递给函数的调用者。利用异常的传递性，在主程序捕获异常，不需要在每个函数中增加异常捕获的代码。Python中提供了Exception异常类。
+主动抛出异常的方法： 1. 创建一个Exception的对象 2.
+使用<strong>raise</strong>关键字抛出异常对象</p>
+<p>示例如下： <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs vim">def input_password():<br>    <span class="hljs-keyword">pwd</span> = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入密码：&quot;</span>)<br>    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(<span class="hljs-keyword">pwd</span>) &gt;= <span class="hljs-number">8</span>:<br>        <span class="hljs-keyword">print</span>(<span class="hljs-string">&quot;密码格式正确&quot;</span>)<br>        <span class="hljs-keyword">return</span><br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">ex</span> = Exception(<span class="hljs-string">&quot;密码长度小于8位&quot;</span>)<br>        raise <span class="hljs-keyword">ex</span><br><br><span class="hljs-keyword">try</span>:<br>    input_password()<br>except Exception <span class="hljs-keyword">as</span> result:<br>    <span class="hljs-keyword">print</span>(<span class="hljs-string">&quot;程序异常：%s&quot;</span> % result)<br></code></pre></td></tr></table></figure></p>
+<h2 id="文件">文件</h2>
+<h3 id="模块">1.模块</h3>
+<p><strong>一个Python文件就是一个模块</strong>。模块提供的工具有全局变量、函数、类等。</p>
+<p>导入方式： （1）整个模块导入 <code>import 模块名 as 模块别名</code>
+as关键字指定别名（可以省略），模块别名应满足“大驼峰“命名规则，通过<code>模块名.</code>的方式使用工具。</p>
+<p>（2）部分导入工具 <code>from 模块名 import 工具名</code>
+可以直接使用工具</p>
+<p>注意： 1.
+如果两个模块存在同名函数，后导入模块的函数会覆盖先导入模块的函数。</p>
+<ol start="2" type="1">
+<li>文件被导入时没有缩进的代码会被执行一遍。但是在实际开发中，模块下方可能会有一些测试代码，当被导入其他模块中执行时，这一部分代码也会被执行。可以通过__name__解决这一问题。
+__name__是Python内置的一个字符串，存储模块的名称，可以用来标记当前模块是否为顶层模块。如果一个模块是顶层模块，即当前模块直接运行（没有被其他模块调用），<strong>name</strong>
+==
+“<strong>main</strong>”；而当前模块被导入到其他模块调用时，__name__为当前模块名。</li>
 </ol>
-<h3 id="2-包"><a href="#2-包" class="headerlink" title="2.包"></a>2.包</h3><p><strong>一个包是若干个模块的集合</strong>。实质是一个包含多个模块的特殊目录，目录下包含一个__init__.py文件，需要在该文件中指定对外界提供的模块列表。</p>
+<h3 id="包">2.包</h3>
+<p><strong>一个包是若干个模块的集合</strong>。实质是一个包含多个模块的特殊目录，目录下包含一个__init__.py文件，需要在该文件中指定对外界提供的模块列表。</p>
 <p>包的命名规范为：全部小写字母，不推荐使用下划线。</p>
-<p>包的结构为<strong>树状</strong>，可以进行分层组织，从而避免重名。例如一个包pkga的结构如下所示，它由两个子包pkgb和pkgc组成，两个子包都有同名模块module1。</p>
-<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs gherkin">pkga      <span class="hljs-comment">#顶层包a</span><br>|<span class="hljs-string">—— __init__.py</span><br><span class="hljs-string"></span>|<span class="hljs-string">—— pkgb        #子包b</span><br><span class="hljs-string"></span>|<span class="hljs-string">   </span>|<span class="hljs-string">—— __init__.py</span><br><span class="hljs-string"></span>|<span class="hljs-string">   </span>|<span class="hljs-string">—— module1.py</span><br><span class="hljs-string"></span>|<span class="hljs-string">   </span>|<span class="hljs-string">—— module2.py</span><br><span class="hljs-string"></span>|<br>|<span class="hljs-string">—— pkgc        #子包c</span><br><span class="hljs-string">    </span>|<span class="hljs-string">—— __init__.py</span><br><span class="hljs-string">    </span>|<span class="hljs-string">—— module1.py</span><br><span class="hljs-string">    </span>|<span class="hljs-string">—— module3.py</span><br></code></pre></td></tr></table></figure>
+<p>包的结构为<strong>树状</strong>，可以进行分层组织，从而避免重名。例如一个包pkga的结构如下所示，它由两个子包pkgb和pkgc组成，两个子包都有同名模块module1。
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs gherkin">pkga      <span class="hljs-comment">#顶层包a</span><br>|<span class="hljs-string">—— __init__.py</span><br><span class="hljs-string"></span>|<span class="hljs-string">—— pkgb        #子包b</span><br><span class="hljs-string"></span>|<span class="hljs-string">   </span>|<span class="hljs-string">—— __init__.py</span><br><span class="hljs-string"></span>|<span class="hljs-string">   </span>|<span class="hljs-string">—— module1.py</span><br><span class="hljs-string"></span>|<span class="hljs-string">   </span>|<span class="hljs-string">—— module2.py</span><br><span class="hljs-string"></span>|<br>|<span class="hljs-string">—— pkgc        #子包c</span><br><span class="hljs-string">    </span>|<span class="hljs-string">—— __init__.py</span><br><span class="hljs-string">    </span>|<span class="hljs-string">—— module1.py</span><br><span class="hljs-string">    </span>|<span class="hljs-string">—— module3.py</span><br></code></pre></td></tr></table></figure></p>
+<p>如果要使用module2中的函数say()，则导入与使用方式如下：
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs stylus">#方式一：<br>import pkga<span class="hljs-selector-class">.pkgb</span><span class="hljs-selector-class">.module2</span><br>pkga<span class="hljs-selector-class">.pkgb</span><span class="hljs-selector-class">.module2</span><span class="hljs-selector-class">.say</span>()<br><br>#方式二（推荐）：<br>from pkga<span class="hljs-selector-class">.pkgb</span> import module2<br>module2<span class="hljs-selector-class">.say</span>()<br><br>#方式三：<br>from pkga<span class="hljs-selector-class">.pkgb</span><span class="hljs-selector-class">.module2</span> import say<br><span class="hljs-function"><span class="hljs-title">say</span><span class="hljs-params">()</span></span><br></code></pre></td></tr></table></figure></p>
 
-<p>如果要使用module2中的函数say()，则导入与使用方式如下：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs stylus">#方式一：<br>import pkga<span class="hljs-selector-class">.pkgb</span><span class="hljs-selector-class">.module2</span><br>pkga<span class="hljs-selector-class">.pkgb</span><span class="hljs-selector-class">.module2</span><span class="hljs-selector-class">.say</span>()<br><br>#方式二（推荐）：<br>from pkga<span class="hljs-selector-class">.pkgb</span> import module2<br>module2<span class="hljs-selector-class">.say</span>()<br><br>#方式三：<br>from pkga<span class="hljs-selector-class">.pkgb</span><span class="hljs-selector-class">.module2</span> import say<br><span class="hljs-function"><span class="hljs-title">say</span><span class="hljs-params">()</span></span><br></code></pre></td></tr></table></figure>
                 
               </div>
             

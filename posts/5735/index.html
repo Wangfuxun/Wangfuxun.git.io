@@ -1,0 +1,698 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/yourname.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="WangFuxun">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Dijkstra算法是解决单源点最短路径问题的一种贪心算法，每次向集合中加入一个最短路径的长度最小的节点，直到所有节点均加入集合。Dijkstra算法不能用于边权为负的情况。 假设T表示已经找到最短路径的节点集合，初始时，T为空集。  选择一个节点作为源点。 从集合T之外的节点中选择一个节点u，使得源点到节点u的距离最小，即节点u的最短路径的长度最小，将节点u加入集合T。 更新节点u的所">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图-最短路径之Dijkstra算法">
+<meta property="og:url" content="https://wangfuxun.github.io/posts/5735/index.html">
+<meta property="og:site_name" content="用心流浪">
+<meta property="og:description" content="Dijkstra算法是解决单源点最短路径问题的一种贪心算法，每次向集合中加入一个最短路径的长度最小的节点，直到所有节点均加入集合。Dijkstra算法不能用于边权为负的情况。 假设T表示已经找到最短路径的节点集合，初始时，T为空集。  选择一个节点作为源点。 从集合T之外的节点中选择一个节点u，使得源点到节点u的距离最小，即节点u的最短路径的长度最小，将节点u加入集合T。 更新节点u的所">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-08-12T08:12:03.000Z">
+<meta property="article:modified_time" content="2024-08-12T13:19:30.285Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>图-最短路径之Dijkstra算法 - 用心流浪</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"wangfuxun.github.io","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Wang fuxun&#39;s blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/star.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="图-最短路径之Dijkstra算法"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-08-12 16:12" pubdate>
+          August 12, 2024 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.1k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          35 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">图-最短路径之Dijkstra算法</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>Dijkstra算法是解决<strong>单源点最短路径</strong>问题的一种<strong>贪心算法</strong>，每次向集合中加入一个最短路径的长度最小的节点，直到所有节点均加入集合。Dijkstra算法不能用于<strong>边权为负</strong>的情况。</p>
+<p>假设T表示已经找到最短路径的节点集合，初始时，T为空集。</p>
+<ol type="1">
+<li>选择一个节点作为源点。</li>
+<li>从集合T之外的节点中选择一个节点u，使得源点到节点u的距离最小，即节点u的最短路径的长度最小，将节点u加入集合T。</li>
+<li>更新节点u的所有未加入集合T的邻接节点的最短路径长度。</li>
+<li>重复步骤2和3，直到所有节点加入集合。</li>
+</ol>
+<p>注意：</p>
+<ol type="1">
+<li>在步骤2中，比较源点到每一个节点（集合T之外）的距离，对于距离最小的节点，当前的路径一定是最短路径。</li>
+<li>Dijkstra算法与<strong>Prim算法</strong>的实现思路基本相同，不同之处在于<code>dist</code>数组的含义。Prim算法中<code>dist</code>数组表示集合T到节点的距离，而在Dijkstra算法中则表示源点到节点的距离。除此之外，更新邻接节点的操作也不同。</li>
+</ol>
+<p>基于邻接矩阵的代码如下： <figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-built_in">public</span> <span class="hljs-keyword">class</span> Dijkstra &#123;<br>    <span class="hljs-type">int</span>[][] matrix;<br>    <span class="hljs-type">int</span> V;<br><br>    <span class="hljs-built_in">public</span> Dijkstra(<span class="hljs-type">int</span> V)&#123;<br>        this.V = V;<br>        matrix = <span class="hljs-built_in">new</span> <span class="hljs-type">int</span>[V][V];<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; V; i++)&#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; V; j++)&#123;<br>                matrix[i][j] = <span class="hljs-type">Integer</span>.MAX_VALUE;<br>            &#125;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-built_in">public</span> <span class="hljs-type">void</span> addEdge(<span class="hljs-type">int</span> i, <span class="hljs-type">int</span> j, <span class="hljs-type">int</span> weight)&#123;<br>        matrix[i][j] = weight;<br>        matrix[j][i] = weight; //有向图需要删掉这一行<br>    &#125;<br><br>    <span class="hljs-built_in">public</span> <span class="hljs-type">void</span> dijkstra(<span class="hljs-type">int</span> init)&#123;<br>        <span class="hljs-type">boolean</span>[] visited = <span class="hljs-built_in">new</span> <span class="hljs-type">boolean</span>[V]; //表示节点是否加入集合T<br>        <span class="hljs-type">int</span>[] parent = <span class="hljs-built_in">new</span> <span class="hljs-type">int</span>[V]; //表示节点的父节点<br>        <span class="hljs-type">int</span>[] dist = <span class="hljs-built_in">new</span> <span class="hljs-type">int</span> [V]; //表示源点到节点i的距离<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; V; i++)&#123;<br>            parent[i] = i;<br>            dist[i] = <span class="hljs-type">Integer</span>.MAX_VALUE;<br>            visited[i] = <span class="hljs-keyword">false</span>;<br>        &#125;<br>        dist[init] = <span class="hljs-number">0</span>;<br>        <br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; V; i++)&#123;<br>            //获得从起始节点到其余未访问节点中距离最小的一个<br>            <span class="hljs-type">int</span> next = <span class="hljs-number">-1</span>; <br>            <span class="hljs-type">int</span> <span class="hljs-keyword">minValue</span> = Integer.MAX_VALUE;<br>            for(int j = <span class="hljs-number">0</span>; j &lt; V; j++)&#123;<br>                <span class="hljs-keyword">if</span>(!visited[j] &amp;&amp; dist[j] &lt;= <span class="hljs-keyword">minValue</span>)&#123;<br>                    <span class="hljs-keyword">minValue</span> = dist[j];<br>                    next = j;<br>                &#125;<br>            &#125;<br>            visited[next] = true;<br><br>            //更新邻接节点的最短路径长度<br>            for(int j = <span class="hljs-number">0</span>; j &lt; V; j++)&#123;<br>                <span class="hljs-keyword">if</span>(visited[j] || matrix[next][j] == <span class="hljs-type">Integer</span>.MAX_VALUE || dist[next] == <span class="hljs-type">Integer</span>.MAX_VALUE)&#123;<br>                    <span class="hljs-keyword">continue</span>;<br>                &#125;<br>                <span class="hljs-keyword">if</span>(dist[next] + matrix[next][j] &lt; dist[j])&#123;<br>                    dist[j] = dist[next] + matrix[next][j];<br>                    parent[j] = next;<br>                &#125;<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; V; i++)&#123;<br>            String str = String.format(&quot;%s -&gt; %s: &quot;, init, i);<br>            <span class="hljs-keyword">if</span>(init == i || dist[i] == <span class="hljs-type">Integer</span>.MAX_VALUE)&#123;<br>                <span class="hljs-keyword">System</span>.<span class="hljs-keyword">out</span>.println(str + &quot;不存在路径&quot;);<br>                <span class="hljs-keyword">continue</span>;<br>            &#125;<br>            str += getPath(parent, i);<br>            <span class="hljs-keyword">System</span>.<span class="hljs-keyword">out</span>.println(str);<br>            <span class="hljs-keyword">System</span>.<span class="hljs-keyword">out</span>.println(&quot;距离为：&quot; + dist[i]);<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-built_in">public</span> String getPath(<span class="hljs-type">int</span>[] parent, <span class="hljs-type">int</span> v)&#123;<br>        String tmp = &quot;&quot;;<br>        <span class="hljs-keyword">if</span>(parent[v] == v)&#123;<br>            tmp += v + &quot; &quot;;<br>        &#125;<br>        <span class="hljs-keyword">else</span> tmp += getPath(parent, parent[v]) + v + &quot; &quot;;<br>        <span class="hljs-keyword">return</span> tmp;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<p>基于邻接矩阵的Dijkstra算法的时间复杂度为<span
+class="math inline">\(O(V^2)\)</span>，可以使用邻接表和优先队列进行优化，使时间复杂度变为<span
+class="math inline">\(O(ElogV)\)</span>，这一部分的详细分析可以看Prim算法那篇文章。</p>
+<p>代码如下： <figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-built_in">public</span> <span class="hljs-keyword">class</span> DijkstraHeap &#123;<br>    static <span class="hljs-keyword">class</span> Pair&#123;<br>        <span class="hljs-type">int</span> dest;<br>        <span class="hljs-type">int</span> weight;<br>        <span class="hljs-built_in">public</span> Pair(<span class="hljs-type">int</span> dest, <span class="hljs-type">int</span> weight)&#123;<br>            this.dest = dest;<br>            this.weight = weight;<br>        &#125;<br>    &#125;<br><br>    List&lt;List&lt;Pair&gt;&gt; adjList;<br>    <span class="hljs-type">int</span> V;<br><br>    <span class="hljs-built_in">public</span> DijkstraHeap(<span class="hljs-type">int</span> V)&#123;<br>        this.V = V;<br>        adjList = <span class="hljs-built_in">new</span> ArrayList&lt;&gt;();<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; V; i++)&#123;<br>            adjList.<span class="hljs-keyword">add</span>(<span class="hljs-built_in">new</span> ArrayList&lt;&gt;());<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-built_in">public</span> <span class="hljs-type">void</span> addEdge(<span class="hljs-type">int</span> i, <span class="hljs-type">int</span> j, <span class="hljs-type">int</span> weight)&#123;<br>        adjList.<span class="hljs-keyword">get</span>(i).<span class="hljs-keyword">add</span>(<span class="hljs-built_in">new</span> Pair(j, weight));<br>        adjList.<span class="hljs-keyword">get</span>(j).<span class="hljs-keyword">add</span>(<span class="hljs-built_in">new</span> Pair(i, weight)); //有向图需要删除这一行<br>    &#125;<br><br>    <span class="hljs-built_in">public</span> <span class="hljs-type">void</span> dijkstra(<span class="hljs-type">int</span> init)&#123;<br>        Comparator&lt;Pair&gt; cmp = <span class="hljs-built_in">new</span> Comparator&lt;Pair&gt;() &#123;<br>            <span class="hljs-built_in">public</span> <span class="hljs-type">int</span> compare(Pair p1, Pair p2)&#123;<br>                <span class="hljs-keyword">return</span> p1.weight - p2.weight;<br>            &#125;<br>        &#125;;<br>        PriorityQueue&lt;Pair&gt; pQueue = <span class="hljs-built_in">new</span> PriorityQueue&lt;&gt;(cmp); <br>        <span class="hljs-type">boolean</span>[] visited = <span class="hljs-built_in">new</span> <span class="hljs-type">boolean</span>[V]; //表示节点是否加入集合T<br>        <span class="hljs-type">int</span>[] parent = <span class="hljs-built_in">new</span> <span class="hljs-type">int</span>[V]; //表示节点的父节点<br>        <span class="hljs-type">int</span>[] dist = <span class="hljs-built_in">new</span> <span class="hljs-type">int</span> [V]; //表示源点到节点i的距离<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; V; i++)&#123;<br>            parent[i] = i;<br>            dist[i] = <span class="hljs-type">Integer</span>.MAX_VALUE;<br>            visited[i] = <span class="hljs-keyword">false</span>;<br>        &#125;<br>        dist[init] = <span class="hljs-number">0</span>;<br>        pQueue.offer(<span class="hljs-built_in">new</span> Pair(init, dist[init]));<br><br>        <span class="hljs-keyword">while</span>(!pQueue.isEmpty())&#123;<br>            Pair p = pQueue.poll();<br>            <span class="hljs-type">int</span> next = p.dest;<br><br>            <span class="hljs-keyword">if</span>(visited[next])&#123;<br>                <span class="hljs-keyword">continue</span>;<br>            &#125;<br><br>            visited[next] = <span class="hljs-keyword">true</span>;<br>            <span class="hljs-keyword">for</span>(Pair node: adjList.<span class="hljs-keyword">get</span>(next))&#123;<br>                <span class="hljs-type">int</span> v = node.dest;<br>                <span class="hljs-type">int</span> weight = node.weight;<br>                <span class="hljs-keyword">if</span>(dist[next] != <span class="hljs-type">Integer</span>.MAX_VALUE &amp;&amp; dist[next] + weight &lt; dist[v])&#123;<br>                    dist[v] = dist[next] + weight;<br>                    pQueue.offer(<span class="hljs-built_in">new</span> Pair(v, dist[v])); //注意这一行<br>                    parent[v] = next;<br>                &#125;<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; V; i++)&#123;<br>            String str = String.format(&quot;%s -&gt; %s: &quot;, init, i);<br>            <span class="hljs-keyword">if</span>(init == i || dist[i] == <span class="hljs-type">Integer</span>.MAX_VALUE)&#123;<br>                <span class="hljs-keyword">System</span>.<span class="hljs-keyword">out</span>.println(str + &quot;不存在路径&quot;);<br>                <span class="hljs-keyword">continue</span>;<br>            &#125;<br>            str += getPath(parent, i);<br>            <span class="hljs-keyword">System</span>.<span class="hljs-keyword">out</span>.println(str);<br>            <span class="hljs-keyword">System</span>.<span class="hljs-keyword">out</span>.println(&quot;距离为：&quot; + dist[i]);<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-built_in">public</span> String getPath(<span class="hljs-type">int</span>[] parent, <span class="hljs-type">int</span> v)&#123;<br>        String tmp = &quot;&quot;;<br>        <span class="hljs-keyword">if</span>(parent[v] == v)&#123;<br>            tmp += v + &quot; &quot;;<br>        &#125;<br>        <span class="hljs-keyword">else</span> tmp += getPath(parent, parent[v]) + v + &quot; &quot;;<br>        <span class="hljs-keyword">return</span> tmp;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%AE%97%E6%B3%95/" class="category-chain-item">算法</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>图-最短路径之Dijkstra算法</div>
+      <div>https://wangfuxun.github.io/posts/5735/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>WangFuxun</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>August 12, 2024</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/37942/" title="图-最短路径之Floyd-Warshall算法">
+                        <span class="hidden-mobile">图-最短路径之Floyd-Warshall算法</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>

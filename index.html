@@ -224,6 +224,114 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
+        <a href="/posts/5735/" target="_self">
+          图-最短路径之Dijkstra算法
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/posts/5735/" target="_self">
+        <div>
+          Dijkstra算法是解决单源点最短路径问题的一种贪心算法，每次向集合中加入一个最短路径的长度最小的节点，直到所有节点均加入集合。Dijkstra算法不能用于边权为负的情况。 假设T表示已经找到最短路径的节点集合，初始时，T为空集。  选择一个节点作为源点。 从集合T之外的节点中选择一个节点u，使得源点到节点u的距离最小，即节点u的最短路径的长度最小，将节点u加入集合T。 更新节点u的所
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-08-12 16:12" pubdate>
+              2024-08-12
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%AE%97%E6%B3%95/" class="category-chain-item">算法</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/posts/37942/" target="_self">
+          图-最短路径之Floyd-Warshall算法
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/posts/37942/" target="_self">
+        <div>
+          Floyd-Warshall算法是解决带权图中多源最短路径问题的一种算法，它能够得到图中任意两个节点的最短路径。Floyd-Warshall算法采用了动态规划的思想，可以适用于边权为负的情况，但是图中不能存在负环。 算法思想：对于节点i和j的最短路径，如果存在一个中间节点k，使得i经由k到j的路径存在，并且该路径长度小于原来的路径长度，则将节点i和j的最短路径更新为这条路径。需要让图中的每一个节
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-08-10 15:07" pubdate>
+              2024-08-10
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%AE%97%E6%B3%95/" class="category-chain-item">算法</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
         <a href="/posts/38857/" target="_self">
           图-最小生成树之Prim算法
         </a>
@@ -232,7 +340,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/posts/38857/" target="_self">
         <div>
-          基本思想与Krusakl算法类似，Prim算法也是一种用于解决最小生成树问题的贪心算法。与Kruskal算法不同的地方在于，它每一轮向最小生成树集合中加入一个节点，直到所有节点全部加入集合，也称为加点法。 假设图G &#x3D; (V, E)，T表示最小生成树集合。初始时T为空集，每个节点到T的距离为无穷大。（1）选定一个节点作为初始节点，将该节点到集合T的距离修改为0。（2）从尚未加入集合T的所
+          基本思想 与Krusakl算法类似，Prim算法也是一种用于解决最小生成树问题的贪心算法。与Kruskal算法不同的地方在于，它每一轮向最小生成树集合中加入一个节点，直到所有节点全部加入集合，也称为加点法。 假设图G = (V, E)，T表示最小生成树集合。初始时T为空集，每个节点到T的距离为无穷大。  选定一个节点作为初始节点，将该节点到集合T的距离修改为0。 从尚未加入集合T的所有
         </div>
       </a>
 
@@ -286,7 +394,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/posts/16155/" target="_self">
         <div>
-          最小生成树 如果连通图G的一个子图是一棵包含G的所有顶点的树，则该子图称为G的生成树(Spanning Tree)。生成树是连通图的包含图中的所有顶点的极小连通子图。  最小生成树（Minimum Spanning Tree，简写为MST）是带权连通图G所有可能的生成树中权值最小的，其中生成树的权值定义为树中所有边的权值之和。 假设无向连通图G&#x3D;(V，E)，V为节点集，E为边集。G的最小
+          最小生成树  如果连通图G的一个子图是一棵包含G的所有顶点的树，则该子图称为G的生成树(Spanning Tree)。生成树是连通图的包含图中的所有顶点的极小连通子图。  最小生成树（Minimum Spanning Tree，简写为MST）是带权连通图G所有可能的生成树中权值最小的，其中生成树的权值定义为树中所有边的权值之和。 假设无向连通图G=(V，E)，V为节点集，E为边集。G
         </div>
       </a>
 
@@ -340,7 +448,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/posts/61809/" target="_self">
         <div>
-          基本思想并查集（Union-Find）是一种树型的数据结构，通常使用森林来表示，每一棵树表示一个集合，树中的节点表示集合中的元素，树的根节点作为一个集合的标识。示例如图所示。 并查集有合并（Union）和 查找（Find）两种基本操作：（1）查找：查找某一个节点所属的集合，即查找某一个节点所在树的根节点。（2）合并：将两个节点所属的两个不相交集合（Disjoint Set）合并为一个集合，即将两棵
+          基本思想 并查集（Union-Find）是一种树型的数据结构，通常使用森林来表示，每一棵树表示一个集合，树中的节点表示集合中的元素，树的根节点作为一个集合的标识。示例如图所示。  并查集有合并（Union）和 查找（Find）两种基本操作： （1）查找：查找某一个节点所属的集合，即查找某一个节点所在树的根节点。 （2）合并：将两个节点所属的两个不相交集合（Disjoint Set）合
         </div>
       </a>
 
@@ -394,7 +502,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/posts/29864/" target="_self">
         <div>
-          在有向图中，使用顶点表示活动、有向边表示活动的先后关系，这样的有向图称为顶点活动网（简称AOV网）。AOV网是一个有向无环图。 拓扑排序（topological sort）是针对有向无环图的排序，即将图中所有节点排成一个线性序列，如果存在从节点u到节点v的有向边，则在线性序列中，节点v只能出现在节点u的后面。注意，拓扑排序并不一定是唯一的。 例如使用AOV网描述课程安排，如下图所示。有的课程需要学
+          在有向图中，使用顶点表示活动、有向边表示活动的先后关系，这样的有向图称为顶点活动网（简称AOV网）。AOV网是一个有向无环图。 拓扑排序（topological sort）是针对有向无环图的排序，即将图中所有节点排成一个线性序列，如果存在从节点u到节点v的有向边，则在线性序列中，节点v只能出现在节点u的后面。注意，拓扑排序并不一定是唯一的。 例如使用AOV网描述课程安排，如下图所示。有的课程
         </div>
       </a>
 
@@ -448,7 +556,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/posts/42854/" target="_self">
         <div>
-          广度优先搜索BFS广度优先搜索的基本思想是从初始节点出发，访问它的所有相邻节点，然后对每一个相邻节点执行相同的操作，直到所有节点遍历完毕。 广度优先搜索使用队列保存待处理的节点，遵守先进先出（FIFO）的原则。首先将初始节点入队，然后从队列中取出节点，并且将该节点的所有未被访问过的相邻节点入队，重复这一过程直到所有节点都被访问。其中需要使用一个数组visited标记节点是否被访问过。 基于邻接矩阵
+          广度优先搜索BFS 广度优先搜索的基本思想是从初始节点出发，访问它的所有相邻节点，然后对每一个相邻节点执行相同的操作，直到所有节点遍历完毕。 广度优先搜索使用队列保存待处理的节点，遵守先进先出（FIFO）的原则。首先将初始节点入队，然后从队列中取出节点，并且将该节点的所有未被访问过的相邻节点入队，重复这一过程直到所有节点都被访问。其中需要使用一个数组visited标记节点是否被访问过。 基于
         </div>
       </a>
 
@@ -502,7 +610,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/posts/12592/" target="_self">
         <div>
-          1.邻接矩阵邻接矩阵（adjacency matrix）是一个二维数组，用来表示图中节点的关系。对于非带权图，如果节点i和节点j之间存在边，则二维数组中i行j列元素为1，否则为0；对于带权图（也称为网），如果节点i和节点j之间存在边，则二维数组中i行j列元素为边的权重，否则为无穷大。 性质：  无向图的邻接矩阵一定为对称矩阵，有向图的邻接矩阵则不一定。 无向图的邻接矩阵i行非零元素个数为节点i的度
+          1.邻接矩阵 邻接矩阵（adjacency matrix）是一个二维数组，用来表示图中节点的关系。对于非带权图，如果节点i和节点j之间存在边，则二维数组中i行j列元素为1，否则为0；对于带权图（也称为网），如果节点i和节点j之间存在边，则二维数组中i行j列元素为边的权重，否则为无穷大。 性质： 1. 无向图的邻接矩阵一定为对称矩阵，有向图的邻接矩阵则不一定。 2. 无向图的邻接矩阵i行
         </div>
       </a>
 
@@ -556,7 +664,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/posts/43931/" target="_self">
         <div>
-          字典树(Trie)，也称为前缀树或单词查找树，是一种树型的数据结构，常用于存储字符串集合。许多编辑器或搜索引擎的词频统计、前缀匹配、自动补全、拼写检查等功能都是基于字典树实现的。其性质如下： 1.根节点不包含字符，除根节点外每一个节点都只包含一个字符。2.从根节点到某一节点，路径上经过的字符连接起来，为该节点对应的字符串。3.每个节点的所有子节点包含的字符都不相同。 示例如下图所示。 与字典树相关
+          字典树(Trie)，也称为前缀树或单词查找树，是一种树型的数据结构，常用于存储字符串集合。许多编辑器或搜索引擎的词频统计、前缀匹配、自动补全、拼写检查等功能都是基于字典树实现的。其性质如下： 1.根节点不包含字符，除根节点外每一个节点都只包含一个字符。 2.从根节点到某一节点，路径上经过的字符连接起来，为该节点对应的字符串。 3.每个节点的所有子节点包含的字符都不相同。 示例如下图所示。
         </div>
       </a>
 
@@ -610,7 +718,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/posts/22932/" target="_self">
         <div>
-          Boyer-Moore算法，即BM算法，是一种非常高效的字符串搜索算法，擅长处理大规模文本和长模式串。它的核心思想是当主串与模式串在某一位置失配时，根据某种规则，跳过一些不必要的比较，提高字符串匹配的效率。目前大多数文本编辑器中的字符串查找、替换功能都是使用BM算法实现的。 BM算法由坏字符和好后缀两个启发式规则组成，下面将对这两部分进行具体介绍。 坏字符规则与KMP算法不同，BM算法是从模式串的
+          Boyer-Moore算法，即BM算法，是一种非常高效的字符串搜索算法，擅长处理大规模文本和长模式串。它的核心思想是当主串与模式串在某一位置失配时，根据某种规则，跳过一些不必要的比较，提高字符串匹配的效率。目前大多数文本编辑器中的字符串查找、替换功能都是使用BM算法实现的。 BM算法由坏字符和好后缀两个启发式规则组成，下面将对这两部分进行具体介绍。 坏字符规则 与KMP算法不同，BM算法是从
         </div>
       </a>
 
@@ -620,114 +728,6 @@
             <i class="iconfont icon-date"></i>
             <time datetime="2024-07-05 13:39" pubdate>
               2024-07-05
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E7%AE%97%E6%B3%95/" class="category-chain-item">算法</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/posts/35766/" target="_self">
-          串匹配-KMP算法
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/posts/35766/" target="_self">
-        <div>
-          串匹配串匹配，也称为模式匹配，即对于一个字符串P，在某一个字符串T中找出与串P相同的子串，并返回该子串在T中的位置。其中字符串P称为模式串，待查找的字符串T称为目标串或者主串。 BF算法BF(Brute Force)算法，又称为朴素模式匹配算法。 算法思路：从主串的第一个字符开始，与模式串的第一个字符进行比较，如果相同，则依次比较后续字符；如果不相同，即主串和模式串失配，则从主串的后一个字符开始，
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2024-07-01 14:13" pubdate>
-              2024-07-01
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E7%AE%97%E6%B3%95/" class="category-chain-item">算法</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/posts/25823/" target="_self">
-          排序算法-非比较排序
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/posts/25823/" target="_self">
-        <div>
-          计数排序计数排序是一种非比较排序算法，采用了哈希思想。 算法思路：  找出待排序序列的最大值和最小值，确定序列元素的范围。 创建一个计数数组用来统计序列中每个元素的出现次数。 采用前缀和思想对计数数组进行修改，获得每个元素最终位置的右边界。 从右向左遍历待排序序列，根据前缀和数组确定当前元素的最终位置。  代码： 123456789101112131415161718192021222324252
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2024-06-23 13:48" pubdate>
-              2024-06-23
             </time>
           </div>
         

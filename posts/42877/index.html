@@ -16,22 +16,21 @@
   <meta name="author" content="WangFuxun">
   <meta name="keywords" content="">
   
-    <meta name="description" content="二分查找概述二分查找（Binary Search，简称BS），又称折半查找 ，是一种效率很高的查找方法。 算法要求：1.线性表必须采用顺序存储结构，不能为链式结构2.元素已经排过序(有序) 算法原理：每次取搜索区间[low，high]中间位置mid的值进行判断，进而使搜索区间减半，即将原区间划分为[low,mid-1]和[mid+1,high]两个区间。重复这一过程，查找结束，获取目标值的索引或者">
+    <meta name="description" content="二分查找概述 二分查找（Binary Search，简称BS），又称折半查找 ，是一种效率很高的查找方法。 算法要求： 1.线性表必须采用顺序存储结构，不能为链式结构 2.元素已经排过序(有序) 算法原理： 每次取搜索区间[low，high]中间位置mid的值进行判断，进而使搜索区间减半，即将原区间划分为[low,mid-1]和[mid+1,high]两个区间。重复这一过程，查找结">
 <meta property="og:type" content="article">
 <meta property="og:title" content="二分查找">
 <meta property="og:url" content="https://wangfuxun.github.io/posts/42877/index.html">
 <meta property="og:site_name" content="用心流浪">
-<meta property="og:description" content="二分查找概述二分查找（Binary Search，简称BS），又称折半查找 ，是一种效率很高的查找方法。 算法要求：1.线性表必须采用顺序存储结构，不能为链式结构2.元素已经排过序(有序) 算法原理：每次取搜索区间[low，high]中间位置mid的值进行判断，进而使搜索区间减半，即将原区间划分为[low,mid-1]和[mid+1,high]两个区间。重复这一过程，查找结束，获取目标值的索引或者">
+<meta property="og:description" content="二分查找概述 二分查找（Binary Search，简称BS），又称折半查找 ，是一种效率很高的查找方法。 算法要求： 1.线性表必须采用顺序存储结构，不能为链式结构 2.元素已经排过序(有序) 算法原理： 每次取搜索区间[low，high]中间位置mid的值进行判断，进而使搜索区间减半，即将原区间划分为[low,mid-1]和[mid+1,high]两个区间。重复这一过程，查找结">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://wangfuxun.github.io/images/BS/%E6%A0%87%E5%87%86BS.png">
-<meta property="og:image" content="https://wangfuxun.github.io/images/BS/%E5%B7%A6%E8%BE%B9%E7%95%8CBS.png">
-<meta property="og:image" content="https://wangfuxun.github.io/images/BS/%E5%B7%A6%E8%BE%B9%E7%95%8CBS-low%E8%B6%8A%E7%95%8C.png">
-<meta property="og:image" content="https://wangfuxun.github.io/images/BS/%E5%8F%B3%E8%BE%B9%E7%95%8CBS.png">
+<meta property="og:image" content="https://wangfuxun.github.io/posts/images/BS/%E6%A0%87%E5%87%86BS.png">
+<meta property="og:image" content="https://wangfuxun.github.io/posts/images/BS/%E5%B7%A6%E8%BE%B9%E7%95%8CBS.png">
+<meta property="og:image" content="https://wangfuxun.github.io/posts/images/BS/%E5%B7%A6%E8%BE%B9%E7%95%8CBS-low%E8%B6%8A%E7%95%8C.png">
 <meta property="article:published_time" content="2023-09-09T09:00:06.000Z">
 <meta property="article:modified_time" content="2023-09-09T09:24:24.393Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://wangfuxun.github.io/images/BS/%E6%A0%87%E5%87%86BS.png">
+<meta name="twitter:image" content="https://wangfuxun.github.io/posts/images/BS/%E6%A0%87%E5%87%86BS.png">
   
   
   
@@ -224,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.5k words
+          2.4k words
         
       </span>
     
@@ -277,38 +276,54 @@
             
               <div class="markdown-body">
                 
-                <h2 id="二分查找概述"><a href="#二分查找概述" class="headerlink" title="二分查找概述"></a>二分查找概述</h2><p>二分查找（Binary Search，简称<strong>BS</strong>），又称<strong>折半查找</strong> ，是一种效率很高的查找方法。</p>
-<p>算法要求：<br>1.线性表必须采用<strong>顺序存储</strong>结构，不能为链式结构<br>2.元素已经排过序(<strong>有序</strong>)</p>
-<p>算法原理：<br>每次取搜索区间[low，high]中间位置mid的值进行判断，进而使搜索区间减半，即将原区间划分为[low,mid-1]和[mid+1,high]两个区间。重复这一过程，查找结束，获取目标值的索引或者未找到。</p>
-<p>时间复杂度：<br>每一次以中间元素作为根节点，将中间元素的左侧区间和右侧区间分别作为左子树和右子树，依次执行可以将整个区间转化为一棵<strong>二叉搜索树</strong>。该搜索树的高度为logn，因此时间复杂度为<strong>O（logn）</strong>。</p>
+                <h2 id="二分查找概述">二分查找概述</h2>
+<p>二分查找（Binary
+Search，简称<strong>BS</strong>），又称<strong>折半查找</strong>
+，是一种效率很高的查找方法。</p>
+<p>算法要求：
+1.线性表必须采用<strong>顺序存储</strong>结构，不能为链式结构
+2.元素已经排过序(<strong>有序</strong>)</p>
+<p>算法原理：
+每次取搜索区间[low，high]中间位置mid的值进行判断，进而使搜索区间减半，即将原区间划分为[low,mid-1]和[mid+1,high]两个区间。重复这一过程，查找结束，获取目标值的索引或者未找到。</p>
+<p>时间复杂度：
+每一次以中间元素作为根节点，将中间元素的左侧区间和右侧区间分别作为左子树和右子树，依次执行可以将整个区间转化为一棵<strong>二叉搜索树</strong>。该搜索树的高度为logn，因此时间复杂度为<strong>O（logn）</strong>。</p>
 <p>对于二分查找的理解，Kmp算法的发明者Knuth曾经说过：思路很简单，细节是魔鬼。BS具有许多实现形式（循环、递归等），而这些形式在细节上有所不同，比如搜索区间（左开右闭、左闭右开、左闭右闭等）、循环条件、区间更新操作等。</p>
-<h2 id="标准BS"><a href="#标准BS" class="headerlink" title="标准BS"></a>标准BS</h2><p>搜索区间：[low,high]（<strong>左闭右闭</strong>）（下面以升序为例）<br>思路：每次比较target与当前中间位置元素nums[mid]的大小。如果两者相等，则找到目标元素的索引；如果target比较大，则说明target在mid右侧；如果target比较小，则说明target在mid左侧。经过上述过程，<strong>low左侧的元素都比target小，high右侧的元素比target大</strong>，当low&#x3D;&#x3D;high+1时，说明未找到元素，终止循环，见下图。</p>
-<p><img src="/../images/BS/%E6%A0%87%E5%87%86BS.png" srcset="/img/loading.gif" lazyload alt="标准BS"></p>
-<p>代码：</p>
-<figure class="highlight stan"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs stan"><span class="hljs-type">int</span> binarySearch(<span class="hljs-type">vector</span>&lt;<span class="hljs-type">int</span>&gt; nums, <span class="hljs-type">int</span> <span class="hljs-built_in">target</span>)&#123;<br>    <span class="hljs-type">int</span> low = <span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> high = nums.<span class="hljs-built_in">size</span>()-<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span>(low &lt;= high)&#123;<br>        <span class="hljs-type">int</span> mid = (low+high)/<span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">if</span>(nums[mid] == <span class="hljs-built_in">target</span>) <span class="hljs-keyword">return</span> mid;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid] &lt; <span class="hljs-built_in">target</span>) low = mid+<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid] &gt; <span class="hljs-built_in">target</span>) high = mid-<span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>; <span class="hljs-comment">//表示未找到</span><br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p>作用：查找某一个数<br>注意：</p>
-<ol>
-<li>由于mid本身已经判断过，无需进行下一步的搜索，因此区间更新操作为low&#x3D;mid+1或者high&#x3D;mid-1（而不是low&#x3D;mid或者high&#x3D;mid）。</li>
-<li>循环判断条件为low&lt;&#x3D;high，对应的终止条件为low&#x3D;&#x3D;high+1，此时搜索区间为空。而如果改为low&lt;high，则终止条件为low&#x3D;&#x3D;high，当前索引low没有被搜索。</li>
+<h2 id="标准bs">标准BS</h2>
+<p>搜索区间：[low,high]（<strong>左闭右闭</strong>）（下面以升序为例）
+思路：每次比较target与当前中间位置元素nums[mid]的大小。如果两者相等，则找到目标元素的索引；如果target比较大，则说明target在mid右侧；如果target比较小，则说明target在mid左侧。经过上述过程，<strong>low左侧的元素都比target小，high右侧的元素比target大</strong>，当low==high+1时，说明未找到元素，终止循环，见下图。</p>
+<figure>
+<img src="../images/BS/标准BS.png" srcset="/img/loading.gif" lazyload alt="标准BS" />
+<figcaption aria-hidden="true">标准BS</figcaption>
+</figure>
+<p>代码： <figure class="highlight stan"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs stan"><span class="hljs-type">int</span> binarySearch(<span class="hljs-type">vector</span>&lt;<span class="hljs-type">int</span>&gt; nums, <span class="hljs-type">int</span> <span class="hljs-built_in">target</span>)&#123;<br>    <span class="hljs-type">int</span> low = <span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> high = nums.<span class="hljs-built_in">size</span>()-<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span>(low &lt;= high)&#123;<br>        <span class="hljs-type">int</span> mid = (low+high)/<span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">if</span>(nums[mid] == <span class="hljs-built_in">target</span>) <span class="hljs-keyword">return</span> mid;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid] &lt; <span class="hljs-built_in">target</span>) low = mid+<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid] &gt; <span class="hljs-built_in">target</span>) high = mid-<span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>; <span class="hljs-comment">//表示未找到</span><br>&#125;<br></code></pre></td></tr></table></figure></p>
+<p>作用：查找某一个数 注意：</p>
+<ol type="1">
+<li>由于mid本身已经判断过，无需进行下一步的搜索，因此区间更新操作为low=mid+1或者high=mid-1（而不是low=mid或者high=mid）。</li>
+<li>循环判断条件为low&lt;=high，对应的终止条件为low==high+1，此时搜索区间为空。而如果改为low&lt;high，则终止条件为low==high，当前索引low没有被搜索。</li>
 <li><strong>溢出问题</strong>：在low和high的值较大的情况下，计算mid时会产生整数溢出。因此可以将mid的计算形式改为<code>mid=low+(high-low)/2</code></li>
 </ol>
-<h2 id="边界问题"><a href="#边界问题" class="headerlink" title="边界问题"></a>边界问题</h2><p>对于一些获取左右边界的问题，例如对于序列seq&#x3D;[1，2，3，3，3，4，5]，target&#x3D;3，如果想要获取第一个等于target的元素的下标，标准BS则无法解决。下面以查找左边界为例。</p>
-<p>搜索区间：[low,high]（左闭右闭）<br>思路：比较target与nums[mid]的大小，记第一个等于target的元素为elem。如果两者相等，则说明elem在mid左侧或者等于mid。如果target比较大，则说明elem在mid右侧；如果target比较小，则elem一定在mid左侧。<strong>low左侧的元素都比target小，high右侧的元素都大于等于target</strong>，当low&#x3D;&#x3D;high+1时，终止循环，见下图。</p>
-<p><img src="/../images/BS/%E5%B7%A6%E8%BE%B9%E7%95%8CBS.png" srcset="/img/loading.gif" lazyload alt="左边界BS"></p>
-<p>代码：</p>
-<figure class="highlight stan"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs stan"><span class="hljs-type">int</span> binarySearch_lowerBound(<span class="hljs-type">vector</span>&lt;<span class="hljs-type">int</span>&gt; nums, <span class="hljs-type">int</span> <span class="hljs-built_in">target</span>)&#123;<br>    <span class="hljs-type">int</span> low = <span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> high = nums.<span class="hljs-built_in">size</span>()-<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span>(low &lt;= high)&#123;<br>        <span class="hljs-type">int</span> mid = (low+high)/<span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">if</span>(nums[mid] == <span class="hljs-built_in">target</span>) high = mid-<span class="hljs-number">1</span>; <br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid] &lt; <span class="hljs-built_in">target</span>) low = mid+<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid] &gt; <span class="hljs-built_in">target</span>) high = mid-<span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(low == nums.<span class="hljs-built_in">size</span>() || nums[low] != <span class="hljs-built_in">target</span>) <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>; <span class="hljs-comment">//未找到</span><br>    <span class="hljs-keyword">return</span> low; <span class="hljs-comment">//找到左边界</span><br>&#125;<br></code></pre></td></tr></table></figure>
-<p>注意：<br>1.与标准BS不同之处在于：当nums[mid]&#x3D;&#x3D;target时，elem可能在mid左侧，因此high&#x3D;mid-1，而不能返回索引。<br>2.循环终止条件只有一个，即low&#x3D;&#x3D;high+1，无论查找成功或者失败，只要满足这一条件时均会终止循环，因此需要判断是否查找成功。如果<strong>当前low对应的元素不等于target或者low等于数组长度</strong>（见下图），则查找失败；反之查找成功，此时low对应的元素即为elem。</p>
-<p><img src="/../images/BS/%E5%B7%A6%E8%BE%B9%E7%95%8CBS-low%E8%B6%8A%E7%95%8C.png" srcset="/img/loading.gif" lazyload alt="low越界"></p>
-<p>附查找右边界的代码：</p>
-<figure class="highlight stan"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs stan"><span class="hljs-type">int</span> binarySearch_upperBound(<span class="hljs-type">vector</span>&lt;<span class="hljs-type">int</span>&gt; nums, <span class="hljs-type">int</span> <span class="hljs-built_in">target</span>)&#123;<br>    <span class="hljs-type">int</span> low = <span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> high = nums.<span class="hljs-built_in">size</span>()-<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span>(low &lt;= high)&#123;<br>        <span class="hljs-type">int</span> mid = (low+high)/<span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">if</span>(nums[mid] == <span class="hljs-built_in">target</span>) low = mid+<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid] &lt; <span class="hljs-built_in">target</span>) low = mid+<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid] &gt; <span class="hljs-built_in">target</span>) high = mid-<span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(high&lt;<span class="hljs-number">0</span> || nums[high] != <span class="hljs-built_in">target</span>) <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>; <span class="hljs-comment">//未找到</span><br>    <span class="hljs-keyword">return</span> high; <span class="hljs-comment">//找到右边界</span><br>&#125;<br></code></pre></td></tr></table></figure>
-<p><img src="/../images/BS/%E5%8F%B3%E8%BE%B9%E7%95%8CBS.png" srcset="/img/loading.gif" lazyload alt="右边界BS"></p>
-<p><strong>参考文章</strong>：</p>
-<ol>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/kyoner/p/11080078.html">详解二分查找算法</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qjyws/article/details/126416671">算法刷题：二分查找及对应左边界和右边界的寻找整理</a></li>
-<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/569929092">二分查找</a></li>
-</ol>
+<h2 id="边界问题">边界问题</h2>
+<p>对于一些获取左右边界的问题，例如对于序列seq=[1，2，3，3，3，4，5]，target=3，如果想要获取第一个等于target的元素的下标，标准BS则无法解决。下面以查找左边界为例。</p>
+<p>搜索区间：[low,high]（左闭右闭）
+思路：比较target与nums[mid]的大小，记第一个等于target的元素为elem。如果两者相等，则说明elem在mid左侧或者等于mid。如果target比较大，则说明elem在mid右侧；如果target比较小，则elem一定在mid左侧。<strong>low左侧的元素都比target小，high右侧的元素都大于等于target</strong>，当low==high+1时，终止循环，见下图。</p>
+<figure>
+<img src="../images/BS/左边界BS.png" srcset="/img/loading.gif" lazyload alt="左边界BS" />
+<figcaption aria-hidden="true">左边界BS</figcaption>
+</figure>
+<p>代码： <figure class="highlight stan"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs stan"><span class="hljs-type">int</span> binarySearch_lowerBound(<span class="hljs-type">vector</span>&lt;<span class="hljs-type">int</span>&gt; nums, <span class="hljs-type">int</span> <span class="hljs-built_in">target</span>)&#123;<br>    <span class="hljs-type">int</span> low = <span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> high = nums.<span class="hljs-built_in">size</span>()-<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span>(low &lt;= high)&#123;<br>        <span class="hljs-type">int</span> mid = (low+high)/<span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">if</span>(nums[mid] == <span class="hljs-built_in">target</span>) high = mid-<span class="hljs-number">1</span>; <br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid] &lt; <span class="hljs-built_in">target</span>) low = mid+<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid] &gt; <span class="hljs-built_in">target</span>) high = mid-<span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(low == nums.<span class="hljs-built_in">size</span>() || nums[low] != <span class="hljs-built_in">target</span>) <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>; <span class="hljs-comment">//未找到</span><br>    <span class="hljs-keyword">return</span> low; <span class="hljs-comment">//找到左边界</span><br>&#125;<br></code></pre></td></tr></table></figure> 注意：
+1.与标准BS不同之处在于：当nums[mid]==target时，elem可能在mid左侧，因此high=mid-1，而不能返回索引。
+2.循环终止条件只有一个，即low==high+1，无论查找成功或者失败，只要满足这一条件时均会终止循环，因此需要判断是否查找成功。如果<strong>当前low对应的元素不等于target或者low等于数组长度</strong>（见下图），则查找失败；反之查找成功，此时low对应的元素即为elem。</p>
+<figure>
+<img src="../images/BS/左边界BS-low越界.png" srcset="/img/loading.gif" lazyload alt="low越界" />
+<figcaption aria-hidden="true">low越界</figcaption>
+</figure>
+<p>附查找右边界的代码： <figure class="highlight stan"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs stan"><span class="hljs-type">int</span> binarySearch_upperBound(<span class="hljs-type">vector</span>&lt;<span class="hljs-type">int</span>&gt; nums, <span class="hljs-type">int</span> <span class="hljs-built_in">target</span>)&#123;<br>    <span class="hljs-type">int</span> low = <span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> high = nums.<span class="hljs-built_in">size</span>()-<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span>(low &lt;= high)&#123;<br>        <span class="hljs-type">int</span> mid = (low+high)/<span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">if</span>(nums[mid] == <span class="hljs-built_in">target</span>) low = mid+<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid] &lt; <span class="hljs-built_in">target</span>) low = mid+<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid] &gt; <span class="hljs-built_in">target</span>) high = mid-<span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(high&lt;<span class="hljs-number">0</span> || nums[high] != <span class="hljs-built_in">target</span>) <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>; <span class="hljs-comment">//未找到</span><br>    <span class="hljs-keyword">return</span> high; <span class="hljs-comment">//找到右边界</span><br>&#125;<br></code></pre></td></tr></table></figure> <img
+src="../images/BS/右边界BS.png" srcset="/img/loading.gif" lazyload alt="右边界BS" /></p>
+<p><strong>参考文章</strong>： 1. <a
+target="_blank" rel="noopener" href="https://www.cnblogs.com/kyoner/p/11080078.html">详解二分查找算法</a>
+2. <a
+target="_blank" rel="noopener" href="https://blog.csdn.net/qjyws/article/details/126416671">算法刷题：二分查找及对应左边界和右边界的寻找整理</a>
+3. <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/569929092">二分查找</a></p>
 
                 
               </div>

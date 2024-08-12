@@ -16,22 +16,22 @@
   <meta name="author" content="WangFuxun">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1.列表 list列表（即数组）索引值从0开始，一般情况下默认列表中的所有数据的类型一致。 常用方法如下： 注意：  clear与del的区别clear会清除列表中所有元素，但内存并未释放，仍然可以通过变量名访问；del关键字会将变量从内存中删除，此时不能继续使用变量名，否则会报错。如果仅删除某一个索引对应的元素，则后续元素均向前移动一位，索引值均减1。区别见下图：    append与exten">
+    <meta name="description" content="1.列表 list 列表（即数组）索引值从0开始，一般情况下默认列表中的所有数据的类型一致。 常用方法如下：  注意： 1. clear与del的区别 clear会清除列表中所有元素，但内存并未释放，仍然可以通过变量名访问；del关键字会将变量从内存中删除，此时不能继续使用变量名，否则会报错。如果仅删除某一个索引对应的元素，则后续元素均向前移动一位，索引值均减1。区别见下图：   d">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python基础-数据容器(1)">
 <meta property="og:url" content="https://wangfuxun.github.io/posts/46737/index.html">
 <meta property="og:site_name" content="用心流浪">
-<meta property="og:description" content="1.列表 list列表（即数组）索引值从0开始，一般情况下默认列表中的所有数据的类型一致。 常用方法如下： 注意：  clear与del的区别clear会清除列表中所有元素，但内存并未释放，仍然可以通过变量名访问；del关键字会将变量从内存中删除，此时不能继续使用变量名，否则会报错。如果仅删除某一个索引对应的元素，则后续元素均向前移动一位，索引值均减1。区别见下图：    append与exten">
+<meta property="og:description" content="1.列表 list 列表（即数组）索引值从0开始，一般情况下默认列表中的所有数据的类型一致。 常用方法如下：  注意： 1. clear与del的区别 clear会清除列表中所有元素，但内存并未释放，仍然可以通过变量名访问；del关键字会将变量从内存中删除，此时不能继续使用变量名，否则会报错。如果仅删除某一个索引对应的元素，则后续元素均向前移动一位，索引值均减1。区别见下图：   d">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://wangfuxun.github.io/images/Python/%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8(1)-list.png">
-<meta property="og:image" content="https://wangfuxun.github.io/images/Python/%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8(1)-del.png">
-<meta property="og:image" content="https://wangfuxun.github.io/images/Python/%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8(1)-append.png">
-<meta property="og:image" content="https://wangfuxun.github.io/images/Python/%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8(1)-keys.png">
+<meta property="og:image" content="https://wangfuxun.github.io/posts/images/Python/%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8(1)-list.png">
+<meta property="og:image" content="https://wangfuxun.github.io/posts/images/Python/%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8(1)-del.png">
+<meta property="og:image" content="https://wangfuxun.github.io/posts/images/Python/%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8(1)-append.png">
+<meta property="og:image" content="https://wangfuxun.github.io/posts/images/Python/%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8(1)-keys.png">
 <meta property="article:published_time" content="2023-08-03T09:30:12.000Z">
 <meta property="article:modified_time" content="2023-08-13T02:40:50.415Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://wangfuxun.github.io/images/Python/%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8(1)-list.png">
+<meta name="twitter:image" content="https://wangfuxun.github.io/posts/images/Python/%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8(1)-list.png">
   
   
   
@@ -277,61 +277,62 @@
             
               <div class="markdown-body">
                 
-                <h2 id="1-列表-list"><a href="#1-列表-list" class="headerlink" title="1.列表 list"></a>1.列表 list</h2><p>列表（即数组）索引值从0开始，一般情况下默认列表中的所有数据的类型一致。</p>
-<p>常用方法如下：<br><img src="/../images/Python/%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8(1)-list.png" srcset="/img/loading.gif" lazyload alt="列表常用方法总结"></p>
-<p>注意：</p>
-<ol>
-<li>clear与del的区别<br>clear会清除列表中所有元素，但内存并未释放，仍然可以通过变量名访问；<strong>del关键字会将变量从内存中删除</strong>，此时不能继续使用变量名，否则会报错。如果仅删除某一个索引对应的元素，则后续元素均向前移动一位，索引值均减1。区别见下图：</li>
+                <h2 id="列表-list">1.列表 list</h2>
+<p>列表（即数组）索引值从0开始，一般情况下默认列表中的所有数据的类型一致。</p>
+<p>常用方法如下： <img src="../images/Python/数据容器(1)-list.png" srcset="/img/loading.gif" lazyload
+alt="列表常用方法总结" /></p>
+<p>注意： 1. clear与del的区别
+clear会清除列表中所有元素，但内存并未释放，仍然可以通过变量名访问；<strong>del关键字会将变量从内存中删除</strong>，此时不能继续使用变量名，否则会报错。如果仅删除某一个索引对应的元素，则后续元素均向前移动一位，索引值均减1。区别见下图：</p>
+<figure>
+<img src="../images/Python/数据容器(1)-del.png" srcset="/img/loading.gif" lazyload alt="del删除列表" />
+<figcaption aria-hidden="true">del删除列表</figcaption>
+</figure>
+<ol start="2" type="1">
+<li>append与extend的区别
+extend用于合并列表，将需要插入的列表的元素加入原列表，参数为<strong>可迭代对象</strong>；append直接将整个对象当作一个元素加入原列表末尾，参数为任意对象。其区别见下图：</li>
 </ol>
-<p><img src="/../images/Python/%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8(1)-del.png" srcset="/img/loading.gif" lazyload alt="del删除列表"></p>
-<ol start="2">
-<li>append与extend的区别<br>extend用于合并列表，将需要插入的列表的元素加入原列表，参数为<strong>可迭代对象</strong>；append直接将整个对象当作一个元素加入原列表末尾，参数为任意对象。其区别见下图：</li>
-</ol>
-<p><img src="/../images/Python/%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8(1)-append.png" srcset="/img/loading.gif" lazyload alt="append与extend"></p>
-<h2 id="2-元组-tuple"><a href="#2-元组-tuple" class="headerlink" title="2.元组 tuple"></a>2.元组 tuple</h2><p>元组是由多个元素组成的序列，<strong>元组的元素不能被修改</strong></p>
+<figure>
+<img src="../images/Python/数据容器(1)-append.png" srcset="/img/loading.gif" lazyload
+alt="append与extend" />
+<figcaption aria-hidden="true">append与extend</figcaption>
+</figure>
+<h2 id="元组-tuple">2.元组 tuple</h2>
+<p>元组是由多个元素组成的序列，<strong>元组的元素不能被修改</strong></p>
 <p><strong>元组只包含一个元素时需要在元素后面添加逗号</strong></p>
 <p>常用方法：</p>
 <figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs axapta"><span class="hljs-meta"># t代表元组</span><br><br>t.<span class="hljs-keyword">count</span>(k) <span class="hljs-meta"># 统计数据k出现的次数</span><br><br>t.<span class="hljs-keyword">index</span>(k) <span class="hljs-meta"># 查找数据k，返回数据k第一次匹配时的索引位置，如果对象不在元组中会产生异常</span><br><br>len(t) <span class="hljs-meta"># 统计元组的长度</span><br></code></pre></td></tr></table></figure>
-
-
-
 <p>应用：（1）函数的参数和返回值（2）格式化字符串（3）将列表转化为元组，保证数据安全</p>
-<p>元组和列表的转换<br>元组-&gt;列表：列表&#x3D;list（元组）  列表-&gt;元组：元组&#x3D;tuple（列表）</p>
-<p>面试题：交换两个数字a&#x3D;6,b&#x3D;100,不能使用其他变量<br>解法一：a&#x3D;a+b b&#x3D;a-b a&#x3D;a-b<br>解法二：使用元组 a,b&#x3D;(b,a)</p>
-<h2 id="3-集合"><a href="#3-集合" class="headerlink" title="3.集合"></a>3.集合</h2><p>Python中的集合与数学上的集合一致。集合是<strong>无序</strong>对象的聚集，并且集合中的元素<strong>不重复</strong>。存储的元素为字符串、数值类型或者元组等<strong>不可变类型</strong>。集合的内部实现基于<strong>哈希表</strong>。集合之间可以进行并集、交集、差集等运算。</p>
+<p>元组和列表的转换 元组-&gt;列表：列表=list（元组）
+列表-&gt;元组：元组=tuple（列表）</p>
+<p>面试题：交换两个数字a=6,b=100,不能使用其他变量 解法一：a=a+b b=a-b
+a=a-b 解法二：使用元组 a,b=(b,a)</p>
+<h2 id="集合">3.集合</h2>
+<p>Python中的集合与数学上的集合一致。集合是<strong>无序</strong>对象的聚集，并且集合中的元素<strong>不重复</strong>。存储的元素为字符串、数值类型或者元组等<strong>不可变类型</strong>。集合的内部实现基于<strong>哈希表</strong>。集合之间可以进行并集、交集、差集等运算。</p>
 <p>集合分为可变集合set和不可变集合frozenset。下面主要介绍可变集合的常用方法(其中s、s1、s2均代表集合名)：</p>
-<ol>
-<li><p>添加</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs csharp">s.<span class="hljs-keyword">add</span>(elem)  <span class="hljs-meta"># 向集合添加一个元素elem，如果该元素已存在则不产生效果</span><br>s.update(iter)  <span class="hljs-meta"># 将可迭代对象iter的元素添加到集合中   </span><br></code></pre></td></tr></table></figure>
-</li>
-<li><p>删除</p>
-<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs maxima">s.<span class="hljs-built_in">remove</span>(<span class="hljs-built_in">elem</span>) # 删除指定元素<span class="hljs-built_in">elem</span>，如果不存在会报错<br>s.discard(<span class="hljs-built_in">elem</span>) # 删除指定元素<span class="hljs-built_in">elem</span>，如果不存在则忽略<br>s.clear()   # 清空集合<br></code></pre></td></tr></table></figure>
-
-</li>
-<li><p>集合运算</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">s1</span> &amp; s2 <span class="hljs-comment"># 交集</span><br>s1 | s2 <span class="hljs-comment"># 并集</span><br>s1 - s2 <span class="hljs-comment"># 差集</span><br></code></pre></td></tr></table></figure>
-<p>注意：如果要创建一个空集合，则必须用set函数创建，不能使用{ }创建（否则会创建一个空字典）</p>
-</li>
+<ol type="1">
+<li><p>添加 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs csharp">s.<span class="hljs-keyword">add</span>(elem)  <span class="hljs-meta"># 向集合添加一个元素elem，如果该元素已存在则不产生效果</span><br>s.update(iter)  <span class="hljs-meta"># 将可迭代对象iter的元素添加到集合中   </span><br></code></pre></td></tr></table></figure></p></li>
+<li><p>删除 <figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs maxima">s.<span class="hljs-built_in">remove</span>(<span class="hljs-built_in">elem</span>) # 删除指定元素<span class="hljs-built_in">elem</span>，如果不存在会报错<br>s.discard(<span class="hljs-built_in">elem</span>) # 删除指定元素<span class="hljs-built_in">elem</span>，如果不存在则忽略<br>s.clear()   # 清空集合<br></code></pre></td></tr></table></figure></p></li>
+<li><p>集合运算 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">s1</span> &amp; s2 <span class="hljs-comment"># 交集</span><br>s1 | s2 <span class="hljs-comment"># 并集</span><br>s1 - s2 <span class="hljs-comment"># 差集</span><br></code></pre></td></tr></table></figure>
+注意：如果要创建一个空集合，则必须用set函数创建，不能使用{
+}创建（否则会创建一个空字典）</p></li>
 </ol>
-<h2 id="4-字典-dict"><a href="#4-字典-dict" class="headerlink" title="4.字典 dict"></a>4.字典 dict</h2><p>字典是<strong>存储无序</strong>的对象集合（列表存储的是有序对象），是键和值的<strong>哈希映射</strong>关系。它的实现同样基于<strong>哈希表</strong>。</p>
-<p>特点：<br>（1）使用键值对存储数据，键值对之间使用逗号分隔，键和值之间使用冒号分隔<br>（2）<strong>键必须唯一</strong><br>（3）键必须是<strong>不可变类型</strong>，值可以取任意数据类型</p>
+<h2 id="字典-dict">4.字典 dict</h2>
+<p>字典是<strong>存储无序</strong>的对象集合（列表存储的是有序对象），是键和值的<strong>哈希映射</strong>关系。它的实现同样基于<strong>哈希表</strong>。</p>
+<p>特点：
+（1）使用键值对存储数据，键值对之间使用逗号分隔，键和值之间使用冒号分隔
+（2）<strong>键必须唯一</strong>
+（3）键必须是<strong>不可变类型</strong>，值可以取任意数据类型</p>
 <p>字典的常用方法如下(其中d代表字典名,key代表键，value代表值)：</p>
-<ol>
-<li><p>添加</p>
-<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs q">d[<span class="hljs-built_in">key</span>]=<span class="hljs-built_in">value</span>   # 如果<span class="hljs-built_in">key</span>存在，修改已存在的键值对；如果<span class="hljs-built_in">key</span>不存在，新增键值对<br><br>d1.<span class="hljs-keyword">update</span>(d2) <br># 将字典d2合并到字典d1中。如果字典d1和字典d2存在相同的键，则将对原键值对进行覆盖<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>查看</p>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">keys</span> = d.keys()      <span class="hljs-comment"># 获取所有键key</span><br><span class="hljs-attr">values</span> = d.values()  <span class="hljs-comment"># 获取所有值value</span><br><span class="hljs-attr">items</span> = d.items()    <span class="hljs-comment"># 获取字典中的每一个元素</span><br></code></pre></td></tr></table></figure>
-<p>这三种方法的返回值均为<strong>可迭代的视图对象</strong>，它们并不具备列表的功能，即无法通过索引获取元素、无法修改、无法使用内置方法等，仅支持迭代遍历。可以通过list函数将这些对象转化为列表进行操作。</p>
-</li>
+<ol type="1">
+<li><p>添加 <figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs q">d[<span class="hljs-built_in">key</span>]=<span class="hljs-built_in">value</span>   # 如果<span class="hljs-built_in">key</span>存在，修改已存在的键值对；如果<span class="hljs-built_in">key</span>不存在，新增键值对<br><br>d1.<span class="hljs-keyword">update</span>(d2) <br># 将字典d2合并到字典d1中。如果字典d1和字典d2存在相同的键，则将对原键值对进行覆盖<br></code></pre></td></tr></table></figure></p></li>
+<li><p>查看 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">keys</span> = d.keys()      <span class="hljs-comment"># 获取所有键key</span><br><span class="hljs-attr">values</span> = d.values()  <span class="hljs-comment"># 获取所有值value</span><br><span class="hljs-attr">items</span> = d.items()    <span class="hljs-comment"># 获取字典中的每一个元素</span><br></code></pre></td></tr></table></figure>
+这三种方法的返回值均为<strong>可迭代的视图对象</strong>，它们并不具备列表的功能，即无法通过索引获取元素、无法修改、无法使用内置方法等，仅支持迭代遍历。可以通过list函数将这些对象转化为列表进行操作。</p></li>
 </ol>
-<p>实例：<br><img src="/../images/Python/%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8(1)-keys.png" srcset="/img/loading.gif" lazyload alt="视图对象"></p>
-<ol start="3">
-<li><p>删除</p>
-<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs maxima"><span class="hljs-built_in">del</span> d[<span class="hljs-built_in">key</span>]  # 删除键为<span class="hljs-built_in">key</span>对应的键值对<br><span class="hljs-built_in">del</span> d       # 删除整个字典，释放内存空间<br>d.<span class="hljs-built_in">pop</span>(<span class="hljs-built_in">key</span>)  # 如果键<span class="hljs-built_in">key</span>存在，返回并删除其值；如果指定的<span class="hljs-built_in">key</span>不存在，则会报错<br>d.clear()   # 清除字典中的元素<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>迭代遍历</p>
-<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs axapta"><span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> d:      <span class="hljs-meta"># k为每次遍历获得的键值对的key</span><br>    <span class="hljs-keyword">print</span>(k,d[k]) <br></code></pre></td></tr></table></figure></li>
+<p>实例： <img src="../images/Python/数据容器(1)-keys.png" srcset="/img/loading.gif" lazyload
+alt="视图对象" /></p>
+<ol start="3" type="1">
+<li><p>删除 <figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs maxima"><span class="hljs-built_in">del</span> d[<span class="hljs-built_in">key</span>]  # 删除键为<span class="hljs-built_in">key</span>对应的键值对<br><span class="hljs-built_in">del</span> d       # 删除整个字典，释放内存空间<br>d.<span class="hljs-built_in">pop</span>(<span class="hljs-built_in">key</span>)  # 如果键<span class="hljs-built_in">key</span>存在，返回并删除其值；如果指定的<span class="hljs-built_in">key</span>不存在，则会报错<br>d.clear()   # 清除字典中的元素<br></code></pre></td></tr></table></figure></p></li>
+<li><p>迭代遍历 <figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs axapta"><span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> d:      <span class="hljs-meta"># k为每次遍历获得的键值对的key</span><br>    <span class="hljs-keyword">print</span>(k,d[k]) <br></code></pre></td></tr></table></figure></p></li>
 </ol>
 
                 
